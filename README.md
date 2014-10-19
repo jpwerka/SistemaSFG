@@ -10,11 +10,11 @@ Até tentei portar este projeto para versão mais recente da atual ferramenta de
 Este projeto é dependente de algumas customizações e componentes de terceiros que podem ser adquiridos entrando em contato pelo e-mail jpwerka@gmail.com. Estes componentes são instalados em conjunto na IDE de desenvolvimento para o projeto então poder ser aberto e compilado. Com exceção dos componentes customizados
 
 Os componentes em questão são:
-Zeos Database Component -  Version 6.6.6-stable - http://sourceforge.net/projects/zeoslib/
-Fast  Report Component -  Version 4.6.8 - http://www.fast-report.com/pt/
-Indy Components – Version 10.5.8 - http://www.indyproject.org/index.en.aspx
-Windows XP Theme Manager - http://www.soft-gems.net/index.php/controls/windows-xp-theme-manager
-Sfg Customizado – Contém o StringAlignGrid e outros components customizados.
+- Zeos Database Component -  Version 6.6.6-stable - http://sourceforge.net/projects/zeoslib/
+- Fast  Report Component -  Version 4.6.8 - http://www.fast-report.com/pt/
+- Indy Components – Version 10.5.8 - http://www.indyproject.org/index.en.aspx
+- Windows XP Theme Manager - http://www.soft-gems.net/index.php/controls/windows-xp-theme-manager
+- Sfg Customizado – Contém o StringAlignGrid e outros components customizados.
 
 Estou abrindo o projeto para desenvolvimento comunitário onde o objetivo não é vender um produto, mas serviços de customização, portanto as melhorias incorporadas ao produto devem ser desenvolvidas de forma livre. Visto que o produto foi pensado em ser modularizado de forma a poder ser customizado para estender suas funcionalidades.
 
