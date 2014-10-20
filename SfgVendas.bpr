@@ -1,0 +1,207 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.00"/>
+    <PROJECT value="Install\SfgVendas.dll"/>
+    <OBJFILES value="SfgVendas.obj Vendas\uSfgBrowseVdp.obj Produto\uSfgBrowsePrd.obj 
+      Financeiro\uSfgBrowseFin.obj Vendas\uVdp1001.obj Vendas\uVdp1002.obj 
+      Vendas\uVdp1003.obj Vendas\uVdp1004.obj Vendas\uVdp1010.obj 
+      Cliente\uVdp1020.obj Cliente\uVdp1021.obj Representante\uVdp1023.obj 
+      Cliente\uVdp1022.obj Representante\uVdp1024.obj Cliente\uVdp1025.obj 
+      Vendas\uVdp2001.obj Cliente\uVdp2020.obj Representante\uVdp2021.obj 
+      Representante\uVdp2022.obj Vendas\uVdp3001.obj Vendas\uVdp3002.obj 
+      Vendas\uVdp3003.obj Vendas\uVdp3004.obj Vendas\uVdp3005.obj 
+      Vendas\uVdp3006.obj Vendas\uVdp3007.obj Vendas\uVdp3010.obj 
+      Cliente\uVdp3020.obj Cliente\uVdp3021.obj Representante\uVdp3022.obj 
+      Representante\uVdp3008.obj Vendas\uVdp3011.obj Vendas\uVdp3012.obj"/>
+    <RESFILES value="Resource\SfgVendas.res"/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES) Vendas\uVdp1001.dfm Vendas\uVdp1002.dfm Vendas\uVdp1003.dfm 
+      Vendas\uVdp1004.dfm Vendas\uVdp1010.dfm Cliente\uVdp1020.dfm 
+      Cliente\uVdp1021.dfm Representante\uVdp1023.dfm Cliente\uVdp1022.dfm 
+      Representante\uVdp1024.dfm Cliente\uVdp1025.dfm Vendas\uVdp2001.dfm 
+      Cliente\uVdp2020.dfm Representante\uVdp2021.dfm Representante\uVdp2022.dfm 
+      Vendas\uVdp3001.dfm Vendas\uVdp3002.dfm Vendas\uVdp3003.dfm 
+      Vendas\uVdp3004.dfm Vendas\uVdp3005.dfm Vendas\uVdp3006.dfm 
+      Vendas\uVdp3007.dfm Vendas\uVdp3010.dfm Cliente\uVdp3020.dfm 
+      Cliente\uVdp3021.dfm Representante\uVdp3022.dfm Representante\uVdp3008.dfm 
+      Vendas\uVdp3011.dfm Vendas\uVdp3012.dfm"/>
+    <LIBFILES value=""/>
+    <LIBRARIES value="vclx.lib"/>
+    <SPARELIBS value="vcl.lib rtl.lib dbrtl.lib vcldb.lib vclx.lib"/>
+    <PACKAGES value="rtl.bpi vcl.bpi dbrtl.bpi vcldb.bpi SfgPackage.bpi"/>
+    <PATHCPP value=".;Vendas;Produto;Financeiro;Vendas;Vendas;Vendas;Vendas;Vendas;Cliente;Cliente;Representante;Cliente;Representante;Cliente;Vendas;Cliente;Representante;Representante;Vendas;Vendas;Vendas;Vendas;Vendas;Vendas;Vendas;Vendas;Cliente;Cliente;Representante;Representante;Vendas;Vendas"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;Resource;Resource"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="ilink32"/>
+    <USERDEFINES value="_DEBUG;_WINSOCKAPI_"/>
+    <SYSDEFINES value="NO_STRICT;_RTLDLL;USEPACKAGES"/>
+    <MAINSOURCE value="SfgVendas.cpp"/>
+    <INCLUDEPATH value="Fiscal;Resource;Representante;Cliente;Vendas;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\Projects\Include;&quot;$(ProgramFiles)\Soft Gems\Theme Manager\Source&quot;;D:\ProjetosBCB\SistemaSFG_FR;Compras;Fornecedor;Produto;Utils;Financeiro"/>
+    <LIBPATH value="Fiscal;Resource;Representante;Cliente;Vendas;$(BCB)\lib;$(BCB)\lib\obj;$(BCB)\Projects\Lib;$(BCB)\Projects\Bpl;$(BCB)\Projects\Obj;&quot;$(ProgramFiles)\Soft Gems\Theme Manager\Source&quot;;D:\ProjetosBCB\SistemaSFG_FR;Compras;Fornecedor;Produto;Utils;Financeiro"/>
+    <WARNINGS value="-w-par"/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-IFiscal -IResource -IRepresentante -ICliente -IVendas -I$(BCB)\include 
+      -I$(BCB)\include\vcl -I$(BCB)\Projects\Include 
+      -I&quot;$(ProgramFiles)\Soft Gems\Theme Manager\Source&quot; 
+      -ID:\ProjetosBCB\SistemaSFG_FR -ICompras -IFornecedor -IProduto -IUtils 
+      -IFinanceiro -src_suffix cpp -D_DEBUG -D_WINSOCKAPI_ -boa"/>
+    <CFLAG1 value="-WD -Od -H=$(BCB)\lib\vcl60.csm -Hc -Vx -Ve -X- -r- -a8 -b- -k -y -v -vi- 
+      -tWD -tWM -c"/>
+    <PFLAGS value="-$Y+ -$W -$O- -$A8 -v -JPHNE -M"/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zi"/>
+    <LFLAGS value="-D&quot;&quot; -aa -Tpd -x -Gn -Gi -v"/>
+    <OTHERFILES value=""/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0d32.obj $(PACKAGES) Memmgr.Lib sysinit.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cp32mti.lib"/>
+    <OTHERFILES value=""/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="SfgVendas.cpp" FORMNAME="" UNITNAME="SfgVendas" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Resource\SfgVendas.rc" FORMNAME="" UNITNAME="SfgVendas.rc" CONTAINERID="RCCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Vendas\uSfgBrowseVdp.cpp" FORMNAME="" UNITNAME="uSfgBrowseVdp.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Produto\uSfgBrowsePrd.cpp" FORMNAME="" UNITNAME="uSfgBrowsePrd" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Financeiro\uSfgBrowseFin.cpp" FORMNAME="" UNITNAME="uSfgBrowseFin" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Vendas\uVdp1001.cpp" FORMNAME="Vdp1001" UNITNAME="uVdp1001" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Vendas\uVdp1002.cpp" FORMNAME="Vdp1002" UNITNAME="uVdp1002" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Vendas\uVdp1003.cpp" FORMNAME="Vdp1003" UNITNAME="uVdp1003" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Vendas\uVdp1004.cpp" FORMNAME="Vdp1004" UNITNAME="uVdp1004" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Vendas\uVdp1010.cpp" FORMNAME="Vdp1010" UNITNAME="uVdp1010" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Cliente\uVdp1020.cpp" FORMNAME="Vdp1020" UNITNAME="uVdp1020" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Cliente\uVdp1021.cpp" FORMNAME="Vdp1021" UNITNAME="uVdp1021" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Representante\uVdp1023.cpp" FORMNAME="Vdp1023" UNITNAME="uVdp1023" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Cliente\uVdp1022.cpp" FORMNAME="Vdp1022" UNITNAME="uVdp1022" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Representante\uVdp1024.cpp" FORMNAME="Vdp1024" UNITNAME="uVdp1024" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Cliente\uVdp1025.cpp" FORMNAME="Vdp1025" UNITNAME="uVdp1025" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Vendas\uVdp2001.cpp" FORMNAME="Vdp2001" UNITNAME="uVdp2001" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Cliente\uVdp2020.cpp" FORMNAME="Vdp2020" UNITNAME="uVdp2020" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Representante\uVdp2021.cpp" FORMNAME="Vdp2021" UNITNAME="uVdp2021" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Representante\uVdp2022.cpp" FORMNAME="Vdp2022" UNITNAME="uVdp2022" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Vendas\uVdp3001.cpp" FORMNAME="Vdp3001" UNITNAME="uVdp3001" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Vendas\uVdp3002.cpp" FORMNAME="Vdp3002" UNITNAME="uVdp3002" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Vendas\uVdp3003.cpp" FORMNAME="Vdp3003" UNITNAME="uVdp3003" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Vendas\uVdp3004.cpp" FORMNAME="Vdp3004" UNITNAME="uVdp3004" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Vendas\uVdp3005.cpp" FORMNAME="Vdp3005" UNITNAME="uVdp3005" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Vendas\uVdp3006.cpp" FORMNAME="Vdp3006" UNITNAME="uVdp3006" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Vendas\uVdp3007.cpp" FORMNAME="Vdp3007" UNITNAME="uVdp3007" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Vendas\uVdp3010.cpp" FORMNAME="Vdp3010" UNITNAME="uVdp3010" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Cliente\uVdp3020.cpp" FORMNAME="Vdp3020" UNITNAME="uVdp3020" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Cliente\uVdp3021.cpp" FORMNAME="Vdp3021" UNITNAME="uVdp3021" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Representante\uVdp3022.cpp" FORMNAME="Vdp3022" UNITNAME="uVdp3022" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Representante\uVdp3008.cpp" FORMNAME="Vdp3008" UNITNAME="uVdp3008" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Vendas\uVdp3011.cpp" FORMNAME="Vdp3011" UNITNAME="uVdp3011" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Vendas\uVdp3012.cpp" FORMNAME="Vdp3012" UNITNAME="uVdp3012" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+
+  <IDEOPTIONS>
+[Version Info]
+IncludeVerInfo=0
+AutoIncBuild=0
+MajorVer=1
+MinorVer=0
+Release=0
+Build=0
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=1046
+CodePage=1252
+
+[Version Info Keys]
+CompanyName=
+FileDescription=
+FileVersion=1.0.0.0
+InternalName=
+LegalCopyright=
+LegalTrademarks=
+OriginalFilename=
+ProductName=
+ProductVersion=1.0.0.0
+Comments=
+
+[HistoryLists\hlIncludePath]
+Count=6
+Item0=Fiscal;Resource;Representante;Cliente;Vendas;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\Projects\Include;$(ProgramFiles)\Soft Gems\Theme Manager\Source;D:\ProjetosBCB\SistemaSFG_FR;Compras;Fornecedor;Produto;Utils;Financeiro
+Item1=Fiscal;Resource;Representante;Cliente;Vendas;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\Projects\Include;$(ProgramFiles)\Soft Gems\Theme Manager\Source;D:\ProjetosBCB\SistemaSFG_FR;Compras;Fornecedor;Produto;Utils;Financeiro;Frame
+Item2=Resource;Representante;Cliente;Vendas;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\Projects\Include;$(ProgramFiles)\Soft Gems\Theme Manager\Source;D:\ProjetosBCB\SistemaSFG_FR;Compras;Fornecedor;Produto;Utils;Financeiro
+Item3=Cliente;Vendas;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\Projects\Include;$(ProgramFiles)\Soft Gems\Theme Manager\Source;D:\ProjetosBCB\SistemaSFG_FR;Compras;Fornecedor;Produto;Utils;Financeiro
+Item4=$(BCB)\include;$(BCB)\include\vcl;$(BCB)\Projects\Include;$(ProgramFiles)\Soft Gems\Theme Manager\Source;D:\ProjetosBCB\SistemaSFG_FR;Compras;Fornecedor;Produto;Utils;Financeiro
+Item5=$(BCB)\include;$(BCB)\include\vcl;$(BCB)\Projects\Include;&quot;$(ProgramFiles)\Soft Gems\Theme Manager\Source&quot;D:\ProjetosBCB\SistemaSFG_FR;Compras;Fornecedor;Produto;Utils
+
+[HistoryLists\hlLibraryPath]
+Count=6
+Item0=Fiscal;Resource;Representante;Cliente;Vendas;$(BCB)\lib;$(BCB)\lib\obj;$(BCB)\Projects\Lib;$(BCB)\Projects\Bpl;$(BCB)\Projects\Obj;$(ProgramFiles)\Soft Gems\Theme Manager\Source;D:\ProjetosBCB\SistemaSFG_FR;Compras;Fornecedor;Produto;Utils;Financeiro
+Item1=Fiscal;Resource;Representante;Cliente;Vendas;$(BCB)\lib;$(BCB)\lib\obj;$(BCB)\Projects\Lib;$(BCB)\Projects\Bpl;$(BCB)\Projects\Obj;$(ProgramFiles)\Soft Gems\Theme Manager\Source;D:\ProjetosBCB\SistemaSFG_FR;Compras;Fornecedor;Produto;Utils;Financeiro;Frame
+Item2=Resource;Representante;Cliente;Vendas;$(BCB)\lib;$(BCB)\lib\obj;$(BCB)\Projects\Lib;$(BCB)\Projects\Bpl;$(BCB)\Projects\Obj;$(ProgramFiles)\Soft Gems\Theme Manager\Source;D:\ProjetosBCB\SistemaSFG_FR;Compras;Fornecedor;Produto;Utils;Financeiro
+Item3=Cliente;Vendas;$(BCB)\lib;$(BCB)\lib\obj;$(BCB)\Projects\Lib;$(BCB)\Projects\Bpl;$(BCB)\Projects\Obj;$(ProgramFiles)\Soft Gems\Theme Manager\Source;D:\ProjetosBCB\SistemaSFG_FR;Compras;Fornecedor;Produto;Utils;Financeiro
+Item4=$(BCB)\lib;$(BCB)\lib\obj;$(BCB)\Projects\Lib;$(BCB)\Projects\Bpl;$(BCB)\Projects\Obj;$(ProgramFiles)\Soft Gems\Theme Manager\Source;D:\ProjetosBCB\SistemaSFG_FR;Compras;Fornecedor;Produto;Utils;Financeiro
+Item5=$(BCB)\lib;$(BCB)\lib\obj;$(BCB)\Projects\Lib;$(BCB)\Projects\Bpl;$(BCB)\Projects\Obj;$(ProgramFiles)\Soft Gems\Theme Manager\Source;D:\ProjetosBCB\SistemaSFG_FR;Compras;Fornecedor;Produto;Utils
+
+[HistoryLists\hlDebugSourcePath]
+Count=1
+Item0=$(BCB)\source\vcl
+
+[HistoryLists\hlConditionals]
+Count=4
+Item0=_DEBUG;_WINSOCKAPI_
+Item1=_DEBUG
+Item2=_IS_SFGDLL
+Item3=_DEBUG;_IS_SFGDLL
+
+[HistoryLists\hlFinalOutputDir]
+Count=2
+Item0=Install\
+Item1=Install
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=
+Launcher=
+UseLauncher=0
+DebugCWD=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteLauncher=
+RemoteCWD=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=1
+LinkCGLIB=0
+
+[CORBA]
+AddServerUnit=1
+AddClientUnit=1
+PrecompiledHeaders=1
+
+[Language]
+ActiveLang=
+ProjectLang=
+RootDir=
+
+[Linker]
+LibPrefix=
+LibSuffix=
+LibVersion=
+  </IDEOPTIONS>
+</PROJECT>

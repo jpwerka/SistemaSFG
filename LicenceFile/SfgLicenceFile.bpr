@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.00"/>
+    <PROJECT value="SfgLicenceFile.exe"/>
+    <OBJFILES value="SfgLicenceFile.obj D:\MyWinAPI\AppBase_New\AppBase.obj 
+      D:\MyWinAPI\AppBase_New\AppUtility.obj 
+      D:\MyWinAPI\AppBase_New\FormControls.obj 
+      D:\MyWinAPI\AppBase_New\StdControls.obj 
+      D:\MyWinAPI\AppBase_New\ExtControls.obj uFrmLicFile.obj 
+      ..\LicenceServer\uSfgCriptoLic.obj"/>
+    <RESFILES value="SfgLicenceFile.res"/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES)"/>
+    <LIBFILES value=""/>
+    <LIBRARIES value="rtl.lib"/>
+    <SPARELIBS value="rtl.lib"/>
+    <PACKAGES value="vcl.bpi rtl.bpi"/>
+    <PATHCPP value=".;D:\MyWinAPI\AppBase_New;D:\MyWinAPI\AppBase_New;D:\MyWinAPI\AppBase_New;D:\MyWinAPI\AppBase_New;D:\MyWinAPI\AppBase_New;..\LicenceServer"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="ilink32"/>
+    <USERDEFINES value="_USE_DIALOG;_USE_XPTHEMES"/>
+    <SYSDEFINES value="NO_STRICT;_NO_VCL"/>
+    <MAINSOURCE value="SfgLicenceFile.cpp"/>
+    <INCLUDEPATH value="$(BCB)\include;$(BCB)\include\vcl;D:\MyWinAPI\AppBase_New;..\LicenceServer"/>
+    <LIBPATH value="$(BCB)\lib;$(BCB)\lib\obj;$(BCB)\Projects\Lib;$(BCB)\lib\psdk;D:\MyWinAPI\AppBase_New;..\LicenceServer"/>
+    <WARNINGS value="-w-par"/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-I$(BCB)\include -I$(BCB)\include\vcl -ID:\MyWinAPI\AppBase_New 
+      -I..\LicenceServer -src_suffix cpp -D_USE_DIALOG -D_USE_XPTHEMES -boa"/>
+    <CFLAG1 value="-O2 -H=$(BCB)\lib\vcl60.csm -Hc -Vx -Ve -X- -a8 -b- -k- -vi -tW -tWM -c"/>
+    <PFLAGS value="-$Y- -$L- -$D- -$A8 -v -JPHNE -M"/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zn"/>
+    <LFLAGS value="-D&quot;&quot; -aa -Tpe -x -Gn"/>
+    <OTHERFILES value=""/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0w32.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cw32mt.lib"/>
+    <OTHERFILES value=""/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="SfgLicenceFile.cpp" FORMNAME="" UNITNAME="SfgLicenceFile" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="SfgLicenceFile.rc" FORMNAME="" UNITNAME="SfgLicenceFile" CONTAINERID="RCCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="D:\MyWinAPI\AppBase_New\AppBase.cpp" FORMNAME="" UNITNAME="AppBase.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="D:\MyWinAPI\AppBase_New\AppUtility.cpp" FORMNAME="" UNITNAME="AppUtility.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="D:\MyWinAPI\AppBase_New\FormControls.cpp" FORMNAME="" UNITNAME="FormControls.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="D:\MyWinAPI\AppBase_New\StdControls.cpp" FORMNAME="" UNITNAME="StdControls.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="D:\MyWinAPI\AppBase_New\ExtControls.cpp" FORMNAME="" UNITNAME="ExtControls" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="uFrmLicFile.cpp" FORMNAME="" UNITNAME="uFrmLicFile" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\LicenceServer\uSfgCriptoLic.cpp" FORMNAME="" UNITNAME="uSfgCriptoLic" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+
+  <IDEOPTIONS>
+[Version Info]
+IncludeVerInfo=0
+AutoIncBuild=0
+MajorVer=1
+MinorVer=0
+Release=0
+Build=0
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=1046
+CodePage=1252
+
+[Version Info Keys]
+CompanyName=
+FileDescription=
+FileVersion=1.0.0.0
+InternalName=
+LegalCopyright=
+LegalTrademarks=
+OriginalFilename=
+ProductName=
+ProductVersion=1.0.0.0
+Comments=
+
+[HistoryLists\hlIncludePath]
+Count=5
+Item0=$(BCB)\include;$(BCB)\include\vcl;D:\MyWinAPI\AppBase_New;..\LicenceServer
+Item1=..\LicenceServer;D:\MyWinAPI\AppBase_New;D:\MyWinAPI\AppBase;D:\MyWinAPI\Calculadora\CallCalendar\resource;D:\MyWinAPI\Calculadora\CallCalendar;$(BCB)\include;$(BCB)\include\vcl
+Item2=..\LicenceServer;C:\Arquivos de programas\Borland\CBuilder6\Projects;D:\MyWinAPI\AppBase_New;D:\MyWinAPI\Calculadora\CallCalendar\gui;D:\MyWinAPI\AppBase;D:\MyWinAPI\Calculadora\CallCalendar\resource;D:\MyWinAPI\Calculadora\CallCalendar;resource;gui;..\..\AppBase;$(BCB)\include;$(BCB)\include\vcl;C:\Arquivos de programas\CoreLab\MyDac for CBuilder 6\Include
+Item3=C:\Arquivos de programas\Borland\CBuilder6\Projects;D:\MyWinAPI\AppBase_New;D:\MyWinAPI\Calculadora\CallCalendar\gui;D:\MyWinAPI\AppBase;D:\MyWinAPI\Calculadora\CallCalendar\resource;D:\MyWinAPI\Calculadora\CallCalendar;resource;gui;..\..\AppBase;$(BCB)\include;$(BCB)\include\vcl;C:\Arquivos de programas\CoreLab\MyDac for CBuilder 6\Include
+Item4=resource;gui;..\..\AppBase;$(BCB)\include;$(BCB)\include\vcl;C:\Arquivos de programas\CoreLab\MyDac for CBuilder 6\Include
+
+[HistoryLists\hlLibraryPath]
+Count=5
+Item0=$(BCB)\lib;$(BCB)\lib\obj;$(BCB)\Projects\Lib;$(BCB)\lib\psdk;D:\MyWinAPI\AppBase_New;..\LicenceServer
+Item1=$(BCB)\lib;$(BCB)\lib\obj;$(BCB)\Projects\Lib;D:\MyWinAPI\AppBase_New;..\LicenceServer
+Item2=..\LicenceServer;C:\Arquivos de programas\Borland\CBuilder6\Projects;D:\MyWinAPI\AppBase_New;D:\MyWinAPI\Calculadora\CallCalendar\gui;D:\MyWinAPI\AppBase;D:\MyWinAPI\Calculadora\CallCalendar\resource;D:\MyWinAPI\Calculadora\CallCalendar;$(BCB)\Projects\Lib;resource;gui;..\..\AppBase;$(BCB)\lib\obj;$(BCB)\lib;C:\Arquivos de programas\CoreLab\MyDac for CBuilder 6\Lib
+Item3=C:\Arquivos de programas\Borland\CBuilder6\Projects;D:\MyWinAPI\AppBase_New;D:\MyWinAPI\Calculadora\CallCalendar\gui;D:\MyWinAPI\AppBase;D:\MyWinAPI\Calculadora\CallCalendar\resource;D:\MyWinAPI\Calculadora\CallCalendar;$(BCB)\Projects\Lib;resource;gui;..\..\AppBase;$(BCB)\lib\obj;$(BCB)\lib;C:\Arquivos de programas\CoreLab\MyDac for CBuilder 6\Lib
+Item4=$(BCB)\Projects\Lib;resource;gui;..\..\AppBase;$(BCB)\lib\obj;$(BCB)\lib;C:\Arquivos de programas\CoreLab\MyDac for CBuilder 6\Lib
+
+[HistoryLists\hlDebugSourcePath]
+Count=1
+Item0=$(BCB)\source\vcl
+
+[HistoryLists\hlConditionals]
+Count=7
+Item0=_USE_DIALOG;_USE_XPTHEMES
+Item1=_USE_DIALOG;_USE_XPTHEMES;_DEBUG
+Item2=_USE_DIALOG
+Item3=_USE_DIALOG;_USE_XPTHEMES;_IS_APP
+Item4=_USE_DIALOG;_USE_XPTHEMES;_DEBUG;_IS_APP
+Item5=_DEBUG;_USE_DIALOG;_USE_XPTHEMES
+Item6=_DEBUG
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=
+Launcher=
+UseLauncher=0
+DebugCWD=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteLauncher=
+RemoteCWD=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=0
+LinkCGLIB=0
+
+[CORBA]
+AddServerUnit=1
+AddClientUnit=1
+PrecompiledHeaders=1
+
+[Language]
+ActiveLang=
+ProjectLang=
+RootDir=
+  </IDEOPTIONS>
+</PROJECT>

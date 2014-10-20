@@ -1,0 +1,37 @@
+/****************************************************************************
+Aqui vão todos os recursos do meu projeto
+*****************************************************************************/
+MAINICON ICON "sfgicon.ico"
+
+/* Informações sobre a versão do arquivo */
+1 VERSIONINFO
+FILEVERSION 1,0,0,0
+PRODUCTVERSION 1,0,0,1
+FILEFLAGSMASK VS_FFI_FILEFLAGSMASK
+FILEOS VOS__WINDOWS32
+FILETYPE VFT_APP
+{
+ BLOCK "StringFileInfo"
+ {
+  BLOCK "041604E4"
+  {
+   VALUE "CompanyName", "SoftGreen\0"
+   VALUE "FileDescription", "Servidor de licenças para o Sistema SFG\0"
+   VALUE "FileVersion", "1.0.0.0\0"
+   VALUE "InternalName", "SfgLicence.exe\0"
+   VALUE "LegalCopyright", "© Copyright 2012 By SoftGreen Softwares\0"
+   VALUE "LegalTrademarks", "contato@sofgreen.inf.br\0"
+   VALUE "OriginalFilename", "SfgLicence.exe\0"
+   VALUE "ProductName", "SfgLicence\0"
+   VALUE "ProductVersion", "1.0.0.0\0"
+   VALUE "Comments", "Servidor para gerenciar as licenças de uso do Sistema SFG.\0"
+  }
+ }
+
+ BLOCK "VarFileInfo"
+ {
+  VALUE "Translation", 1046, 1252
+ }
+
+}
+

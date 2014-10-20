@@ -1,0 +1,192 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.00"/>
+    <PROJECT value="Install\SfgFinancas.dll"/>
+    <OBJFILES value="SfgFinancas.obj Financeiro\uSfgBrowseFin.obj Compras\uSfgBrowseSup.obj 
+      Vendas\uSfgBrowseVdp.obj Financeiro\uFin1001.obj Financeiro\uFin1002.obj 
+      Financeiro\uFin1003.obj Financeiro\uFin1004.obj Financeiro\uFin1005.obj 
+      Financeiro\uFin1006.obj Financeiro\uFin1007.obj Financeiro\uFin2001.obj 
+      Financeiro\uFin2002.obj Financeiro\uFin2004.obj Financeiro\uFin3002.obj 
+      Financeiro\uFin3003.obj Financeiro\uFin3004.obj Financeiro\uFin3005.obj 
+      Financeiro\uFin3006.obj Financeiro\uFin3007.obj Financeiro\uFin3008.obj 
+      Financeiro\uFin3009.obj Financeiro\uFin3010.obj Financeiro\uFin3011.obj 
+      Financeiro\uFin3012.obj Financeiro\uFin3013.obj Financeiro\uFin3014.obj 
+      Financeiro\uFin3015.obj Financeiro\uFin3016.obj Financeiro\uFin3017.obj"/>
+    <RESFILES value="Resource\SfgFinancas.res"/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES) Financeiro\uFin1001.dfm Financeiro\uFin1002.dfm 
+      Financeiro\uFin1003.dfm Financeiro\uFin1004.dfm Financeiro\uFin1005.dfm 
+      Financeiro\uFin1006.dfm Financeiro\uFin1007.dfm Financeiro\uFin2001.dfm 
+      Financeiro\uFin2002.dfm Financeiro\uFin2004.dfm Financeiro\uFin3002.dfm 
+      Financeiro\uFin3003.dfm Financeiro\uFin3004.dfm Financeiro\uFin3005.dfm 
+      Financeiro\uFin3006.dfm Financeiro\uFin3007.dfm Financeiro\uFin3008.dfm 
+      Financeiro\uFin3009.dfm Financeiro\uFin3010.dfm Financeiro\uFin3011.dfm 
+      Financeiro\uFin3012.dfm Financeiro\uFin3013.dfm Financeiro\uFin3014.dfm 
+      Financeiro\uFin3015.dfm Financeiro\uFin3016.dfm Financeiro\uFin3017.dfm"/>
+    <LIBFILES value=""/>
+    <LIBRARIES value=""/>
+    <SPARELIBS value="vcl.lib rtl.lib dbrtl.lib vcldb.lib"/>
+    <PACKAGES value="rtl.bpi vcl.bpi dbrtl.bpi vcldb.bpi SfgPackage.bpi"/>
+    <PATHCPP value=".;Financeiro;Compras;Vendas;Financeiro;Financeiro;Financeiro;Financeiro;Financeiro;Financeiro;Financeiro;Financeiro;Financeiro;Financeiro;Financeiro;Financeiro;Financeiro;Financeiro;Financeiro;Financeiro;Financeiro;Financeiro;Financeiro;Financeiro;Financeiro;Financeiro;Financeiro;Financeiro;Financeiro;Financeiro"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;Resource;Resource"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="ilink32"/>
+    <USERDEFINES value="_DEBUG;_WINSOCKAPI_"/>
+    <SYSDEFINES value="NO_STRICT;_RTLDLL;USEPACKAGES"/>
+    <MAINSOURCE value="SfgFinancas.cpp"/>
+    <INCLUDEPATH value="Compras;Vendas;Resource;Utils;Financeiro;D:\ProjetosBCB\SistemaSFG_FR;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\Projects\Include;&quot;$(ProgramFiles)\Soft Gems\Theme Manager\Source&quot;"/>
+    <LIBPATH value="$(BCB)\lib;$(BCB)\lib\obj;$(BCB)\Projects\Lib;$(BCB)\Projects\Bpl;$(BCB)\Projects\Obj;&quot;$(ProgramFiles)\Soft Gems\Theme Manager\Source&quot;;D:\ProjetosBCB\SistemaSFG_FR;Utils;Resource;Financeiro;Vendas;Compras"/>
+    <WARNINGS value="-w-par"/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-ICompras -IVendas -IResource -IUtils -IFinanceiro 
+      -ID:\ProjetosBCB\SistemaSFG_FR -I$(BCB)\include -I$(BCB)\include\vcl 
+      -I$(BCB)\Projects\Include 
+      -I&quot;$(ProgramFiles)\Soft Gems\Theme Manager\Source&quot; -src_suffix cpp 
+      -D_DEBUG -D_WINSOCKAPI_ -boa"/>
+    <CFLAG1 value="-WD -Od -H=$(BCB)\lib\vcl60.csm -Hc -Vx -Ve -X- -r- -a8 -b- -k -y -v -vi- 
+      -tWD -tWM -c"/>
+    <PFLAGS value="-$Y+ -$W -$O- -$A8 -v -JPHNE -M"/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zi"/>
+    <LFLAGS value="-D&quot;&quot; -aa -Tpd -x -Gn -Gi -v"/>
+    <OTHERFILES value=""/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0d32.obj $(PACKAGES) Memmgr.Lib sysinit.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cp32mti.lib"/>
+    <OTHERFILES value=""/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="SfgFinancas.cpp" FORMNAME="" UNITNAME="SfgFinancas" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Resource\SfgFinancas.rc" FORMNAME="" UNITNAME="SfgFinancas.rc" CONTAINERID="RCCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Financeiro\uSfgBrowseFin.cpp" FORMNAME="" UNITNAME="uSfgBrowseFin.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Compras\uSfgBrowseSup.cpp" FORMNAME="" UNITNAME="uSfgBrowseSup" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Vendas\uSfgBrowseVdp.cpp" FORMNAME="" UNITNAME="uSfgBrowseVdp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Financeiro\uFin1001.cpp" FORMNAME="Fin1001" UNITNAME="uFin1001" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Financeiro\uFin1002.cpp" FORMNAME="Fin1002" UNITNAME="uFin1002" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Financeiro\uFin1003.cpp" FORMNAME="Fin1003" UNITNAME="uFin1003" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Financeiro\uFin1004.cpp" FORMNAME="Fin1004" UNITNAME="uFin1004" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Financeiro\uFin1005.cpp" FORMNAME="Fin1005" UNITNAME="uFin1005" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Financeiro\uFin1006.cpp" FORMNAME="Fin1006" UNITNAME="uFin1006" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Financeiro\uFin1007.cpp" FORMNAME="Fin1007" UNITNAME="uFin1007" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Financeiro\uFin2001.cpp" FORMNAME="Fin2001" UNITNAME="uFin2001" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Financeiro\uFin2002.cpp" FORMNAME="Fin2002" UNITNAME="uFin2002" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Financeiro\uFin2004.cpp" FORMNAME="Fin2004" UNITNAME="uFin2004" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Financeiro\uFin3002.cpp" FORMNAME="Fin3002" UNITNAME="uFin3002" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Financeiro\uFin3003.cpp" FORMNAME="Fin3003" UNITNAME="uFin3003" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Financeiro\uFin3004.cpp" FORMNAME="Fin3004" UNITNAME="uFin3004" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Financeiro\uFin3005.cpp" FORMNAME="Fin3005" UNITNAME="uFin3005" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Financeiro\uFin3006.cpp" FORMNAME="Fin3006" UNITNAME="uFin3006" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Financeiro\uFin3007.cpp" FORMNAME="Fin3007" UNITNAME="uFin3007" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Financeiro\uFin3008.cpp" FORMNAME="Fin3008" UNITNAME="uFin3008" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Financeiro\uFin3009.cpp" FORMNAME="Fin3009" UNITNAME="uFin3009" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Financeiro\uFin3010.cpp" FORMNAME="Fin3010" UNITNAME="uFin3010" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Financeiro\uFin3011.cpp" FORMNAME="Fin3011" UNITNAME="uFin3011" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Financeiro\uFin3012.cpp" FORMNAME="Fin3012" UNITNAME="uFin3012" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Financeiro\uFin3013.cpp" FORMNAME="Fin3013" UNITNAME="uFin3013" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Financeiro\uFin3014.cpp" FORMNAME="Fin3014" UNITNAME="uFin3014" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Financeiro\uFin3015.cpp" FORMNAME="Fin3015" UNITNAME="uFin3015" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Financeiro\uFin3016.cpp" FORMNAME="Fin3016" UNITNAME="uFin3016" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Financeiro\uFin3017.cpp" FORMNAME="Fin3017" UNITNAME="uFin3017" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+
+  <IDEOPTIONS>
+[Version Info]
+IncludeVerInfo=0
+AutoIncBuild=0
+MajorVer=1
+MinorVer=0
+Release=0
+Build=0
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=1046
+CodePage=1252
+
+[Version Info Keys]
+CompanyName=
+FileDescription=
+FileVersion=1.0.0.0
+InternalName=
+LegalCopyright=
+LegalTrademarks=
+OriginalFilename=
+ProductName=
+ProductVersion=1.0.0.0
+Comments=
+
+[HistoryLists\hlIncludePath]
+Count=1
+Item0=Compras;Vendas;Resource;Utils;Financeiro;D:\ProjetosBCB\SistemaSFG_FR;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\Projects\Include;$(ProgramFiles)\Soft Gems\Theme Manager\Source
+
+[HistoryLists\hlLibraryPath]
+Count=1
+Item0=$(BCB)\lib;$(BCB)\lib\obj;$(BCB)\Projects\Lib;$(BCB)\Projects\Bpl;$(BCB)\Projects\Obj;$(ProgramFiles)\Soft Gems\Theme Manager\Source;D:\ProjetosBCB\SistemaSFG_FR;Utils;Resource;Financeiro;Vendas;Compras
+
+[HistoryLists\hlDebugSourcePath]
+Count=1
+Item0=$(BCB)\source\vcl
+
+[HistoryLists\hlConditionals]
+Count=4
+Item0=_DEBUG;_WINSOCKAPI_
+Item1=_DEBUG
+Item2=_IS_SFGDLL
+Item3=_DEBUG;_IS_SFGDLL
+
+[HistoryLists\hlFinalOutputDir]
+Count=2
+Item0=Install\
+Item1=Install
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=
+Launcher=
+UseLauncher=0
+DebugCWD=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteLauncher=
+RemoteCWD=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=1
+LinkCGLIB=0
+
+[CORBA]
+AddServerUnit=1
+AddClientUnit=1
+PrecompiledHeaders=1
+
+[Language]
+ActiveLang=
+ProjectLang=
+RootDir=
+
+[Linker]
+LibPrefix=
+LibSuffix=
+LibVersion=
+  </IDEOPTIONS>
+</PROJECT>

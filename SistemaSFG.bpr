@@ -1,0 +1,165 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.00"/>
+    <PROJECT value="install\SistemaSFG.exe"/>
+    <OBJFILES value="SistemaSFG.obj Frame\uFrmMain.obj Frame\uFrmLogin.obj 
+      Utils\uSplashScreen.obj Frame\uSobre.obj LicenceServer\uSfgCriptoLic.obj 
+      Utils\uSfgClientLicence.obj Utils\uSfgSignLicence.obj 
+      Frame\uSfgBrowseFrm.obj Frame\uFrm1001.obj Frame\uFrm1002.obj 
+      Frame\uFrm1003.obj Frame\uFrm1004.obj Frame\uFrm1005.obj 
+      Frame\uFrm1010.obj Frame\uFrm1011.obj Frame\uFrm1012.obj Frame\uFrm1013.obj 
+      Frame\uFrm1020.obj"/>
+    <RESFILES value="Resource\SistemaSfg.res"/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES) Frame\uFrmMain.dfm Frame\uFrmLogin.dfm Utils\uSplashScreen.dfm 
+      Frame\uSobre.dfm Frame\uFrm1001.dfm Frame\uFrm1002.dfm Frame\uFrm1003.dfm 
+      Frame\uFrm1004.dfm Frame\uFrm1005.dfm Frame\uFrm1010.dfm 
+      Frame\uFrm1011.dfm Frame\uFrm1012.dfm Frame\uFrm1013.dfm Frame\uFrm1020.dfm"/>
+    <LIBFILES value=""/>
+    <LIBRARIES value="ThemeManager60.lib"/>
+    <SPARELIBS value="vcl.lib rtl.lib dbrtl.lib vcldb.lib ThemeManager60.lib"/>
+    <PACKAGES value="rtl.bpi vcl.bpi dbrtl.bpi vcldb.bpi SfgPackage.bpi"/>
+    <PATHCPP value=".;Frame;Frame;Utils;Frame;LicenceServer;Utils;Utils;Frame;Frame;Frame;Frame;Frame;Frame;Frame;Frame;Frame;Frame;Frame"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;Resource;Resource"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="ilink32"/>
+    <USERDEFINES value="_WINSOCKAPI_;_DEBUG"/>
+    <SYSDEFINES value="NO_STRICT;_RTLDLL;USEPACKAGES"/>
+    <MAINSOURCE value="SistemaSFG.cpp"/>
+    <INCLUDEPATH value="LicenceServer;&quot;C:\Arquivos de programas\Borland\CBuilder6\Projects&quot;;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\Projects\Include;Resource;Utils;Frame"/>
+    <LIBPATH value="LicenceServer;&quot;C:\Arquivos de programas\Borland\CBuilder6\Projects&quot;;$(BCB)\lib;$(BCB)\lib\obj;$(BCB)\Projects\Lib;$(BCB)\Projects\Bpl;$(BCB)\Projects\obj;Resource;Utils;Frame;$(BCB)\lib\Psdk"/>
+    <WARNINGS value="-w-par"/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-src_suffix cpp -D_WINSOCKAPI_ -D_DEBUG -ILicenceServer 
+      -I&quot;C:\Arquivos de programas\Borland\CBuilder6\Projects&quot; -I$(BCB)\include 
+      -I$(BCB)\include\vcl -I$(BCB)\Projects\Include -IResource -IUtils -IFrame 
+      -boa"/>
+    <CFLAG1 value="-Od -H=$(BCB)\lib\vcl60.csm -Hc -Vx -Ve -X- -r- -a8 -b- -k -y -v -vi- -c 
+      -tW -tWM"/>
+    <PFLAGS value="-$Y+ -$W -$O- -$A8 -v -JPHNE -M"/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zi"/>
+    <LFLAGS value="-D&quot;&quot; -aa -Tpe -x -Gn -v"/>
+    <OTHERFILES value=""/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0w32.obj $(PACKAGES) Memmgr.Lib sysinit.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cp32mti.lib"/>
+    <OTHERFILES value=""/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="SistemaSFG.cpp" FORMNAME="" UNITNAME="SistemaSFG" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Resource\SistemaSfg.rc" FORMNAME="" UNITNAME="SistemaSfg.rc" CONTAINERID="RCCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Frame\uFrmMain.cpp" FORMNAME="FrmMain" UNITNAME="uFrmMain" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Frame\uFrmLogin.cpp" FORMNAME="FrmLogin" UNITNAME="uFrmLogin" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Utils\uSplashScreen.cpp" FORMNAME="SplahScreen" UNITNAME="uSplashScreen" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Frame\uSobre.cpp" FORMNAME="frmSobre" UNITNAME="uSobre" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="LicenceServer\uSfgCriptoLic.cpp" FORMNAME="" UNITNAME="uSfgCriptoLic" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Utils\uSfgClientLicence.cpp" FORMNAME="" UNITNAME="uSfgClientLicence.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Utils\uSfgSignLicence.cpp" FORMNAME="" UNITNAME="uSfgSignLicence.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Frame\uSfgBrowseFrm.cpp" FORMNAME="" UNITNAME="uSfgBrowseFrm.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Frame\uFrm1001.cpp" FORMNAME="Frm1001" UNITNAME="uFrm1001" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Frame\uFrm1002.cpp" FORMNAME="Frm1002" UNITNAME="uFrm1002" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Frame\uFrm1003.cpp" FORMNAME="Frm1003" UNITNAME="uFrm1003" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Frame\uFrm1004.cpp" FORMNAME="Frm1004" UNITNAME="uFrm1004" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Frame\uFrm1005.cpp" FORMNAME="Frm1005" UNITNAME="uFrm1005" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Frame\uFrm1010.cpp" FORMNAME="Frm1010" UNITNAME="uFrm1010" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Frame\uFrm1011.cpp" FORMNAME="Frm1011" UNITNAME="uFrm1011" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Frame\uFrm1012.cpp" FORMNAME="Frm1012" UNITNAME="uFrm1012" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Frame\uFrm1013.cpp" FORMNAME="Frm1013" UNITNAME="uFrm1013" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Frame\uFrm1020.cpp" FORMNAME="Frm1020" UNITNAME="uFrm1020" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+
+  <IDEOPTIONS>
+[Version Info]
+IncludeVerInfo=0
+AutoIncBuild=0
+MajorVer=1
+MinorVer=0
+Release=0
+Build=0
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=1046
+CodePage=1252
+
+[Version Info Keys]
+CompanyName=
+FileDescription=
+FileVersion=1.0.0.0
+InternalName=
+LegalCopyright=
+LegalTrademarks=
+OriginalFilename=
+ProductName=
+ProductVersion=1.0.0.0
+Comments=
+
+[HistoryLists\hlIncludePath]
+Count=1
+Item0=LicenceServer;C:\Arquivos de programas\Borland\CBuilder6\Projects;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\Projects\Include;Resource;Utils;Frame
+
+[HistoryLists\hlLibraryPath]
+Count=1
+Item0=LicenceServer;C:\Arquivos de programas\Borland\CBuilder6\Projects;$(BCB)\lib;$(BCB)\lib\obj;$(BCB)\Projects\Lib;$(BCB)\Projects\Bpl;$(BCB)\Projects\obj;Resource;Utils;Frame;$(BCB)\lib\Psdk
+
+[HistoryLists\hlDebugSourcePath]
+Count=1
+Item0=$(BCB)\source\vcl;D:\ProjetosBCB\Componentes\FastReport4\Source;D:\ProjetosBCB\Componentes\FastReport4\FastScript\;D:\ProjetosBCB\Componentes\CustomBCB\source\;D:\ProjetosBCB\Componentes\ZEOSDBO-6.6.6-stable\src\plain\;D:\ProjetosBCB\Componentes\ThemeManager\Source\
+
+[HistoryLists\hlConditionals]
+Count=2
+Item0=_WINSOCKAPI_;_DEBUG
+Item1=
+
+[HistoryLists\hlFinalOutputDir]
+Count=2
+Item0=install\
+Item1=install
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl;D:\ProjetosBCB\Componentes\FastReport4\Source;D:\ProjetosBCB\Componentes\FastReport4\FastScript\;D:\ProjetosBCB\Componentes\CustomBCB\source\;D:\ProjetosBCB\Componentes\ZEOSDBO-6.6.6-stable\src\plain\;D:\ProjetosBCB\Componentes\ThemeManager\Source\;C:\Program Files (x86)\Borland\CBuilder6\Source\ComServers\Office2K\
+
+[Parameters]
+RunParams=-db Cafeteria -u administrador -s qwe123
+Launcher=
+UseLauncher=0
+DebugCWD=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteLauncher=
+RemoteCWD=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=1
+LinkCGLIB=0
+
+[CORBA]
+AddServerUnit=1
+AddClientUnit=1
+PrecompiledHeaders=1
+
+[Language]
+ActiveLang=
+ProjectLang=
+RootDir=
+  </IDEOPTIONS>
+</PROJECT>

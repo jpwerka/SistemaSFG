@@ -1,0 +1,153 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.00"/>
+    <PROJECT value="SfgLicenceSvc.exe"/>
+    <OBJFILES value="SfgLicenceSvc.obj uSfgLicenceSvc.obj uSfgCriptoLic.obj"/>
+    <RESFILES value="SfgLicenceSvc.res"/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES) uSfgLicenceSvc.dfm"/>
+    <LIBFILES value=""/>
+    <LIBRARIES value="rtl.lib vcl.lib"/>
+    <SPARELIBS value="vcl.lib rtl.lib"/>
+    <PACKAGES value="vcl.bpi rtl.bpi dbrtl.bpi adortl.bpi vcldb.bpi vclx.bpi bdertl.bpi 
+      vcldbx.bpi ibxpress.bpi dsnap.bpi cds.bpi bdecds.bpi qrpt.bpi teeui.bpi 
+      teedb.bpi tee.bpi dss.bpi teeqr.bpi visualclx.bpi visualdbclx.bpi 
+      dsnapcrba.bpi dsnapcon.bpi bcbsmp.bpi vclie.bpi xmlrtl.bpi inet.bpi 
+      inetdbbde.bpi inetdbxpress.bpi inetdb.bpi nmfast.bpi webdsnap.bpi 
+      bcbie.bpi websnap.bpi soaprtl.bpi dclocx.bpi dbexpress.bpi dbxcds.bpi 
+      bcb2kaxserver.bpi dclusr.bpi IndyCore60.bpi IndySystem60.bpi 
+      IndyProtocols60.bpi ZComponent.bpi ZPlain.bpi ZCore.bpi ZDbc.bpi 
+      ZParseSql.bpi fsTee6.bpi fs6.bpi fsADO6.bpi fsBDE6.bpi fsDB6.bpi frx6.bpi 
+      frxADO6.bpi frxBDE6.bpi frxDB6.bpi frxe6.bpi frxTee6.bpi 
+      ThemeManager60.bpi SfgCustom60.bpi CustomBCB60RT.bpi"/>
+    <PATHCPP value=".;"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="ilink32"/>
+    <USERDEFINES value="_WINSOCKAPI_"/>
+    <SYSDEFINES value="NO_STRICT"/>
+    <MAINSOURCE value="SfgLicenceSvc.cpp"/>
+    <INCLUDEPATH value="$(BCB)\include;$(BCB)\include\vcl;$(BCB)\Projects\Include"/>
+    <LIBPATH value="$(BCB)\lib;$(BCB)\lib\obj;$(BCB)\Projects\Lib;$(BCB)\Projects\Bpl;$(BCB)\lib\psdk"/>
+    <WARNINGS value="-w-par"/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-I$(BCB)\include -I$(BCB)\include\vcl -I$(BCB)\Projects\Include 
+      -src_suffix cpp -D_WINSOCKAPI_ -boa"/>
+    <CFLAG1 value="-O2 -H=$(BCB)\lib\vcl60.csm -Hc -Vx -Ve -X- -a8 -b- -k- -vi -c -tW -tWM"/>
+    <PFLAGS value="-$Y- -$L- -$D- -$A8 -v -JPHNE -M"/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zn"/>
+    <LFLAGS value="-D&quot;&quot; -aa -Tpe -x -Gn"/>
+    <OTHERFILES value=""/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0w32.obj sysinit.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cp32mt.lib"/>
+    <OTHERFILES value=""/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="SfgLicenceSvc.cpp" FORMNAME="" UNITNAME="SfgLicenceSvc" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="SfgLicenceSvc.rc" FORMNAME="" UNITNAME="SfgLicenceSvc.rc" CONTAINERID="RCCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="uSfgLicenceSvc.cpp" FORMNAME="SfgLicenceSvcSvc" UNITNAME="uSfgLicenceSvc" CONTAINERID="CCompiler" DESIGNCLASS="TService" LOCALCOMMAND=""/>
+      <FILE FILENAME="uSfgCriptoLic.cpp" FORMNAME="" UNITNAME="uSfgCriptoLic" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+
+  <IDEOPTIONS>
+[Version Info]
+IncludeVerInfo=0
+AutoIncBuild=0
+MajorVer=1
+MinorVer=0
+Release=0
+Build=0
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=1046
+CodePage=1252
+
+[Version Info Keys]
+CompanyName=
+FileDescription=
+FileVersion=1.0.0.0
+InternalName=
+LegalCopyright=
+LegalTrademarks=
+OriginalFilename=
+ProductName=
+ProductVersion=1.0.0.0
+Comments=
+
+[HistoryLists\hlIncludePath]
+Count=4
+Item0=$(BCB)\include;$(BCB)\include\vcl;$(BCB)\Projects\Include
+Item1=AppLicence;..\Servico;C:\Arquivos de programas\Borland\CBuilder6\Projects;D:\ProjetosBCB\SistemaSFG_FR;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\Projects\Include
+Item2=C:\Arquivos de programas\Borland\CBuilder6\Projects;D:\ProjetosBCB\SistemaSFG_FR;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\Projects\Include
+Item3=$(BCB)\include;$(BCB)\include\vcl
+
+[HistoryLists\hlLibraryPath]
+Count=7
+Item0=$(BCB)\lib;$(BCB)\lib\obj;$(BCB)\Projects\Lib;$(BCB)\Projects\Bpl;$(BCB)\lib\psdk
+Item1=AppLicence;..\Servico;C:\Arquivos de programas\Borland\CBuilder6\Projects;D:\ProjetosBCB\SistemaSFG_FR;$(BCB)\lib;$(BCB)\lib\obj;$(BCB)\Projects\Lib;$(BCB)\Projects\Bpl;$(BCB)\lib\psdk
+Item2=C:\Arquivos de programas\Borland\CBuilder6\Projects;D:\ProjetosBCB\SistemaSFG_FR;$(BCB)\lib;$(BCB)\lib\obj;$(BCB)\Projects\Lib;$(BCB)\Projects\Bpl;$(BCB)\lib\psdk
+Item3=C:\Arquivos de programas\Borland\CBuilder6\Projects;D:\ProjetosBCB\SistemaSFG_FR;$(BCB)\lib;$(BCB)\lib\obj;$(BCB)\Projects\Lib;$(BCB)\Projects\Bpl
+Item4=$(BCB)\lib;$(BCB)\lib\obj;$(BCB)\Projects\Lib;$(BCB)\Projects\Bpl
+Item5=$(BCB)\lib\obj;$(BCB)\lib;$(BCB)\Projects\Lib;$(BCB)\Projects\Bpl
+Item6=$(BCB)\lib\obj;$(BCB)\lib
+
+[HistoryLists\hlDebugSourcePath]
+Count=1
+Item0=$(BCB)\source\vcl
+
+[HistoryLists\hlConditionals]
+Count=4
+Item0=_WINSOCKAPI_
+Item1=_WINSOCKAPI_;_DEBUG
+Item2=_DEBUG;_WINSOCKAPI_
+Item3=_DEBUG
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=
+Launcher=
+UseLauncher=0
+DebugCWD=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteLauncher=
+RemoteCWD=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=0
+LinkCGLIB=0
+
+[CORBA]
+AddServerUnit=1
+AddClientUnit=1
+PrecompiledHeaders=1
+
+[Language]
+ActiveLang=
+ProjectLang=
+RootDir=
+  </IDEOPTIONS>
+</PROJECT>

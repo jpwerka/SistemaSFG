@@ -1,0 +1,34 @@
+/* Informações sobre a versão do arquivo */
+1 VERSIONINFO
+FILEVERSION 1,5,0,1
+PRODUCTVERSION 1,5,0,1
+FILEFLAGSMASK VS_FFI_FILEFLAGSMASK
+FILEOS VOS__WINDOWS32
+FILETYPE VFT_APP
+{
+ BLOCK "StringFileInfo"
+ {
+  BLOCK "041604E4"
+  {
+   VALUE "CompanyName", "SoftGreen\0"
+   VALUE "FileDescription", "Módulo de estoque do sistema SFG.\0"
+   VALUE "FileVersion", "1.5.0.1\0"
+   VALUE "InternalName", "SfgEstoque.dll\0"
+   VALUE "LegalCopyright", "© Copyright 2012 By SoftGreen\0"
+   VALUE "LegalTrademarks", "www.softgreen.inf.br\0"
+   VALUE "OriginalFilename", "SfgEstoque.dll\0"
+   VALUE "ProductName", "SistemaSFG\0"
+   VALUE "ProductVersion", "1.5.0.1\0"
+   VALUE "Comments", "Este programa está protegido por © Copyright.\r\n"
+                     "A sua distribuição ou uso sem estar devidamente licenciado "\
+                     "implica no direito dos proprietários do mesmo poderem acionar "\
+                     "todos os meios legais passíveis para requerer seus créditos.\0"
+  }
+ }
+
+ BLOCK "VarFileInfo"
+ {
+  VALUE "Translation", 1046, 1252
+ }
+
+}

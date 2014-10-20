@@ -1,0 +1,188 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.00"/>
+    <PROJECT value="Install\SfgCompras.dll"/>
+    <OBJFILES value="SfgCompras.obj Compras\uSfgBrowseSup.obj Produto\uSfgBrowsePrd.obj 
+      Financeiro\uSfgBrowseFin.obj Compras\uSup1001.obj Compras\uSup1002.obj 
+      Compras\uSup1003.obj Compras\uSup1004.obj Fornecedor\uSup1010.obj 
+      Fornecedor\uSup1011.obj Compras\uSup2001.obj Fornecedor\uSup2020.obj 
+      Compras\uSup3001.obj Compras\uSup3002.obj Compras\uSup3003.obj 
+      Compras\uSup3004.obj Compras\uSup3005.obj Compras\uSup3006.obj 
+      Fornecedor\uSup3010.obj Fornecedor\uSup3020.obj Vendas\uVdp1010.obj 
+      Cliente\uVdp1021.obj Cliente\uVdp1022.obj"/>
+    <RESFILES value="Resource\SfgCompras.res"/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES) Compras\uSup1001.dfm Compras\uSup1002.dfm Compras\uSup1003.dfm 
+      Compras\uSup1004.dfm Fornecedor\uSup1010.dfm Fornecedor\uSup1011.dfm 
+      Compras\uSup2001.dfm Fornecedor\uSup2020.dfm Compras\uSup3001.dfm 
+      Compras\uSup3002.dfm Compras\uSup3003.dfm Compras\uSup3004.dfm 
+      Compras\uSup3005.dfm Compras\uSup3006.dfm Fornecedor\uSup3010.dfm 
+      Fornecedor\uSup3020.dfm Vendas\uVdp1010.dfm Cliente\uVdp1021.dfm 
+      Cliente\uVdp1022.dfm"/>
+    <LIBFILES value=""/>
+    <LIBRARIES value="IndyProtocols60.lib IndySystem60.lib IndyCore60.lib"/>
+    <SPARELIBS value="vcl.lib rtl.lib dbrtl.lib vcldb.lib IndyCore60.lib 
+      IndySystem60.lib IndyProtocols60.lib"/>
+    <PACKAGES value="rtl.bpi vcl.bpi dbrtl.bpi vcldb.bpi SfgPackage.bpi"/>
+    <PATHCPP value=".;Compras;Produto;Financeiro;Compras;Compras;Compras;Compras;Fornecedor;Fornecedor;Compras;Fornecedor;Compras;Compras;Compras;Compras;Compras;Compras;Fornecedor;Fornecedor;Vendas;Cliente;Cliente"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;Resource;Resource"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="ilink32"/>
+    <USERDEFINES value="_DEBUG;_WINSOCKAPI_"/>
+    <SYSDEFINES value="NO_STRICT;_RTLDLL;USEPACKAGES"/>
+    <MAINSOURCE value="SfgCompras.cpp"/>
+    <INCLUDEPATH value="Fiscal;Resource;Cliente;Vendas;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\Projects\Include;&quot;$(ProgramFiles)\Soft Gems\Theme Manager\Source&quot;;D:\ProjetosBCB\SistemaSFG_FR;Compras;Fornecedor;Produto;Utils;Financeiro"/>
+    <LIBPATH value="Fiscal;Resource;Cliente;Vendas;$(BCB)\lib;$(BCB)\lib\obj;$(BCB)\Projects\Lib;$(BCB)\Projects\Bpl;$(BCB)\Projects\Obj;&quot;$(ProgramFiles)\Soft Gems\Theme Manager\Source&quot;;D:\ProjetosBCB\SistemaSFG_FR;Compras;Fornecedor;Produto;Utils;Financeiro"/>
+    <WARNINGS value="-w-par"/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-IFiscal -IResource -ICliente -IVendas -I$(BCB)\include 
+      -I$(BCB)\include\vcl -I$(BCB)\Projects\Include 
+      -I&quot;$(ProgramFiles)\Soft Gems\Theme Manager\Source&quot; 
+      -ID:\ProjetosBCB\SistemaSFG_FR -ICompras -IFornecedor -IProduto -IUtils 
+      -IFinanceiro -src_suffix cpp -D_DEBUG -D_WINSOCKAPI_ -boa"/>
+    <CFLAG1 value="-WD -Od -H=$(BCB)\lib\vcl60.csm -Hc -Vx -Ve -X- -r- -a8 -b- -k -y -v -vi- 
+      -tWD -tWM -c"/>
+    <PFLAGS value="-$Y+ -$W -$O- -$A8 -v -JPHNE -M"/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zi"/>
+    <LFLAGS value="-D&quot;&quot; -aa -Tpd -x -Gn -Gi -v"/>
+    <OTHERFILES value=""/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0d32.obj $(PACKAGES) Memmgr.Lib sysinit.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cp32mti.lib"/>
+    <OTHERFILES value=""/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="SfgCompras.cpp" FORMNAME="" UNITNAME="SfgCompras" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Resource\SfgCompras.rc" FORMNAME="" UNITNAME="SfgCompras.rc" CONTAINERID="RCCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Compras\uSfgBrowseSup.cpp" FORMNAME="" UNITNAME="uSfgBrowseSup" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Produto\uSfgBrowsePrd.cpp" FORMNAME="" UNITNAME="uSfgBrowsePrd" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Financeiro\uSfgBrowseFin.cpp" FORMNAME="" UNITNAME="uSfgBrowseFin" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Compras\uSup1001.cpp" FORMNAME="Sup1001" UNITNAME="uSup1001" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Compras\uSup1002.cpp" FORMNAME="Sup1002" UNITNAME="uSup1002" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Compras\uSup1003.cpp" FORMNAME="Sup1003" UNITNAME="uSup1003" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Compras\uSup1004.cpp" FORMNAME="Sup1004" UNITNAME="uSup1004" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Fornecedor\uSup1010.cpp" FORMNAME="Sup1010" UNITNAME="uSup1010" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Fornecedor\uSup1011.cpp" FORMNAME="Sup1011" UNITNAME="uSup1011" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Compras\uSup2001.cpp" FORMNAME="Sup2001" UNITNAME="uSup2001" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Fornecedor\uSup2020.cpp" FORMNAME="Sup2020" UNITNAME="uSup2020" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Compras\uSup3001.cpp" FORMNAME="Sup3001" UNITNAME="uSup3001" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Compras\uSup3002.cpp" FORMNAME="Sup3002" UNITNAME="uSup3002" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Compras\uSup3003.cpp" FORMNAME="Sup3003" UNITNAME="uSup3003" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Compras\uSup3004.cpp" FORMNAME="Sup3004" UNITNAME="uSup3004" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Compras\uSup3005.cpp" FORMNAME="Sup3005" UNITNAME="uSup3005" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Compras\uSup3006.cpp" FORMNAME="Sup3006" UNITNAME="uSup3006" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Fornecedor\uSup3010.cpp" FORMNAME="Sup3010" UNITNAME="uSup3010" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Fornecedor\uSup3020.cpp" FORMNAME="Sup3020" UNITNAME="uSup3020" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Vendas\uVdp1010.cpp" FORMNAME="Vdp1010" UNITNAME="uVdp1010" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Cliente\uVdp1021.cpp" FORMNAME="Vdp1021" UNITNAME="uVdp1021" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Cliente\uVdp1022.cpp" FORMNAME="Vdp1022" UNITNAME="uVdp1022" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+
+  <IDEOPTIONS>
+[Version Info]
+IncludeVerInfo=0
+AutoIncBuild=0
+MajorVer=1
+MinorVer=0
+Release=0
+Build=0
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=1046
+CodePage=1252
+
+[Version Info Keys]
+CompanyName=
+FileDescription=
+FileVersion=1.0.0.0
+InternalName=
+LegalCopyright=
+LegalTrademarks=
+OriginalFilename=
+ProductName=
+ProductVersion=1.0.0.0
+Comments=
+
+[HistoryLists\hlIncludePath]
+Count=4
+Item0=Resource;Cliente;Vendas;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\Projects\Include;$(ProgramFiles)\Soft Gems\Theme Manager\Source;D:\ProjetosBCB\SistemaSFG_FR;Compras;Fornecedor;Produto;Utils;Financeiro
+Item1=Cliente;Vendas;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\Projects\Include;$(ProgramFiles)\Soft Gems\Theme Manager\Source;D:\ProjetosBCB\SistemaSFG_FR;Compras;Fornecedor;Produto;Utils;Financeiro
+Item2=$(BCB)\include;$(BCB)\include\vcl;$(BCB)\Projects\Include;$(ProgramFiles)\Soft Gems\Theme Manager\Source;D:\ProjetosBCB\SistemaSFG_FR;Compras;Fornecedor;Produto;Utils;Financeiro
+Item3=$(BCB)\include;$(BCB)\include\vcl;$(BCB)\Projects\Include;&quot;$(ProgramFiles)\Soft Gems\Theme Manager\Source&quot;D:\ProjetosBCB\SistemaSFG_FR;Compras;Fornecedor;Produto;Utils
+
+[HistoryLists\hlLibraryPath]
+Count=4
+Item0=Resource;Cliente;Vendas;$(BCB)\lib;$(BCB)\lib\obj;$(BCB)\Projects\Lib;$(BCB)\Projects\Bpl;$(BCB)\Projects\Obj;$(ProgramFiles)\Soft Gems\Theme Manager\Source;D:\ProjetosBCB\SistemaSFG_FR;Compras;Fornecedor;Produto;Utils;Financeiro
+Item1=Cliente;Vendas;$(BCB)\lib;$(BCB)\lib\obj;$(BCB)\Projects\Lib;$(BCB)\Projects\Bpl;$(BCB)\Projects\Obj;$(ProgramFiles)\Soft Gems\Theme Manager\Source;D:\ProjetosBCB\SistemaSFG_FR;Compras;Fornecedor;Produto;Utils;Financeiro
+Item2=$(BCB)\lib;$(BCB)\lib\obj;$(BCB)\Projects\Lib;$(BCB)\Projects\Bpl;$(BCB)\Projects\Obj;$(ProgramFiles)\Soft Gems\Theme Manager\Source;D:\ProjetosBCB\SistemaSFG_FR;Compras;Fornecedor;Produto;Utils;Financeiro
+Item3=$(BCB)\lib;$(BCB)\lib\obj;$(BCB)\Projects\Lib;$(BCB)\Projects\Bpl;$(BCB)\Projects\Obj;$(ProgramFiles)\Soft Gems\Theme Manager\Source;D:\ProjetosBCB\SistemaSFG_FR;Compras;Fornecedor;Produto;Utils
+
+[HistoryLists\hlDebugSourcePath]
+Count=1
+Item0=$(BCB)\source\vcl
+
+[HistoryLists\hlConditionals]
+Count=4
+Item0=_DEBUG;_WINSOCKAPI_
+Item1=_DEBUG
+Item2=_IS_SFGDLL
+Item3=_DEBUG;_IS_SFGDLL
+
+[HistoryLists\hlFinalOutputDir]
+Count=2
+Item0=Install\
+Item1=Install
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=
+Launcher=
+UseLauncher=0
+DebugCWD=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteLauncher=
+RemoteCWD=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=1
+LinkCGLIB=0
+
+[CORBA]
+AddServerUnit=1
+AddClientUnit=1
+PrecompiledHeaders=1
+
+[Language]
+ActiveLang=
+ProjectLang=
+RootDir=
+
+[Linker]
+LibPrefix=
+LibSuffix=
+LibVersion=
+  </IDEOPTIONS>
+</PROJECT>

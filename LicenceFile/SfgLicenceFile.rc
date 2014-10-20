@@ -1,0 +1,65 @@
+/****************************************************************************
+Aqui vão todos os recursos do meu projeto
+*****************************************************************************/
+#include <windows.h>
+
+MAINICON ICON "sfgicon.ico"
+
+/* Informações sobre a versão do arquivo */
+1 VERSIONINFO
+FILEVERSION 1,0,0,0
+PRODUCTVERSION 1,0,0,1
+FILEFLAGSMASK VS_FFI_FILEFLAGSMASK
+FILEOS VOS__WINDOWS32
+FILETYPE VFT_APP
+{
+ BLOCK "StringFileInfo"
+ {
+  BLOCK "041604E4"
+  {
+   VALUE "CompanyName", "SoftGreen\0"
+   VALUE "FileDescription", "Gerador de licenças para o Sistema SFG\0"
+   VALUE "FileVersion", "1.0.0.0\0"
+   VALUE "InternalName", "SfgLicenceFile.exe\0"
+   VALUE "LegalCopyright", "© Copyright 2012 By SoftGreen Softwares\0"
+   VALUE "LegalTrademarks", "contato@sofgreen.inf.br\0"
+   VALUE "OriginalFilename", "SfgLicenceFile.exe\0"
+   VALUE "ProductName", "SfgLicenceFile\0"
+   VALUE "ProductVersion", "1.0.0.0\0"
+   VALUE "Comments", "Utilitário para gerar as licenças de uso do Sistema SFG.\0"
+  }
+ }
+
+ BLOCK "VarFileInfo"
+ {
+  VALUE "Translation", 1046, 1252
+ }
+
+}
+
+LICENCEFILE DIALOGEX 0, 0, 276, 122
+STYLE DS_MODALFRAME | DS_CENTER | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Gerar Licença de Uso"
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+FONT 8, "MS SANS SERIF"
+{
+   CONTROL "Informações do Cliente", -1, BUTTON, BS_GROUPBOX | WS_CHILD | WS_VISIBLE | WS_GROUP, 4, 4, 268, 62 , WS_EX_TRANSPARENT
+   CONTROL "C&ódigo:", -1, STATIC, SS_RIGHT | WS_CHILD | WS_VISIBLE, 6, 17, 46, 9 , WS_EX_TRANSPARENT
+   CONTROL "", 1000, EDIT, ES_LEFT | ES_AUTOHSCROLL | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 54, 15, 125, 14
+   CONTROL "&Denominação:", -1, STATIC, SS_RIGHT | WS_CHILD | WS_VISIBLE | WS_GROUP, 6, 33, 46, 9 , WS_EX_TRANSPARENT
+   CONTROL "", 1004, EDIT, ES_LEFT | ES_AUTOHSCROLL | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 54, 31, 212, 14
+   CONTROL "&Identificador:", -1, STATIC, SS_RIGHT | WS_CHILD | WS_VISIBLE | WS_GROUP, 6, 49, 46, 9 , WS_EX_TRANSPARENT
+   CONTROL "", 1001, EDIT, ES_LEFT | ES_AUTOHSCROLL | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 54, 47, 125, 14
+   CONTROL "Informações da Licença", -1, BUTTON, BS_GROUPBOX | WS_CHILD | WS_VISIBLE | WS_GROUP, 4, 70, 268, 30 , WS_EX_TRANSPARENT
+   CONTROL "&Número:", -1, STATIC, SS_RIGHT | WS_CHILD | WS_VISIBLE, 6, 83, 46, 9 , WS_EX_TRANSPARENT
+   CONTROL "", 1002, EDIT, ES_RIGHT | ES_READONLY | ES_NUMBER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 54, 81, 60, 14
+   CONTROL "", 1003, "msctls_updown32", UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | WS_CHILD | WS_VISIBLE, 114, 81, 11, 14
+   CONTROL "&Validade:", -1, STATIC, SS_RIGHT | WS_CHILD | WS_VISIBLE, 120, 83, 46, 9 , WS_EX_TRANSPARENT
+   CONTROL "", 1005, EDIT, ES_CENTER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 168, 81, 60, 14
+   CONTROL "&Gerar", 1, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 148, 104, 60, 14
+   CONTROL "&Cancelar", 2, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 212, 104, 60, 14
+}
+
+
+1 24 "SfgLicenceFile.exe.Manifest"
+

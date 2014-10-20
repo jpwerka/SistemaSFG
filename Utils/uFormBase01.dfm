@@ -1,0 +1,92 @@
+object frmBase01: TfrmBase01
+  Left = 0
+  Top = 0
+  Width = 782
+  Height = 554
+  HorzScrollBar.Visible = False
+  VertScrollBar.Visible = False
+  Caption = 'Base'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  FormStyle = fsMDIChild
+  OldCreateOrder = False
+  Position = poMainFormCenter
+  Visible = True
+  WindowState = wsMaximized
+  OnClose = FormClose
+  OnDestroy = FormDestroy
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Bevel1: TBevel
+    Left = 0
+    Top = 53
+    Width = 774
+    Height = 2
+    Align = alTop
+    Shape = bsTopLine
+  end
+  object HeaderPanel: TPanel
+    Left = 0
+    Top = 0
+    Width = 774
+    Height = 53
+    Align = alTop
+    AutoSize = True
+    BevelOuter = bvNone
+    Caption = 'T'#237'tulo'
+    Color = clWhite
+    Ctl3D = False
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -29
+    Font.Name = 'Arial'
+    Font.Style = [fsBold]
+    ParentCtl3D = False
+    ParentFont = False
+    TabOrder = 0
+    object Logotipo: TImage
+      Left = 0
+      Top = 0
+      Width = 170
+      Height = 53
+      Align = alLeft
+      AutoSize = True
+      Center = True
+      Proportional = True
+    end
+  end
+  object BodyPanel: TPanel
+    Left = 8
+    Top = 55
+    Width = 758
+    Height = 465
+    Align = alClient
+    BevelOuter = bvNone
+    ParentColor = True
+    TabOrder = 1
+  end
+  object MargemEsq: TPanel
+    Left = 0
+    Top = 55
+    Width = 8
+    Height = 465
+    Align = alLeft
+    BevelOuter = bvNone
+    ParentColor = True
+    TabOrder = 2
+  end
+  object MargemDir: TPanel
+    Left = 766
+    Top = 55
+    Width = 8
+    Height = 465
+    Align = alRight
+    BevelOuter = bvNone
+    ParentColor = True
+    TabOrder = 3
+  end
+end

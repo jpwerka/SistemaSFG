@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="yes"?>
+<Atualization>
+  <FileInfoAtuDB file_atudbname="ATUDB99999" file_atudbdate="22/11/2012" file_requisito=""></FileInfoAtuDB>
+  <Informations>
+    <Information>Criação do campo inadimplente no cadastro de clientes.</Information>
+    <Information>Comando errado de propósito para não travar o arquivo.</Information>
+  </Informations>
+  <Instructions>
+    <Instruction action="ALTER" type="TABLE" object="tbl_cliente " subaction="ADD" subtype="COLUMN" subobject="ies_inadimplente">ALTER TABLE tbl_cliente ADD COLUMN ies_inadimplente CHAR(1) NULL DEFAULT 'N';</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_execucao_atualizacao " subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk1_erro">ALTER TABLE tbl_execucao_atualizacao 
+  ADD CONSTRAINT fk1_erro FOREIGN KEY (usuario)
+    REFERENCES tbl_nota_fiscal (usuario);</Instruction>
+  </Instructions>
+</Atualization>

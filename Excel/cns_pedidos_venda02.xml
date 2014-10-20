@@ -1,0 +1,2017 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:s="uuid:BDC6E3F0-6DA3-11d1-A2A3-00AA00C14882" xmlns:rs="urn:schemas-microsoft-com:rowset" xmlns:z="#RowsetSchema" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" xmlns:html="http://www.w3.org/TR/REC-html40">
+  <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+    <LastAuthor>Jackson Patrick Werka</LastAuthor>
+    <Created>2012-06-26T23:07:27Z</Created>
+    <LastSaved>2012-11-01T00:34:53Z</LastSaved>
+    <Version>11.9999</Version>
+  </DocumentProperties>
+  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+    <WindowHeight>9465</WindowHeight>
+    <WindowWidth>13275</WindowWidth>
+    <WindowTopX>480</WindowTopX>
+    <WindowTopY>105</WindowTopY>
+    <ActiveSheet>1</ActiveSheet>
+    <HidePivotTableFieldList />
+    <AcceptLabelsInFormulas />
+    <ProtectStructure>False</ProtectStructure>
+    <ProtectWindows>False</ProtectWindows>
+  </ExcelWorkbook>
+  <Styles>
+    <Style ss:ID="Default" ss:Name="Normal">
+      <Alignment ss:Vertical="Bottom" />
+    </Style>
+    <Style ss:ID="tbDataField">
+      <Alignment ss:Horizontal="Center" ss:Vertical="Bottom" />
+      <Borders>
+        <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2" ss:Color="#808080" />
+        <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="2" ss:Color="#808080" />
+      </Borders>
+      <Font ss:Color="#000080" ss:Bold="1" />
+      <Interior />
+    </Style>
+    <Style ss:ID="tbDataNumber">
+      <Alignment ss:Horizontal="Center" ss:Vertical="Bottom" />
+      <Borders />
+      <Font ss:Color="#000080" ss:Bold="1" />
+      <Interior />
+    </Style>
+    <Style ss:ID="tbDataString">
+      <Alignment ss:Vertical="Bottom" />
+      <Borders>
+        <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#808080" />
+      </Borders>
+      <Interior />
+    </Style>
+    <Style ss:ID="tbDataDate">
+      <Alignment ss:Vertical="Bottom" />
+      <Borders>
+        <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#808080" />
+      </Borders>
+      <Interior />
+      <NumberFormat ss:Format="Short Date" />
+    </Style>
+    <Style ss:ID="s25">
+      <Borders>
+        <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+        <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+        <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+        <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+      </Borders>
+    </Style>
+    <Style ss:ID="s26">
+      <Borders>
+        <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" />
+        <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+      </Borders>
+      <Font ss:Bold="1" />
+    </Style>
+    <Style ss:ID="s27">
+      <Borders>
+        <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+      </Borders>
+      <Font ss:Bold="1" />
+    </Style>
+    <Style ss:ID="s28">
+      <Alignment ss:Horizontal="Center" ss:Vertical="Bottom" />
+      <Borders>
+        <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+        <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+      </Borders>
+      <Font ss:Size="9" ss:Color="#FFCC00" ss:Bold="1" />
+      <Interior ss:Color="#000000" ss:Pattern="Solid" />
+    </Style>
+    <Style ss:ID="s29">
+      <Alignment ss:Horizontal="Center" ss:Vertical="Bottom" />
+      <Borders>
+        <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+      </Borders>
+      <Font ss:Size="9" ss:Color="#FFCC00" ss:Bold="1" />
+      <Interior ss:Color="#000000" ss:Pattern="Solid" />
+    </Style>
+    <Style ss:ID="s30">
+      <Alignment ss:Horizontal="Center" ss:Vertical="Bottom" />
+      <Borders>
+        <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+        <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+      </Borders>
+      <Font ss:Size="9" ss:Color="#FFCC00" ss:Bold="1" />
+      <Interior ss:Color="#000000" ss:Pattern="Solid" />
+    </Style>
+    <Style ss:ID="s31">
+      <Borders>
+        <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" />
+        <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+      </Borders>
+      <NumberFormat ss:Format="dd/mm/yyyy" />
+    </Style>
+    <Style ss:ID="s32">
+      <Borders>
+        <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+        <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+      </Borders>
+    </Style>
+    <Style ss:ID="s33">
+      <Alignment ss:Horizontal="Center" ss:Vertical="Bottom" />
+      <Borders>
+        <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+        <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+      </Borders>
+      <NumberFormat />
+    </Style>
+    <Style ss:ID="s34">
+      <Alignment ss:Horizontal="Center" ss:Vertical="Bottom" />
+      <Borders>
+        <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+      </Borders>
+      <NumberFormat ss:Format="_(&quot;R$ &quot;* #,##0.00_);_(&quot;R$ &quot;* \(#,##0.00\);_(&quot;R$ &quot;* &quot;-&quot;??_);_(@_)" />
+    </Style>
+    <Style ss:ID="s35">
+      <Alignment ss:Horizontal="Center" ss:Vertical="Bottom" />
+      <Borders>
+        <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+        <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+      </Borders>
+      <NumberFormat ss:Format="_(&quot;R$ &quot;* #,##0.00_);_(&quot;R$ &quot;* \(#,##0.00\);_(&quot;R$ &quot;* &quot;-&quot;??_);_(@_)" />
+    </Style>
+    <Style ss:ID="s36">
+      <Borders>
+        <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+        <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+        <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+      </Borders>
+      <Font ss:Color="#FFCC00" ss:Bold="1" />
+      <Interior ss:Color="#000000" ss:Pattern="Solid" />
+      <NumberFormat ss:Format="dd/mm/yyyy" />
+    </Style>
+    <Style ss:ID="s37">
+      <Borders>
+        <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+        <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="Background" />
+        <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+      </Borders>
+      <Font ss:Color="#FFCC00" ss:Bold="1" />
+      <Interior ss:Color="#000000" ss:Pattern="Solid" />
+    </Style>
+    <Style ss:ID="s38">
+      <Alignment ss:Horizontal="Center" ss:Vertical="Bottom" />
+      <Borders>
+        <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+        <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+        <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+      </Borders>
+      <Font ss:Color="#FFCC00" ss:Bold="1" />
+      <Interior ss:Color="#000000" ss:Pattern="Solid" />
+      <NumberFormat />
+    </Style>
+    <Style ss:ID="s39">
+      <Alignment ss:Horizontal="Center" ss:Vertical="Bottom" />
+      <Borders>
+        <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+        <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+      </Borders>
+      <Font ss:Color="#FFCC00" ss:Bold="1" />
+      <Interior ss:Color="#000000" ss:Pattern="Solid" />
+      <NumberFormat ss:Format="_(&quot;R$ &quot;* #,##0.00_);_(&quot;R$ &quot;* \(#,##0.00\);_(&quot;R$ &quot;* &quot;-&quot;??_);_(@_)" />
+    </Style>
+    <Style ss:ID="s40">
+      <Alignment ss:Horizontal="Center" ss:Vertical="Bottom" />
+      <Borders>
+        <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+        <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+        <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000" />
+      </Borders>
+      <Font ss:Color="#FFCC00" ss:Bold="1" />
+      <Interior ss:Color="#000000" ss:Pattern="Solid" />
+      <NumberFormat ss:Format="_(&quot;R$ &quot;* #,##0.00_);_(&quot;R$ &quot;* \(#,##0.00\);_(&quot;R$ &quot;* &quot;-&quot;??_);_(@_)" />
+    </Style>
+  </Styles>
+  <Worksheet ss:Name="Dados">
+    <Table ss:ExpandedColumnCount="15" ss:ExpandedRowCount="31" x:FullColumns="1" x:FullRows="1">
+      <Column ss:AutoFitWidth="1" ss:Span="14"/>
+      <Row ss:AutoFitHeight="0" ss:Height="13.5">
+        <Cell ss:StyleID="tbDataField">
+          <Data ss:Type="String">cod_pedido_venda</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataField">
+          <Data ss:Type="String">cod_cliente</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataField">
+          <Data ss:Type="String">den_cliente</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataField">
+          <Data ss:Type="String">data_cadastro</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataField">
+          <Data ss:Type="String">ano</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataField">
+          <Data ss:Type="String">mes</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataField">
+          <Data ss:Type="String">ies_situacao</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataField">
+          <Data ss:Type="String">den_situacao</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataField">
+          <Data ss:Type="String">den_forma_pagto</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataField">
+          <Data ss:Type="String">valor_total</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataField">
+          <Data ss:Type="String">valor_recebido</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataField">
+          <Data ss:Type="String">cod_centro_custo</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataField">
+          <Data ss:Type="String">cod_plano_conta</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataField">
+          <Data ss:Type="String">cod_representante</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataField">
+          <Data ss:Type="String">den_representante</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="12">
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">11</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">122345</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Cadastro de clientes</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataDate">
+          <Data ss:Type="String">03/05/2012</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">2012</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">5</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">A</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Aberto</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">A Vista</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">12</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="12">
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">12</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">14</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">De marseille comercio e distribuidora de salgados</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataDate">
+          <Data ss:Type="String">03/05/2012</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">2012</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">5</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">A</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Aberto</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">A Vista</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">5</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="12">
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">14</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">5643389</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Cadastro de cliente 02</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataDate">
+          <Data ss:Type="String">03/05/2012</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">2012</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">5</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">A</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Aberto</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">A Vista</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">66</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="12">
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">18</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">16</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Restaurante Alcaparras Grill</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataDate">
+          <Data ss:Type="String">08/06/2012</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">2012</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">6</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">A</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Aberto</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">A Vista</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">57,5</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="12">
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">19</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">00645482951</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Jackson Patrick Werka</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataDate">
+          <Data ss:Type="DateTime">2012-06-20T23:00:00</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">2012</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">6</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">F</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Fechado</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">A Vista</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">48</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">48</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">OPERACIONAL</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">1.1.01</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">006454829000051</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Jackson Patrick Werka</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="12">
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">20</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">00645482951</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Jackson Patrick Werka</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataDate">
+          <Data ss:Type="String">26/06/2012</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">2012</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">6</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">F</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Fechado</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">A Vista</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">50</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">OPERACIONAL</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">1.1.12</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">006454829000051</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Jackson Patrick Werka</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="12">
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">22</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">13</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Casa Valduga</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataDate">
+          <Data ss:Type="String">27/06/2012</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">2012</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">6</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">A</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Aberto</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">A Vista</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">95</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">OPERACIONAL</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">1.1.12</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">006454829000051</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Jackson Patrick Werka</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="12">
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">23</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">58756</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Teste de cadastro automático</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataDate">
+          <Data ss:Type="String">28/06/2012</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">2012</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">6</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">F</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Fechado</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">A Vista</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">20</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">20</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">ADMINISTRATIVO</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">1.1.01</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">123456789123456</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Representações Constelação</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="12">
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">27</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">13</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Casa Valduga</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataDate">
+          <Data ss:Type="String">08/07/2012</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">2012</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">7</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">A</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Aberto</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">A Vista</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">95</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">OPERACIONAL</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">1.1.12</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">006454829000051</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Jackson Patrick Werka</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="12">
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">29</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">122345</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Cadastro de clientes</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataDate">
+          <Data ss:Type="String">08/07/2012</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">2012</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">7</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">A</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Aberto</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">A Vista</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">12</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">123456789123456</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Representações Constelação</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="12">
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">30</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">14</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">De marseille comercio e distribuidora de salgados</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataDate">
+          <Data ss:Type="String">08/07/2012</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">2012</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">7</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">A</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Aberto</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">A Vista</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">5</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">006454829000051</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Jackson Patrick Werka</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="12">
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">41</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">58756</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Teste de cadastro automático</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataDate">
+          <Data ss:Type="String">08/07/2012</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">2012</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">7</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">A</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Aberto</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">A Vista</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">20</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">ADMINISTRATIVO</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">1.1.01</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">123456789123456</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Representações Constelação</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="12">
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">42</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">12334567</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Fulano de tal</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataDate">
+          <Data ss:Type="String">09/08/2012</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">2012</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">8</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">F</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Fechado</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">A Vista</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">13,5</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">13,5</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">ADMINISTRATIVO</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">1.1.01.02</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">006454829000051</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Jackson Patrick Werka</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="12">
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">45</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">122345</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Cadastro de clientes</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataDate">
+          <Data ss:Type="String">13/10/2012</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">2012</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">10</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">A</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Aberto</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">A Vista</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">30</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">123456789123456</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Representações Constelação</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="12">
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">7</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">11</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Gibi comercio e distribuidora Ltda/WO</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataDate">
+          <Data ss:Type="String">03/05/2012</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">2012</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">5</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">F</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Fechado</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Cheque</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">84</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">42</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">OPERACIONAL</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">1.1.01</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="12">
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">12</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">JDC Distribuidora de Publicações com. E cons. Ltda</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataDate">
+          <Data ss:Type="String">30/05/2012</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">2012</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">5</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">A</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Aberto</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Cheque</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">455,44</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="12">
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">21</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">122345</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Cadastro de clientes</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataDate">
+          <Data ss:Type="String">26/06/2012</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">2012</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">6</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">A</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Aberto</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Cheque</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">80</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">OPERACIONAL</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">1.1.09</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">123456789123456</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Representações Constelação</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="12">
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">26</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">11</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Gibi comercio e distribuidora Ltda/WO</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataDate">
+          <Data ss:Type="String">08/07/2012</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">2012</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">7</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">A</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Aberto</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Cheque</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">204,25</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">OPERACIONAL</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">1.1.01</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">006454829000051</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Jackson Patrick Werka</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="12">
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">47</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">10</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Melo comercio e Distribuição de Gás Ltda</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataDate">
+          <Data ss:Type="String">15/10/2012</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">2012</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">10</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">F</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Fechado</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Cheque</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">28</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">27,5</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">ADMINISTRATIVO</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">123456789123456</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Representações Constelação</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="12">
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">13</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">15</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Kaffeestube Sala de Café</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataDate">
+          <Data ss:Type="String">03/05/2012</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">2012</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">5</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">F</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Fechado</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Parcelado</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">930,3</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="12">
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">15</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">22</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Port Alarm Sistemas</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataDate">
+          <Data ss:Type="String">04/05/2012</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">2012</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">5</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">F</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Fechado</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Parcelado</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">301,2</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="12">
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">31</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">15</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Kaffeestube Sala de Café</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataDate">
+          <Data ss:Type="String">08/07/2012</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">2012</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">7</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">A</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Aberto</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Parcelado</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">930,3</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">123456789123456</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Representações Constelação</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="12">
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">43</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">12</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">JDC Distribuidora de Publicações com. E cons. Ltda</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataDate">
+          <Data ss:Type="String">22/09/2012</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">2012</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">9</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">A</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Aberto</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Parcelado</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">73,5</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">OPERACIONAL</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">1.1.01.02</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">006454829000051</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Jackson Patrick Werka</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="12">
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">51</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">006454829000051</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Jackson Patrick Werka</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataDate">
+          <Data ss:Type="String">05/11/2012</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">2012</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">11</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">F</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Fechado</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Parcelado</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">97,25</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">97,25</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">123456789123456</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Representações Constelação</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="12">
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">46</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">122345</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Cadastro de clientes</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataDate">
+          <Data ss:Type="String">13/10/2012</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">2012</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">10</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">F</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Fechado</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Amostragem</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">20</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">006454829000051</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Jackson Patrick Werka</Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="12">
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">48</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">006454829000051</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Jackson Patrick Werka</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataDate">
+          <Data ss:Type="String">03/11/2012</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">2012</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">11</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">A</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Aberto</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Amostragem</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">322</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="12">
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">49</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">006454829000051</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Jackson Patrick Werka</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataDate">
+          <Data ss:Type="String">03/11/2012</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">2012</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">11</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">A</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Aberto</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Amostragem</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">207</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="12">
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">50</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">123456789123456</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Representações Constelação</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataDate">
+          <Data ss:Type="String">03/11/2012</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">2012</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">11</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">A</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Aberto</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Amostragem</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">150,1</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="12">
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">52</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">123456789123456</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Representações Constelação</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataDate">
+          <Data ss:Type="String">05/11/2012</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">2012</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">11</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">F</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Fechado</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Amostragem</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">29,4</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+      </Row>
+      <Row ss:AutoFitHeight="0" ss:Height="12">
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">52</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">123456789123456</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Representações Constelação</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataDate">
+          <Data ss:Type="String">05/11/2012</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">2012</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">11</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">F</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Fechado</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String">Amostragem</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">29,4</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataNumber">
+          <Data ss:Type="Number">0</Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="tbDataString">
+          <Data ss:Type="String"></Data>
+        </Cell>
+      </Row>
+    </Table>
+    <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+      <PageSetup>
+        <Header x:Margin="0.49212598499999999" />
+        <Footer x:Margin="0.49212598499999999" />
+        <PageMargins x:Bottom="0.984251969" x:Left="0.78740157499999996" x:Right="0.78740157499999996" x:Top="0.984251969" />
+      </PageSetup>
+      <TabColorIndex>39</TabColorIndex>
+      <LeftColumnVisible>3</LeftColumnVisible>
+      <Panes>
+        <Pane>
+          <Number>3</Number>
+          <ActiveCol>13</ActiveCol>
+        </Pane>
+      </Panes>
+      <ProtectObjects>False</ProtectObjects>
+      <ProtectScenarios>False</ProtectScenarios>
+    </WorksheetOptions>
+  </Worksheet>
+  <Worksheet ss:Name="Análise Vendas">
+    <Table ss:ExpandedColumnCount="29" ss:ExpandedRowCount="8" x:FullColumns="1" x:FullRows="1">
+      <Column ss:Width="102.75" />
+      <Column ss:AutoFitWidth="0" ss:Width="78.75" ss:Span="1" />
+      <Column ss:Index="4" ss:Width="132.75" />
+      <Column ss:AutoFitWidth="0" ss:Width="75" />
+      <Column ss:Width="70.5" ss:Span="1" />
+      <Column ss:Index="8" ss:AutoFitWidth="0" ss:Width="99" ss:Span="18" />
+      <Column ss:Index="27" ss:Width="84.75" />
+      <Column ss:Width="117.75" />
+      <Column ss:Width="139.5" />
+      <Row>
+        <Cell ss:StyleID="s25">
+          <Data ss:Type="String">Código Cliente</Data>
+        </Cell>
+        <Cell ss:StyleID="s25">
+          <Data ss:Type="String">(Tudo)</Data>
+        </Cell>
+        <Cell ss:Index="4" ss:StyleID="s25">
+          <Data ss:Type="String">Denominação Cliente</Data>
+        </Cell>
+        <Cell ss:StyleID="s25">
+          <Data ss:Type="String">(Tudo)</Data>
+        </Cell>
+      </Row>
+      <Row>
+        <Cell ss:StyleID="s25">
+          <Data ss:Type="String">Código Representante</Data>
+        </Cell>
+        <Cell ss:StyleID="s25">
+          <Data ss:Type="String">(Tudo)</Data>
+        </Cell>
+        <Cell ss:Index="4" ss:StyleID="s25">
+          <Data ss:Type="String">Denominação Representante</Data>
+        </Cell>
+        <Cell ss:StyleID="s25">
+          <Data ss:Type="String">(Tudo)</Data>
+        </Cell>
+      </Row>
+      <Row>
+        <Cell ss:StyleID="s25">
+          <Data ss:Type="String">Ano</Data>
+        </Cell>
+        <Cell ss:StyleID="s25">
+          <Data ss:Type="String">(Tudo)</Data>
+        </Cell>
+        <Cell ss:Index="4" ss:StyleID="s25">
+          <Data ss:Type="String">Mês</Data>
+        </Cell>
+        <Cell ss:StyleID="s25">
+          <Data ss:Type="String">(Tudo)</Data>
+        </Cell>
+      </Row>
+      <Row>
+        <Cell ss:StyleID="s25">
+          <Data ss:Type="String">Plano Conta</Data>
+        </Cell>
+        <Cell ss:StyleID="s25">
+          <Data ss:Type="String">(Tudo)</Data>
+        </Cell>
+        <Cell ss:Index="4" ss:StyleID="s25">
+          <Data ss:Type="String">Centro Custo</Data>
+        </Cell>
+        <Cell ss:StyleID="s25">
+          <Data ss:Type="String">(Tudo)</Data>
+        </Cell>
+      </Row>
+      <Row ss:Index="6">
+        <Cell ss:StyleID="s26">
+          <Data ss:Type="String">Data Cadastro</Data>
+        </Cell>
+        <Cell ss:StyleID="s27">
+          <Data ss:Type="String">Situação</Data>
+        </Cell>
+        <Cell ss:StyleID="s27">
+          <Data ss:Type="String">Forma Pagto</Data>
+        </Cell>
+        <Cell ss:StyleID="s28">
+          <Data ss:Type="String">Nº Pedidos</Data>
+        </Cell>
+        <Cell ss:StyleID="s29">
+          <Data ss:Type="String">Valor Total</Data>
+        </Cell>
+        <Cell ss:StyleID="s30">
+          <Data ss:Type="String">Valor Recebido</Data>
+        </Cell>
+      </Row>
+      <Row>
+        <Cell ss:StyleID="s31">
+          <Data ss:Type="String">(vazio)</Data>
+        </Cell>
+        <Cell ss:StyleID="s32">
+          <Data ss:Type="String">(vazio)</Data>
+        </Cell>
+        <Cell ss:StyleID="s32">
+          <Data ss:Type="String">(vazio)</Data>
+        </Cell>
+        <Cell ss:StyleID="s33" />
+        <Cell ss:StyleID="s34" />
+        <Cell ss:StyleID="s35" />
+      </Row>
+      <Row>
+        <Cell ss:StyleID="s36">
+          <Data ss:Type="String">Total geral</Data>
+        </Cell>
+        <Cell ss:StyleID="s37" />
+        <Cell ss:StyleID="s37" />
+        <Cell ss:StyleID="s38" />
+        <Cell ss:StyleID="s39" />
+        <Cell ss:StyleID="s40" />
+      </Row>
+    </Table>
+    <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+      <PageSetup>
+        <Header x:Margin="0.49212598499999999" />
+        <Footer x:Margin="0.49212598499999999" />
+        <PageMargins x:Bottom="0.984251969" x:Left="0.78740157499999996" x:Right="0.78740157499999996" x:Top="0.984251969" />
+      </PageSetup>
+      <Print>
+        <ValidPrinterInfo />
+        <PaperSizeIndex>9</PaperSizeIndex>
+        <HorizontalResolution>600</HorizontalResolution>
+        <VerticalResolution>600</VerticalResolution>
+      </Print>
+      <TabColorIndex>11</TabColorIndex>
+      <Selected />
+      <Panes>
+        <Pane>
+          <Number>3</Number>
+          <ActiveCol>1</ActiveCol>
+        </Pane>
+      </Panes>
+      <ProtectObjects>False</ProtectObjects>
+      <ProtectScenarios>False</ProtectScenarios>
+    </WorksheetOptions>
+    <PivotTable xmlns="urn:schemas-microsoft-com:office:excel">
+      <Name>analise_vendas</Name>
+      <PageFieldOrder>OverThenDown</PageFieldOrder>
+      <PageFieldWrapCount>2</PageFieldWrapCount>
+      <AutoFormatName>Table10</AutoFormatName>
+      <AutoFormatNumber />
+      <AutoFormatBorder />
+      <AutoFormatFont />
+      <AutoFormatPattern />
+      <AutoFormatAlignment />
+      <ImmediateItemsOnDrop />
+      <ShowPageMultipleItemLabel />
+      <Location>R1C1:R8C6</Location>
+      <VersionLastUpdate>2</VersionLastUpdate>
+      <DefaultVersion>1</DefaultVersion>
+      <PivotField>
+        <Name>Pedido Venda</Name>
+        <SourceName>cod_pedido_venda</SourceName>
+        <Subtotal>None</Subtotal>
+      </PivotField>
+      <PivotField>
+        <Name>Código Cliente</Name>
+        <SourceName>cod_cliente</SourceName>
+        <Orientation>Page</Orientation>
+        <Subtotal>None</Subtotal>
+        <AutoShowField>Nº Pedidos</AutoShowField>
+        <Position>1</Position>
+        <DataType>Integer</DataType>
+        <PivotItem>
+          <Name></Name>
+        </PivotItem>
+      </PivotField>
+      <PivotField>
+        <Name>Denominação Cliente</Name>
+        <SourceName>den_cliente</SourceName>
+        <Orientation>Page</Orientation>
+        <Subtotal>None</Subtotal>
+        <Position>2</Position>
+        <PivotItem>
+          <Name></Name>
+        </PivotItem>
+      </PivotField>
+      <PivotField>
+        <Name>Data Cadastro</Name>
+        <SourceName>data_cadastro</SourceName>
+        <NumberFormat>dd/mm/yyyy</NumberFormat>
+        <Orientation>Row</Orientation>
+        <Subtotal>None</Subtotal>
+        <Position>1</Position>
+        <PivotItem>
+          <Name></Name>
+        </PivotItem>
+      </PivotField>
+      <PivotField>
+        <Name>Ano</Name>
+        <SourceName>ano</SourceName>
+        <Orientation>Page</Orientation>
+        <Subtotal>None</Subtotal>
+        <Position>5</Position>
+        <PivotItem>
+          <Name></Name>
+        </PivotItem>
+      </PivotField>
+      <PivotField>
+        <Name>Mês</Name>
+        <SourceName>mes</SourceName>
+        <Orientation>Page</Orientation>
+        <Subtotal>None</Subtotal>
+        <Position>6</Position>
+        <DataType>Integer</DataType>
+        <PivotItem>
+          <Name></Name>
+        </PivotItem>
+      </PivotField>
+      <PivotField>
+        <Name>Sigla Situação</Name>
+        <SourceName>ies_situacao</SourceName>
+        <Subtotal>None</Subtotal>
+      </PivotField>
+      <PivotField>
+        <Name>Situação</Name>
+        <SourceName>den_situacao</SourceName>
+        <Orientation>Row</Orientation>
+        <Subtotal>None</Subtotal>
+        <Position>2</Position>
+        <PivotItem>
+          <Name></Name>
+        </PivotItem>
+      </PivotField>
+      <PivotField>
+        <Name>Forma Pagto</Name>
+        <SourceName>den_forma_pagto</SourceName>
+        <Orientation>Row</Orientation>
+        <Subtotal>None</Subtotal>
+        <Position>3</Position>
+        <PivotItem>
+          <Name></Name>
+        </PivotItem>
+      </PivotField>
+      <PivotField>
+        <Name>Valor Total</Name>
+        <SourceName>valor_total</SourceName>
+        <Subtotal>None</Subtotal>
+      </PivotField>
+      <PivotField>
+        <Name>Valor Recebido</Name>
+        <SourceName>valor_recebido</SourceName>
+        <Subtotal>None</Subtotal>
+      </PivotField>
+      <PivotField>
+        <Name>Centro Custo</Name>
+        <SourceName>cod_centro_custo</SourceName>
+        <Orientation>Page</Orientation>
+        <Subtotal>None</Subtotal>
+        <Position>8</Position>
+        <PivotItem>
+          <Name></Name>
+        </PivotItem>
+      </PivotField>
+      <PivotField>
+        <Name>Plano Conta</Name>
+        <SourceName>cod_plano_conta</SourceName>
+        <Orientation>Page</Orientation>
+        <Subtotal>None</Subtotal>
+        <Position>7</Position>
+        <PivotItem>
+          <Name></Name>
+        </PivotItem>
+      </PivotField>
+      <PivotField>
+        <Name>Código Representante</Name>
+        <SourceName>cod_representante</SourceName>
+        <Orientation>Page</Orientation>
+        <Position>3</Position>
+        <PivotItem>
+          <Name></Name>
+        </PivotItem>
+      </PivotField>
+      <PivotField>
+        <Name>Denominação Representante</Name>
+        <SourceName>den_representante</SourceName>
+        <Orientation>Page</Orientation>
+        <Position>4</Position>
+        <PivotItem>
+          <Name></Name>
+        </PivotItem>
+      </PivotField>
+      <PivotField>
+        <DataField />
+        <Name>Dados</Name>
+        <Orientation>Column</Orientation>
+      </PivotField>
+      <PivotField>
+        <Name>Nº Pedidos</Name>
+        <ParentField>Pedido Venda</ParentField>
+        <Orientation>Data</Orientation>
+        <Function>Count</Function>
+        <Position>1</Position>
+      </PivotField>
+      <PivotField>
+        <Name>Soma de Valor Total</Name>
+        <ParentField>Valor Total</ParentField>
+        <NumberFormat>_("R$ "* #,##0.00_);_("R$ "* \(#,##0.00\);_("R$ "* "-"??_);_(@_)</NumberFormat>
+        <Orientation>Data</Orientation>
+        <Position>2</Position>
+      </PivotField>
+      <PivotField>
+        <Name>Soma de Valor Recebido</Name>
+        <ParentField>Valor Recebido</ParentField>
+        <NumberFormat>_("R$ "* #,##0.00_);_("R$ "* \(#,##0.00\);_("R$ "* "-"??_);_(@_)</NumberFormat>
+        <Orientation>Data</Orientation>
+        <Position>3</Position>
+      </PivotField>
+      <PTLineItems>
+        <PTLineItem>
+          <Item>0</Item>
+          <Item>0</Item>
+          <Item>0</Item>
+        </PTLineItem>
+        <PTLineItem>
+          <ItemType>Grand</ItemType>
+          <Item>0</Item>
+        </PTLineItem>
+      </PTLineItems>
+      <PTLineItems>
+        <Orientation>Column</Orientation>
+        <PTLineItem>
+          <Item>0</Item>
+        </PTLineItem>
+        <PTLineItem>
+          <DataField>2</DataField>
+          <Item>1</Item>
+        </PTLineItem>
+        <PTLineItem>
+          <DataField>3</DataField>
+          <Item>2</Item>
+        </PTLineItem>
+      </PTLineItems>
+      <PTSource>
+        <CacheIndex>1</CacheIndex>
+        <VersionLastRefresh>2</VersionLastRefresh>
+        <RefreshName>Jackson Patrick Werka</RefreshName>
+        <RefreshDate>2012-10-31T22:45:03</RefreshDate>
+        <RefreshDateCopy>2012-10-31T22:45:03</RefreshDateCopy>
+        <NoSaveData />
+        <RefreshOnFileOpen />
+        <ConsolidationReference>
+          <FileName>[cns_pedidos_venda02.xml]Dados</FileName>
+          <Reference>R1C1:R29C15</Reference>
+        </ConsolidationReference>
+      </PTSource>
+    </PivotTable>
+  </Worksheet>
+</Workbook>

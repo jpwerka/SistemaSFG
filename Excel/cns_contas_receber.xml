@@ -1,0 +1,673 @@
+<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"
+ xmlns:s="uuid:BDC6E3F0-6DA3-11d1-A2A3-00AA00C14882"
+ xmlns:rs="urn:schemas-microsoft-com:rowset" xmlns:z="#RowsetSchema"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+  <LastAuthor>Jackson Patrick Werka</LastAuthor>
+  <Created>2012-06-26T23:07:27Z</Created>
+  <LastSaved>2012-07-01T18:13:52Z</LastSaved>
+  <Version>11.9999</Version>
+ </DocumentProperties>
+ <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+  <WindowHeight>9720</WindowHeight>
+  <WindowWidth>19035</WindowWidth>
+  <WindowTopX>0</WindowTopX>
+  <WindowTopY>45</WindowTopY>
+  <ActiveSheet>1</ActiveSheet>
+  <AcceptLabelsInFormulas/>
+  <ProtectStructure>False</ProtectStructure>
+  <ProtectWindows>False</ProtectWindows>
+ </ExcelWorkbook>
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="s21">
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+   </Borders>
+  </Style>
+  <Style ss:ID="s22">
+   <Borders>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+   </Borders>
+   <Font ss:Bold="1"/>
+  </Style>
+  <Style ss:ID="s23">
+   <Borders>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+   </Borders>
+   <Font ss:Bold="1"/>
+  </Style>
+  <Style ss:ID="s25">
+   <Borders>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+   </Borders>
+  </Style>
+  <Style ss:ID="s26">
+   <Borders>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+   </Borders>
+   <NumberFormat ss:Format="dd/mm/yyyy"/>
+  </Style>
+  <Style ss:ID="s27">
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+   </Borders>
+   <Font ss:Color="#FFCC00" ss:Bold="1"/>
+   <Interior ss:Color="#000000" ss:Pattern="Solid"/>
+   <NumberFormat ss:Format="dd/mm/yyyy"/>
+  </Style>
+  <Style ss:ID="s28">
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="Background"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+   </Borders>
+   <Font ss:Color="#FFCC00" ss:Bold="1"/>
+   <Interior ss:Color="#000000" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s29">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <Borders>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+   </Borders>
+   <NumberFormat/>
+  </Style>
+  <Style ss:ID="s30">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+   </Borders>
+   <Font ss:Color="#FFCC00" ss:Bold="1"/>
+   <Interior ss:Color="#000000" ss:Pattern="Solid"/>
+   <NumberFormat/>
+  </Style>
+  <Style ss:ID="s31">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <Borders>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+   </Borders>
+   <Font ss:Size="9" ss:Color="#FFCC00" ss:Bold="1"/>
+   <Interior ss:Color="#000000" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s32">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <Borders>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+   </Borders>
+   <Font ss:Size="9" ss:Color="#FFCC00" ss:Bold="1"/>
+   <Interior ss:Color="#000000" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s33">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#808080"/>
+   </Borders>
+   <Interior/>
+  </Style>
+  <Style ss:ID="s34">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#808080"/>
+   </Borders>
+   <Interior/>
+   <NumberFormat ss:Format="Short Date"/>
+  </Style>
+  <Style ss:ID="s35">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"
+     ss:Color="#808080"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="2"
+     ss:Color="#808080"/>
+   </Borders>
+   <Font ss:Color="#000080" ss:Bold="1"/>
+   <Interior/>
+  </Style>
+  <Style ss:ID="s36">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <Borders>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+   </Borders>
+   <Font ss:Size="9" ss:Color="#FFCC00" ss:Bold="1"/>
+   <Interior ss:Color="#000000" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s37">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <Borders>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+   </Borders>
+   <NumberFormat
+    ss:Format="_(&quot;R$ &quot;* #,##0.00_);_(&quot;R$ &quot;* \(#,##0.00\);_(&quot;R$ &quot;* &quot;-&quot;??_);_(@_)"/>
+  </Style>
+  <Style ss:ID="s38">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+   </Borders>
+   <Font ss:Color="#FFCC00" ss:Bold="1"/>
+   <Interior ss:Color="#000000" ss:Pattern="Solid"/>
+   <NumberFormat
+    ss:Format="_(&quot;R$ &quot;* #,##0.00_);_(&quot;R$ &quot;* \(#,##0.00\);_(&quot;R$ &quot;* &quot;-&quot;??_);_(@_)"/>
+  </Style>
+  <Style ss:ID="s39">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <Borders>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+   </Borders>
+   <NumberFormat
+    ss:Format="_(&quot;R$ &quot;* #,##0.00_);_(&quot;R$ &quot;* \(#,##0.00\);_(&quot;R$ &quot;* &quot;-&quot;??_);_(@_)"/>
+  </Style>
+  <Style ss:ID="s40">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+   </Borders>
+   <Font ss:Color="#FFCC00" ss:Bold="1"/>
+   <Interior ss:Color="#000000" ss:Pattern="Solid"/>
+   <NumberFormat
+    ss:Format="_(&quot;R$ &quot;* #,##0.00_);_(&quot;R$ &quot;* \(#,##0.00\);_(&quot;R$ &quot;* &quot;-&quot;??_);_(@_)"/>
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="Dados">
+  <Table ss:ExpandedColumnCount="13" ss:ExpandedRowCount="2" x:FullColumns="1"
+   x:FullRows="1">
+   <Column ss:Width="87.75"/>
+   <Column ss:Width="80.25"/>
+   <Column ss:Width="192"/>
+   <Column ss:Width="72.75"/>
+   <Column ss:Width="26.25"/>
+   <Column ss:Width="24.75"/>
+   <Column ss:Width="63.75"/>
+   <Column ss:Width="69"/>
+   <Column ss:Width="89.25"/>
+   <Column ss:Width="55.5"/>
+   <Column ss:Width="58.5"/>
+   <Column ss:Width="88.5"/>
+   <Column ss:Width="87"/>
+   <Row ss:Height="13.5">
+    <Cell ss:StyleID="s35"><Data ss:Type="String">cod_conta_pagar</Data></Cell>
+    <Cell ss:StyleID="s35"><Data ss:Type="String">cod_cliente</Data></Cell>
+    <Cell ss:StyleID="s35"><Data ss:Type="String">den_cliente</Data></Cell>
+    <Cell ss:StyleID="s35"><Data ss:Type="String">data_cadastro</Data></Cell>
+    <Cell ss:StyleID="s35"><Data ss:Type="String">ano</Data></Cell>
+    <Cell ss:StyleID="s35"><Data ss:Type="String">mes</Data></Cell>
+    <Cell ss:StyleID="s35"><Data ss:Type="String">ies_situacao</Data></Cell>
+    <Cell ss:StyleID="s35"><Data ss:Type="String">den_situacao</Data></Cell>
+    <Cell ss:StyleID="s35"><Data ss:Type="String">den_forma_pagto</Data></Cell>
+    <Cell ss:StyleID="s35"><Data ss:Type="String">valor_total</Data></Cell>
+    <Cell ss:StyleID="s35"><Data ss:Type="String">valor_recebido</Data></Cell>
+    <Cell ss:StyleID="s35"><Data ss:Type="String">cod_centro_custo</Data></Cell>
+    <Cell ss:StyleID="s35"><Data ss:Type="String">cod_plano_conta</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s34"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.49212598499999999"/>
+    <Footer x:Margin="0.49212598499999999"/>
+    <PageMargins x:Bottom="0.984251969" x:Left="0.78740157499999996"
+     x:Right="0.78740157499999996" x:Top="0.984251969"/>
+   </PageSetup>
+   <TabColorIndex>12</TabColorIndex>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <ActiveCol>1</ActiveCol>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+ <Worksheet ss:Name="Análise Contas à Receber">
+  <Table ss:ExpandedColumnCount="26" ss:ExpandedRowCount="8" x:FullColumns="1"
+   x:FullRows="1">
+   <Column ss:AutoFitWidth="0" ss:Width="87.75"/>
+   <Column ss:Width="78.75" ss:Span="1"/>
+   <Column ss:Index="4" ss:Width="99"/>
+   <Column ss:AutoFitWidth="0" ss:Width="75"/>
+   <Column ss:AutoFitWidth="0" ss:Width="70.5"/>
+   <Column ss:Width="154.5"/>
+   <Column ss:Width="101.25" ss:Span="1"/>
+   <Column ss:Index="10" ss:AutoFitWidth="0" ss:Width="99" ss:Span="13"/>
+   <Column ss:Index="24" ss:Width="84.75"/>
+   <Column ss:Width="117.75"/>
+   <Column ss:Width="139.5"/>
+   <Row ss:Index="2">
+    <Cell ss:StyleID="s21"><Data ss:Type="String">Código Cliente</Data></Cell>
+    <Cell ss:StyleID="s21"><Data ss:Type="String">(Tudo)</Data></Cell>
+    <Cell ss:Index="4" ss:StyleID="s21"><Data ss:Type="String">Denominação Cliente</Data></Cell>
+    <Cell ss:StyleID="s21"><Data ss:Type="String">(Tudo)</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s21"><Data ss:Type="String">Ano</Data></Cell>
+    <Cell ss:StyleID="s21"><Data ss:Type="String">(Tudo)</Data></Cell>
+    <Cell ss:Index="4" ss:StyleID="s21"><Data ss:Type="String">Mês</Data></Cell>
+    <Cell ss:StyleID="s21"><Data ss:Type="String">(Tudo)</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s21"><Data ss:Type="String">Plano Conta</Data></Cell>
+    <Cell ss:StyleID="s21"><Data ss:Type="String">(Tudo)</Data></Cell>
+    <Cell ss:Index="4" ss:StyleID="s21"><Data ss:Type="String">Centro Custo</Data></Cell>
+    <Cell ss:StyleID="s21"><Data ss:Type="String">(Tudo)</Data></Cell>
+   </Row>
+   <Row ss:Index="6">
+    <Cell ss:StyleID="s22"><Data ss:Type="String">Data Cadastro</Data></Cell>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">Situação</Data></Cell>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">Forma Pagto</Data></Cell>
+    <Cell ss:StyleID="s31"><Data ss:Type="String">Nº Contas</Data></Cell>
+    <Cell ss:StyleID="s36"><Data ss:Type="String">Valor Total</Data></Cell>
+    <Cell ss:StyleID="s32"><Data ss:Type="String">Valor Recebido</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s26"><Data ss:Type="String">(vazio)</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">(vazio)</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">(vazio)</Data></Cell>
+    <Cell ss:StyleID="s29"/>
+    <Cell ss:StyleID="s37"/>
+    <Cell ss:StyleID="s39"/>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Total geral</Data></Cell>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s30"/>
+    <Cell ss:StyleID="s38"/>
+    <Cell ss:StyleID="s40"/>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.49212598499999999"/>
+    <Footer x:Margin="0.49212598499999999"/>
+    <PageMargins x:Bottom="0.984251969" x:Left="0.78740157499999996"
+     x:Right="0.78740157499999996" x:Top="0.984251969"/>
+   </PageSetup>
+   <Print>
+    <ValidPrinterInfo/>
+    <PaperSizeIndex>9</PaperSizeIndex>
+    <HorizontalResolution>600</HorizontalResolution>
+    <VerticalResolution>600</VerticalResolution>
+   </Print>
+   <TabColorIndex>11</TabColorIndex>
+   <Selected/>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <ActiveRow>9</ActiveRow>
+     <ActiveCol>1</ActiveCol>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+  <PivotTable xmlns="urn:schemas-microsoft-com:office:excel">
+   <Name>analise_contas_receber</Name>
+   <PageFieldOrder>OverThenDown</PageFieldOrder>
+   <PageFieldWrapCount>2</PageFieldWrapCount>
+   <AutoFormatName>Table10</AutoFormatName>
+   <AutoFormatNumber/>
+   <AutoFormatBorder/>
+   <AutoFormatFont/>
+   <AutoFormatPattern/>
+   <AutoFormatAlignment/>
+   <ImmediateItemsOnDrop/>
+   <ShowPageMultipleItemLabel/>
+   <HideTotalsAnnotation/>
+   <Location>R2C1:R8C6</Location>
+   <VersionLastUpdate>2</VersionLastUpdate>
+   <DefaultVersion>1</DefaultVersion>
+   <PivotField>
+    <Name>Conta Pagar</Name>
+    <SourceName>cod_conta_pagar</SourceName>
+    <Subtotal>None</Subtotal>
+   </PivotField>
+   <PivotField>
+    <Name>Código Cliente</Name>
+    <SourceName>cod_cliente</SourceName>
+    <Orientation>Page</Orientation>
+    <Subtotal>None</Subtotal>
+    <Position>1</Position>
+    <PivotItem>
+     <Name></Name>
+    </PivotItem>
+   </PivotField>
+   <PivotField>
+    <Name>Denominação Cliente</Name>
+    <SourceName>den_cliente</SourceName>
+    <Orientation>Page</Orientation>
+    <Subtotal>None</Subtotal>
+    <Position>2</Position>
+    <PivotItem>
+     <Name></Name>
+    </PivotItem>
+   </PivotField>
+   <PivotField>
+    <Name>Data Cadastro</Name>
+    <SourceName>data_cadastro</SourceName>
+    <NumberFormat>dd/mm/yyyy</NumberFormat>
+    <Orientation>Row</Orientation>
+    <Subtotal>None</Subtotal>
+    <Position>1</Position>
+    <DataType>Date</DataType>
+    <PivotItem>
+     <Name>2012-05-20T00:00:00</Name>
+     <Missing/>
+    </PivotItem>
+    <PivotItem>
+     <Name>2012-06-05T00:00:00</Name>
+     <Missing/>
+    </PivotItem>
+    <PivotItem>
+     <Name>2012-06-18T00:00:00</Name>
+     <Missing/>
+    </PivotItem>
+    <PivotItem>
+     <Name>2012-06-20T00:00:00</Name>
+     <Missing/>
+    </PivotItem>
+    <PivotItem>
+     <Name>2012-06-21T00:00:00</Name>
+     <Missing/>
+    </PivotItem>
+    <PivotItem>
+     <Name>2012-06-23T00:00:00</Name>
+     <Missing/>
+    </PivotItem>
+    <PivotItem>
+     <Name>2012-05-13T00:00:00</Name>
+     <Missing/>
+    </PivotItem>
+    <PivotItem>
+     <Name>2012-05-14T00:00:00</Name>
+     <Missing/>
+    </PivotItem>
+    <PivotItem>
+     <Name></Name>
+    </PivotItem>
+   </PivotField>
+   <PivotField>
+    <Name>Ano</Name>
+    <SourceName>ano</SourceName>
+    <Orientation>Page</Orientation>
+    <Subtotal>None</Subtotal>
+    <Position>3</Position>
+    <DataType>Integer</DataType>
+    <PivotItem>
+     <Name>2012</Name>
+     <Missing/>
+    </PivotItem>
+    <PivotItem>
+     <Name></Name>
+    </PivotItem>
+   </PivotField>
+   <PivotField>
+    <Name>Mês</Name>
+    <SourceName>mes</SourceName>
+    <Orientation>Page</Orientation>
+    <Subtotal>None</Subtotal>
+    <Position>4</Position>
+    <DataType>Integer</DataType>
+    <PivotItem>
+     <Name>5</Name>
+     <Missing/>
+    </PivotItem>
+    <PivotItem>
+     <Name>6</Name>
+     <Missing/>
+    </PivotItem>
+    <PivotItem>
+     <Name></Name>
+    </PivotItem>
+   </PivotField>
+   <PivotField>
+    <Name>Sigla Situação</Name>
+    <SourceName>ies_situacao</SourceName>
+    <Subtotal>None</Subtotal>
+   </PivotField>
+   <PivotField>
+    <Name>Situação</Name>
+    <SourceName>den_situacao</SourceName>
+    <Orientation>Row</Orientation>
+    <Subtotal>None</Subtotal>
+    <Position>2</Position>
+    <PivotItem>
+     <Name>Liquidado</Name>
+     <Missing/>
+    </PivotItem>
+    <PivotItem>
+     <Name>Pendente</Name>
+     <Missing/>
+    </PivotItem>
+    <PivotItem>
+     <Name>Andamento</Name>
+     <Missing/>
+    </PivotItem>
+    <PivotItem>
+     <Name></Name>
+    </PivotItem>
+   </PivotField>
+   <PivotField>
+    <Name>Forma Pagto</Name>
+    <SourceName>den_forma_pagto</SourceName>
+    <Orientation>Row</Orientation>
+    <Subtotal>None</Subtotal>
+    <Position>3</Position>
+    <PivotItem>
+     <Name>A Vista</Name>
+     <Missing/>
+    </PivotItem>
+    <PivotItem>
+     <Name>Cheque</Name>
+     <Missing/>
+    </PivotItem>
+    <PivotItem>
+     <Name>Parcelado</Name>
+     <Missing/>
+    </PivotItem>
+    <PivotItem>
+     <Name></Name>
+    </PivotItem>
+   </PivotField>
+   <PivotField>
+    <Name>Valor Total</Name>
+    <SourceName>valor_total</SourceName>
+    <Subtotal>None</Subtotal>
+   </PivotField>
+   <PivotField>
+    <Name>Valor Recebido</Name>
+    <SourceName>valor_recebido</SourceName>
+   </PivotField>
+   <PivotField>
+    <Name>Centro Custo</Name>
+    <SourceName>cod_centro_custo</SourceName>
+    <Orientation>Page</Orientation>
+    <Subtotal>None</Subtotal>
+    <Position>6</Position>
+    <PivotItem>
+     <Name></Name>
+    </PivotItem>
+    <PivotItem>
+     <Name>OPERACIONAL</Name>
+     <Missing/>
+    </PivotItem>
+    <PivotItem>
+     <Name>ADMINISTRATIVO</Name>
+     <Missing/>
+    </PivotItem>
+   </PivotField>
+   <PivotField>
+    <Name>Plano Conta</Name>
+    <SourceName>cod_plano_conta</SourceName>
+    <Orientation>Page</Orientation>
+    <Subtotal>None</Subtotal>
+    <Position>5</Position>
+    <PivotItem>
+     <Name>2.1.01.04</Name>
+     <Missing/>
+    </PivotItem>
+    <PivotItem>
+     <Name>2.1.01</Name>
+     <Missing/>
+    </PivotItem>
+    <PivotItem>
+     <Name></Name>
+    </PivotItem>
+    <PivotItem>
+     <Name>2.1.01.01.005</Name>
+     <Missing/>
+    </PivotItem>
+    <PivotItem>
+     <Name>2.1.05.01</Name>
+     <Missing/>
+    </PivotItem>
+    <PivotItem>
+     <Name>2.1.01.06</Name>
+     <Missing/>
+    </PivotItem>
+   </PivotField>
+   <PivotField>
+    <DataField/>
+    <Name>Dados</Name>
+    <Orientation>Column</Orientation>
+   </PivotField>
+   <PivotField>
+    <Name>Nº Contas</Name>
+    <ParentField>Conta Pagar</ParentField>
+    <Orientation>Data</Orientation>
+    <Function>Count</Function>
+    <Position>1</Position>
+   </PivotField>
+   <PivotField>
+    <Name>Soma de Valor Total</Name>
+    <ParentField>Valor Total</ParentField>
+    <NumberFormat>_(&quot;R$ &quot;* #,##0.00_);_(&quot;R$ &quot;* \(#,##0.00\);_(&quot;R$ &quot;* &quot;-&quot;??_);_(@_)</NumberFormat>
+    <Orientation>Data</Orientation>
+    <Position>2</Position>
+   </PivotField>
+   <PivotField>
+    <Name>Soma de Valor Recebido</Name>
+    <ParentField>Valor Recebido</ParentField>
+    <NumberFormat>_(&quot;R$ &quot;* #,##0.00_);_(&quot;R$ &quot;* \(#,##0.00\);_(&quot;R$ &quot;* &quot;-&quot;??_);_(@_)</NumberFormat>
+    <Orientation>Data</Orientation>
+    <Position>3</Position>
+   </PivotField>
+   <PTLineItems>
+    <PTLineItem>
+     <Item>8</Item>
+     <Item>3</Item>
+     <Item>3</Item>
+    </PTLineItem>
+    <PTLineItem>
+     <ItemType>Grand</ItemType>
+     <Item>0</Item>
+    </PTLineItem>
+   </PTLineItems>
+   <PTLineItems>
+    <Orientation>Column</Orientation>
+    <PTLineItem>
+     <Item>0</Item>
+    </PTLineItem>
+    <PTLineItem>
+     <DataField>2</DataField>
+     <Item>1</Item>
+    </PTLineItem>
+    <PTLineItem>
+     <DataField>3</DataField>
+     <Item>2</Item>
+    </PTLineItem>
+   </PTLineItems>
+   <PTSource>
+    <CacheIndex>1</CacheIndex>
+    <VersionLastRefresh>2</VersionLastRefresh>
+    <RefreshName>Jackson Patrick Werka</RefreshName>
+    <RefreshDate>2012-07-01T15:13:10</RefreshDate>
+    <RefreshDateCopy>2012-07-01T15:13:10</RefreshDateCopy>
+    <NoSaveData/>
+    <ConsolidationReference>
+     <FileName>[cns_contas_receber.xml]Dados</FileName>
+     <Reference>R1C1:R2C13</Reference>
+    </ConsolidationReference>
+   </PTSource>
+  </PivotTable>
+ </Worksheet>
+</Workbook>

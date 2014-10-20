@@ -1,0 +1,968 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="yes"?>
+<Atualization>
+  <FileInfoAtuDB file_atudbname="CRTDB00002" file_atudbdate="22/11/2012" file_requisito="CRTDB00001"></FileInfoAtuDB>
+  <Informations>
+    <Information>Criação da procedure para verificação se pode deletar o plano de conta.</Information>
+    <Information>Criação da procedure para verificação se pode deletar o plano de conta filho.</Information>
+    <Information>Criação da procedure para exclusão do plano de conta e seus filhos.</Information>
+    <Information>Criação do procedimento que carrega a permissão de menu por usuário e/ou grupo.</Information>
+    <Information>Criação do procedimento que modifica a permissão de menu por usuário e/ou grupo.</Information>
+    <Information>Criação do procedimento de fechamento de pedidos de venda.</Information>
+    <Information>Criação do procedimento de reabertura de pedidos de venda.</Information>
+    <Information>Criação do procedimento de fechamento de pedidos de compra.</Information>
+    <Information>Criação do procedimento de reabertura de pedidos de compra.</Information>
+    <Information>Criação do procedimento para fechamento das comissões do representante.</Information>
+    <Information>Criação do procedimento para efetuar a baixa de um pedido de venda do estoque.</Information>
+    <Information>Criação do procedimento para estornar a baixa de um pedido de venda do estoque.</Information>
+    <Information>Criação do procedimento para efetuar a entrada de um pedido de compra do estoque.</Information>
+    <Information>Criação do procedimento para estornar a entrada de um pedido de compra do estoque.</Information>
+    <Information>Criação do procedimento para importar um orçamento para um pedido de venda.</Information>
+    <Information>Criação do procedimento para atualizar parâmetros do sistema.</Information>
+    <Information>Criação do procedimento para atualizar parâmetros do sistema que são texto.</Information>
+    <Information>Criação do procedimento para recuperar parâmetros do sistema que são texto.</Information>
+    <Information>Criação do procedimento para atualizar parâmetros do sistema que são número.</Information>
+    <Information>Criação do procedimento para recuperar parâmetros do sistema que são número.</Information>
+    <Information>Criação do procedimento para atualizar configurações de email do sistema.</Information>
+    <Information>Criação de gatilho na tabela pedidos de venda após a exclusão para desmarcar o orçamento como importado.</Information>
+    <Information>Criação de gatilho na tabela pagamentos da conta a receber após a modificação para integração com os lançamentos do caixa.</Information>
+    <Information>Criação de gatilho na tabela pagamentos da conta a pagar após a modificação para integração com os lançamentos do caixa.</Information>
+  </Informations>
+  <Instructions>
+    <Instruction action="CREATE" type="PROCEDURE" object="can_delete_plano_conta">CREATE PROCEDURE can_delete_plano_conta(in_cod_plano_conta VARCHAR(18))
+BEGIN
+    DECLARE l_count_conta INT DEFAULT 0;
+    DECLARE l_can_delete INT;
+    
+    SET @@session.max_sp_recursion_depth = 1000;
+    SET l_can_delete=1;
+
+    SET l_count_conta = 0;
+    SELECT COUNT(*)
+      INTO l_count_conta
+      FROM tbl_conta_pagar
+     WHERE cod_plano_conta = in_cod_plano_conta;
+    IF l_count_conta &gt; 0 THEN
+        SET l_can_delete = 0;
+    END IF;
+    -- insert into tt_msg (message) values (concat('Conta: ', in_cod_plano_conta, ' Delete: ', l_can_delete, ' Count: ',l_count_conta));
+
+    IF l_can_delete &gt; 0 THEN 
+        SELECT COUNT(*)
+          INTO l_count_conta
+          FROM tbl_conta_receber
+         WHERE cod_plano_conta = in_cod_plano_conta;
+        IF l_count_conta &gt; 0 THEN
+            SET l_can_delete = 0;
+        END IF;
+    END IF;
+    -- insert into tt_msg (message) values (concat('Conta: ', in_cod_plano_conta, ' Delete: ', l_can_delete, ' Count: ',l_count_conta));
+
+    IF l_can_delete &gt; 0 THEN 
+       CALL can_delete_plano_conta_child(in_cod_plano_conta, l_can_delete);
+    END IF;
+    SELECT l_can_delete;
+END</Instruction>
+    <Instruction action="CREATE" type="PROCEDURE" object="can_delete_plano_conta_child">CREATE PROCEDURE can_delete_plano_conta_child(in_cod_plano_conta VARCHAR(18), INOUT can_delete INT)
+BEGIN
+  DECLARE not_found INT DEFAULT 0;
+  DECLARE l_cod_plano_conta_filho VARCHAR(18);
+  DECLARE l_count_conta INT DEFAULT 0;
+  DECLARE l_count INT DEFAULT 0;
+  DECLARE cur1 CURSOR FOR SELECT cod_plano_conta FROM tbl_plano_conta WHERE cod_plano_conta_pai = in_cod_plano_conta;
+  DECLARE CONTINUE HANDLER FOR NOT FOUND SET not_found=1;
+  
+  OPEN cur1;
+
+  read_loop: LOOP
+    SET l_count = l_count + 1;
+    FETCH cur1 INTO l_cod_plano_conta_filho;
+    IF not_found THEN
+      LEAVE read_loop;
+    END IF;
+    
+    SET l_count_conta = 0;
+    SELECT COUNT(*)
+      INTO l_count_conta
+      FROM tbl_conta_pagar
+     WHERE cod_plano_conta = l_cod_plano_conta_filho;
+    IF l_count_conta &gt; 0 THEN
+        SET can_delete = 0;
+        LEAVE read_loop;
+    END IF;
+
+    SELECT COUNT(*)
+      INTO l_count_conta
+      FROM tbl_conta_receber
+     WHERE cod_plano_conta = l_cod_plano_conta_filho;
+    IF l_count_conta &gt; 0 THEN
+        SET can_delete = 0;
+        LEAVE read_loop;
+    END IF;
+    SET not_found=0;
+    
+    CALL can_delete_plano_conta_child(l_cod_plano_conta_filho, can_delete);
+    IF NOT can_delete THEN 
+       LEAVE read_loop;
+    END IF;
+
+  END LOOP;
+
+  CLOSE cur1;
+END</Instruction>
+    <Instruction action="CREATE" type="PROCEDURE" object="delete_plano_conta">CREATE PROCEDURE delete_plano_conta(in_cod_plano_conta VARCHAR(18))
+BEGIN
+    DECLARE not_found INT DEFAULT 0;
+    DECLARE l_cod_plano_conta_filho VARCHAR(18);
+    DECLARE l_count_conta INT;
+    DECLARE cur1 CURSOR FOR SELECT cod_plano_conta FROM tbl_plano_conta WHERE cod_plano_conta_pai = in_cod_plano_conta;
+    DECLARE CONTINUE HANDLER FOR NOT FOUND SET not_found=1; 
+
+    -- Verifica se a conta possui filhos 
+    SELECT COUNT(*)
+      INTO l_count_conta
+      FROM tbl_plano_conta
+     WHERE cod_plano_conta_pai = in_cod_plano_conta;
+    IF l_count_conta = 0 THEN
+        -- insert into tt_msg (message) values (concat('DELETE - Conta: ', in_cod_plano_conta, ' Count Filho : ',l_count_conta));
+        DELETE FROM tbl_plano_conta
+         WHERE cod_plano_conta = in_cod_plano_conta;
+    ELSE
+        -- insert into tt_msg (message) values (concat('NEXT - Conta: ', in_cod_plano_conta, ' Count Filho : ',l_count_conta));
+        OPEN cur1;
+        read_loop: LOOP
+            FETCH cur1 INTO l_cod_plano_conta_filho;
+            IF not_found THEN
+                LEAVE read_loop;
+            END IF;
+            CALL delete_plano_conta(l_cod_plano_conta_filho);
+        END LOOP;
+        CLOSE cur1;
+        -- Agora deve deletar a conta pai
+        DELETE FROM tbl_plano_conta
+         WHERE cod_plano_conta = in_cod_plano_conta;
+    END IF;
+END</Instruction>
+    <Instruction action="CREATE" type="PROCEDURE" object="carrega_permissao_menu">CREATE PROCEDURE carrega_permissao_menu(in_usuario_grupo varchar(16), in_tip_permissao char(1))
+BEGIN
+   -- Cria a tabela temporária, caso não exista
+   CREATE TEMPORARY TABLE IF NOT EXISTS tt_permissao_menu (
+     cod_rotina_pai  VARCHAR (10),
+     ord_rotina      SMALLINT,
+     cod_rotina      VARCHAR (10),
+     den_rotina      VARCHAR (50),
+     programa        VARCHAR (10),
+     ico_index       SMALLINT,
+     usuario_grupo   VARCHAR (16),
+     tip_permissao   CHAR (1),
+     nivel_permissao SMALLINT);
+
+   -- Limpa a temporária caso existam informações
+   DELETE FROM tt_permissao_menu;
+
+   IF in_tip_permissao = 'G' THEN -- Permissão por grupo 
+      INSERT INTO tt_permissao_menu 
+            (cod_rotina_pai, ord_rotina, cod_rotina, den_rotina, programa,
+             ico_index, usuario_grupo, tip_permissao, nivel_permissao)
+      SELECT m.cod_rotina_pai, m.ord_rotina, m.cod_rotina,
+             m.den_rotina, m.programa, m.ico_index,
+             in_usuario_grupo, 'G', p.nivel_permissao
+        FROM tbl_menu_sistema m
+        LEFT JOIN tbl_permissao_usuario_grupo p
+          ON p.cod_rotina = m.cod_rotina
+         AND p.tip_permissao = 'G'
+         AND p.usuario_grupo = in_usuario_grupo
+        LEFT JOIN tbl_usuario_grupo g
+          ON g.cod_grupo = p.usuario_grupo 
+       ORDER BY m.cod_rotina_pai, m.ord_rotina;
+   ELSE -- Permissão por usuário
+      INSERT INTO tt_permissao_menu 
+            (cod_rotina_pai, ord_rotina, cod_rotina, den_rotina, programa,
+             ico_index, usuario_grupo, tip_permissao, nivel_permissao)
+      SELECT m.cod_rotina_pai, m.ord_rotina, m.cod_rotina, 
+             m.den_rotina, m.programa, m.ico_index,
+             in_usuario_grupo, 'U', p.nivel_permissao
+        FROM tbl_menu_sistema m
+        LEFT JOIN tbl_permissao_usuario_grupo p
+          ON p.cod_rotina = m.cod_rotina
+         AND p.tip_permissao = 'U'
+         AND p.usuario_grupo = in_usuario_grupo
+        LEFT JOIN tbl_usuario u
+          ON u.usuario = p.usuario_grupo 
+       ORDER BY m.cod_rotina_pai, m.ord_rotina;
+       
+       -- Carrega a maior permissão por grupo para o usuário, caso exista
+       UPDATE tt_permissao_menu 
+          SET tip_permissao = 'G',
+              nivel_permissao = (SELECT max(p.nivel_permissao)
+                                   FROM tbl_permissao_usuario_grupo p
+                                  WHERE p.cod_rotina = tt_permissao_menu.cod_rotina
+                                    AND p.tip_permissao = 'G'
+                                    AND p.usuario_grupo IN 
+                                    (SELECT cod_grupo 
+                                       FROM tbl_usuario_grupo 
+                                      WHERE usuario = tt_permissao_menu.usuario_grupo))
+        WHERE nivel_permissao IS NULL;
+   END IF;
+
+   UPDATE tt_permissao_menu 
+      SET tip_permissao = in_tip_permissao,
+          nivel_permissao = 0
+    WHERE nivel_permissao IS NULL;  
+   
+   SELECT * FROM tt_permissao_menu;
+END</Instruction>
+    <Instruction action="CREATE" type="PROCEDURE" object="modifica_permissao_menu">CREATE PROCEDURE modifica_permissao_menu(in_usuario_grupo   VARCHAR(16),
+                                         in_tip_permissao   CHAR(1),
+                                         in_cod_rotina      VARCHAR(10),
+                                         in_nivel_permissao SMALLINT)
+BEGIN
+    DECLARE not_found INT DEFAULT 0;
+    DECLARE l_nivel_permissao SMALLINT;
+    DECLARE CONTINUE HANDLER FOR NOT FOUND SET not_found=1;
+    -- Verifica se já existe uma permissão cadastrada para o usuário
+    SELECT nivel_permissao
+      INTO l_nivel_permissao
+      FROM tbl_permissao_usuario_grupo
+     WHERE usuario_grupo = in_usuario_grupo
+       AND tip_permissao = in_tip_permissao
+       AND cod_rotina = in_cod_rotina;
+    IF not_found = 1 THEN
+        INSERT INTO tbl_permissao_usuario_grupo
+               (usuario_grupo,tip_permissao,cod_rotina,nivel_permissao)
+        VALUES (in_usuario_grupo,in_tip_permissao,in_cod_rotina,in_nivel_permissao);
+    ELSE
+        UPDATE tbl_permissao_usuario_grupo
+           SET nivel_permissao = in_nivel_permissao
+         WHERE usuario_grupo = in_usuario_grupo
+           AND tip_permissao = in_tip_permissao
+           AND cod_rotina = in_cod_rotina;
+    END IF;
+    SELECT l_nivel_permissao;
+END</Instruction>
+    <Instruction action="CREATE" type="PROCEDURE" object="fecha_pedido_venda">CREATE PROCEDURE fecha_pedido_venda(in_cod_pedido_venda INT, in_liquida SMALLINT)
+BEGIN
+    DECLARE not_found INT DEFAULT 0;
+    DECLARE l_cod_conta_receber INTEGER;
+    DECLARE l_mensagem VARCHAR(128);
+    DECLARE l_cod_cliente VARCHAR(15);
+    DECLARE l_cod_forma_pagto SMALLINT;
+    DECLARE l_num_parcelas SMALLINT;
+    DECLARE l_valor_total DECIMAL(13,3);
+    DECLARE l_cod_centro_custo VARCHAR(15);
+    DECLARE l_cod_plano_conta VARCHAR(18);
+    DECLARE l_seq_parcela INTEGER;
+    DECLARE l_valor_parcela DECIMAL(13,3);
+    DECLARE l_data_vencimento DATETIME;
+    DECLARE l_observacao VARCHAR(100);
+    DECLARE cq_pedido_venda_pagto CURSOR FOR
+     SELECT seq_parcela, valor_parcela, data_vencimento, observacao
+       FROM tbl_pedido_venda_pagto
+      WHERE cod_pedido_venda = in_cod_pedido_venda;
+    DECLARE CONTINUE HANDLER FOR NOT FOUND SET not_found=1;
+
+    -- Busca as informações do pedido de compra
+    SELECT cod_conta_receber
+      INTO l_cod_conta_receber
+      FROM tbl_conta_receber
+     WHERE num_documento = in_cod_pedido_venda
+       AND tipo_registro = 'PV';
+
+    -- Caso exista exclui as informações da conta
+    IF !not_found THEN
+        SET l_mensagem = CONCAT('Pedido de venda já integrado com a conta a receber ', l_cod_conta_receber, '.');
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT =  l_mensagem, MYSQL_ERRNO = 9999;
+    END IF;
+
+    -- Busca as informações do pedido de compra
+    SELECT cod_cliente, cod_forma_pagto, num_parcelas, valor_total, cod_centro_custo, cod_plano_conta
+      INTO l_cod_cliente, l_cod_forma_pagto, l_num_parcelas, l_valor_total, l_cod_centro_custo, l_cod_plano_conta 
+      FROM tbl_pedido_venda
+     WHERE cod_pedido_venda = in_cod_pedido_venda;
+     
+    -- Insere uma capa para a conta a pagar
+    INSERT INTO tbl_conta_receber 
+                (num_documento, cod_cliente, data_cadastro, ies_situacao, cod_forma_pagto, 
+                 num_parcelas, valor_total, cod_centro_custo, cod_plano_conta, tipo_registro)
+         VALUES (in_cod_pedido_venda, l_cod_cliente, now(), 'P', l_cod_forma_pagto,
+                 l_num_parcelas, l_valor_total, l_cod_centro_custo, l_cod_plano_conta, 'PV');    
+    
+     SET l_cod_conta_receber = LAST_INSERT_ID();
+     
+     -- Insere as parcelas da conta a pagar
+     SET not_found = 0;
+     OPEN cq_pedido_venda_pagto;
+     read_loop: LOOP
+         FETCH cq_pedido_venda_pagto INTO l_seq_parcela,
+                                           l_valor_parcela,
+                                           l_data_vencimento,
+                                           l_observacao;
+         IF not_found THEN
+             LEAVE read_loop;
+         END IF;
+         
+         INSERT INTO tbl_conta_receber_pagto 
+                     (cod_conta_receber, seq_parcela, valor_parcela, data_vencimento, ies_recebido, observacao)
+              VALUES (l_cod_conta_receber, l_seq_parcela, l_valor_parcela, l_data_vencimento, 'N', l_observacao);
+         
+     END LOOP;
+     CLOSE cq_pedido_venda_pagto;
+     
+     IF in_liquida &gt; 0 THEN 
+        UPDATE tbl_conta_receber_pagto 
+           SET valor_recebido = valor_parcela, data_recebimento = now(), ies_recebido = 'S'
+         WHERE cod_conta_receber = l_cod_conta_receber;
+     END IF;
+     
+     CALL baixa_pedido_venda_estoque(in_cod_pedido_venda);
+     
+     UPDATE tbl_pedido_venda
+        SET ies_situacao = 'F',
+            data_fechamento = now()
+      WHERE cod_pedido_venda = in_cod_pedido_venda;
+
+END</Instruction>
+    <Instruction action="CREATE" type="PROCEDURE" object="reabre_pedido_venda">CREATE PROCEDURE reabre_pedido_venda(in_cod_pedido_venda INT)
+BEGIN
+    DECLARE not_found INT DEFAULT 0;
+    DECLARE l_cod_conta_receber INT;
+    DECLARE l_ies_situacao CHAR(1);
+    DECLARE l_cod_representante VARCHAR(15);
+    DECLARE l_mensagem VARCHAR(128);
+    DECLARE CONTINUE HANDLER FOR NOT FOUND SET not_found=1;
+
+    -- Busca as informações do cálculo de comissão do representante
+    SELECT DISTINCT cod_representante
+      INTO l_cod_representante
+      FROM tbl_comissao_representante
+     WHERE cod_pedido_venda = in_cod_pedido_venda;
+
+    -- Caso exista não pode deixar reabrir o pedido de venda
+    IF !not_found THEN
+        SET l_mensagem = CONCAT('Pedido de venda já calculado comissão para o representante ',l_cod_representante,'.');
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT =  l_mensagem, MYSQL_ERRNO = 9999;
+    END IF;
+
+    SET not_found = 0;
+    -- Busca as informações do pedido de compra
+    SELECT cod_conta_receber, ies_situacao
+      INTO l_cod_conta_receber, l_ies_situacao
+      FROM tbl_conta_receber
+     WHERE num_documento = in_cod_pedido_venda
+       AND tipo_registro = 'PV';
+       
+    -- Caso exista valida a situação da conta a pagar
+    IF !not_found THEN
+        IF l_ies_situacao != 'P' THEN
+            SET l_mensagem = CONCAT('Conta a receber ', l_cod_conta_receber, ' do pedido de venda não está pendente.');
+            SIGNAL SQLSTATE '45000'
+            SET MESSAGE_TEXT =  l_mensagem, MYSQL_ERRNO = 9999;
+         END IF;
+ 
+         DELETE FROM tbl_conta_receber_pagto
+         WHERE cod_conta_receber = l_cod_conta_receber;
+         
+        DELETE FROM tbl_conta_receber
+         WHERE cod_conta_receber = l_cod_conta_receber;
+         
+    END IF;
+
+    CALL estorna_pedido_venda_estoque(in_cod_pedido_venda);
+ 
+    UPDATE tbl_pedido_venda
+       SET ies_situacao = 'A',
+           data_fechamento = NULL
+     WHERE cod_pedido_venda = in_cod_pedido_venda;
+
+END</Instruction>
+    <Instruction action="CREATE" type="PROCEDURE" object="fecha_pedido_compra">CREATE PROCEDURE fecha_pedido_compra(in_cod_pedido_compra INT, in_liquida SMALLINT)
+BEGIN
+    DECLARE not_found INT DEFAULT 0;
+    DECLARE l_cod_conta_pagar INTEGER;
+    DECLARE l_mensagem VARCHAR(128);
+    DECLARE l_cod_fornecedor VARCHAR(15);
+    DECLARE l_cod_forma_pagto SMALLINT;
+    DECLARE l_num_parcelas SMALLINT;
+    DECLARE l_valor_total DECIMAL(13,3);
+    DECLARE l_cod_centro_custo VARCHAR(15);
+    DECLARE l_cod_plano_conta VARCHAR(18);
+    DECLARE l_seq_parcela INTEGER;
+    DECLARE l_valor_parcela DECIMAL(13,3);
+    DECLARE l_data_vencimento DATETIME;
+    DECLARE l_observacao VARCHAR(100);
+    DECLARE cq_pedido_compra_pagto CURSOR FOR
+     SELECT seq_parcela, valor_parcela, data_vencimento, observacao
+       FROM tbl_pedido_compra_pagto
+      WHERE cod_pedido_compra = in_cod_pedido_compra;
+    DECLARE CONTINUE HANDLER FOR NOT FOUND SET not_found=1;
+
+    -- Busca as informações do pedido de compra
+    SELECT cod_conta_pagar
+      INTO l_cod_conta_pagar
+      FROM tbl_conta_pagar
+     WHERE num_documento = in_cod_pedido_compra
+       AND tipo_registro = 'PC';
+
+    -- Caso exista exclui as informações da conta
+    IF !not_found THEN
+        SET l_mensagem = CONCAT('Pedido de compra já integrado com a conta a pagar ', l_cod_conta_pagar, '.');
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT =  l_mensagem, MYSQL_ERRNO = 9999;
+    END IF;
+
+    -- Busca as informações do pedido de compra
+    SELECT cod_fornecedor, cod_forma_pagto, num_parcelas, valor_total, cod_centro_custo, cod_plano_conta
+      INTO l_cod_fornecedor, l_cod_forma_pagto, l_num_parcelas, l_valor_total, l_cod_centro_custo, l_cod_plano_conta 
+      FROM tbl_pedido_compra
+     WHERE cod_pedido_compra = in_cod_pedido_compra;
+     
+    -- Insere uma capa para a conta a pagar
+    INSERT INTO tbl_conta_pagar 
+                (num_documento, cod_fornecedor, data_cadastro, ies_situacao, cod_forma_pagto, 
+                 num_parcelas, valor_total, cod_centro_custo, cod_plano_conta, tipo_registro)
+         VALUES (in_cod_pedido_compra, l_cod_fornecedor, now(), 'P', l_cod_forma_pagto,
+                 l_num_parcelas, l_valor_total, l_cod_centro_custo, l_cod_plano_conta, 'PC');    
+    
+     SET l_cod_conta_pagar = LAST_INSERT_ID();
+     
+     -- Insere as parcelas da conta a pagar
+     SET not_found = 0;
+     OPEN cq_pedido_compra_pagto;
+     read_loop: LOOP
+         FETCH cq_pedido_compra_pagto INTO l_seq_parcela,
+                                           l_valor_parcela,
+                                           l_data_vencimento,
+                                           l_observacao;
+         IF not_found THEN
+             LEAVE read_loop;
+         END IF;
+         
+         INSERT INTO tbl_conta_pagar_pagto 
+                     (cod_conta_pagar, seq_parcela, valor_parcela, data_vencimento, ies_pago, observacao)
+              VALUES (l_cod_conta_pagar, l_seq_parcela, l_valor_parcela, l_data_vencimento, 'N', l_observacao);
+         
+     END LOOP;
+     CLOSE cq_pedido_compra_pagto;
+     
+     IF in_liquida &gt; 0 THEN 
+        UPDATE tbl_conta_pagar_pagto 
+           SET valor_pago = valor_parcela, data_pagamento = now(), ies_pago = 'S' 
+         WHERE cod_conta_pagar = l_cod_conta_pagar;
+     END IF;
+     
+     call inclui_pedido_compra_estoque(in_cod_pedido_compra);
+     
+     UPDATE tbl_pedido_compra SET ies_situacao = 'F'
+      WHERE cod_pedido_compra = in_cod_pedido_compra;
+
+END</Instruction>
+    <Instruction action="CREATE" type="PROCEDURE" object="reabre_pedido_compra">CREATE PROCEDURE reabre_pedido_compra(in_cod_pedido_compra INT)
+BEGIN
+    DECLARE not_found INT DEFAULT 0;
+    DECLARE l_cod_conta_pagar INT;
+    DECLARE l_ies_situacao CHAR(1);
+    DECLARE l_mensagem VARCHAR(128);
+    DECLARE CONTINUE HANDLER FOR NOT FOUND SET not_found=1;
+
+    -- Busca as informações do pedido de compra
+    SELECT cod_conta_pagar, ies_situacao
+      INTO l_cod_conta_pagar, l_ies_situacao
+      FROM tbl_conta_pagar
+     WHERE num_documento = in_cod_pedido_compra
+       AND tipo_registro = 'PC';
+       
+    -- Caso exista valida a situação da conta a pagar
+    IF !not_found THEN
+        IF l_ies_situacao != 'P' THEN
+            SET l_mensagem = CONCAT('Conta a pagar ', l_cod_conta_pagar, ' do pedido de compra não está pendente.');
+            SIGNAL SQLSTATE '45000'
+            SET MESSAGE_TEXT =  l_mensagem, MYSQL_ERRNO = 9999;
+         END IF;
+ 
+         DELETE FROM tbl_conta_pagar_pagto
+         WHERE cod_conta_pagar = l_cod_conta_pagar;
+         
+        DELETE FROM tbl_conta_pagar
+         WHERE cod_conta_pagar = l_cod_conta_pagar; 
+         
+        call exclui_pedido_compra_estoque(in_cod_pedido_compra);
+ 
+        UPDATE tbl_pedido_compra SET ies_situacao = 'A'
+         WHERE cod_pedido_compra = in_cod_pedido_compra;
+    END IF;
+
+END</Instruction>
+    <Instruction action="CREATE" type="PROCEDURE" object="fecha_comissao_representante">CREATE PROCEDURE fecha_comissao_representante(in_cod_representante VARCHAR(15), in_mes_comissao SMALLINT, in_ano_comissao SMALLINT, in_user_integracao VARCHAR(16))
+BEGIN
+    DECLARE not_found INT DEFAULT 0;
+    DECLARE l_mensagem VARCHAR(255);
+    DECLARE l_valor_comissao DECIMAL(13,3);
+    DECLARE l_forma_pagto_comissao INTEGER;
+    DECLARE l_num_documento VARCHAR(25);
+    DECLARE l_cod_conta_pagar INTEGER;
+    DECLARE CONTINUE HANDLER FOR NOT FOUND SET not_found=1;
+    -- Efetua a somatória das comissões do representante para o período
+    SELECT SUM(valor_comissao)
+      INTO l_valor_comissao
+      FROM tbl_comissao_representante
+     WHERE cod_representante = in_cod_representante
+       AND mes_comissao = in_mes_comissao
+       AND ano_comissao = in_ano_comissao
+       AND cod_conta_pagar IS NULL;
+       
+    IF l_valor_comissao IS NULL THEN
+        SET l_mensagem = CONCAT('Não foram encontradas comissões pendentes de integração para o representante ', in_cod_representante, ' em ',in_mes_comissao,'/',in_ano_comissao,'.');
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT =  l_mensagem, MYSQL_ERRNO = 9999;
+    END IF;
+    -- Busca a condição de pagamento parametrizada para a integração
+    SELECT tbl_forma_pagto.cod_forma_pagto
+      INTO l_forma_pagto_comissao
+      FROM tbl_parametro_sistema,
+           tbl_forma_pagto
+     WHERE tbl_parametro_sistema.nome_parametro = 'forma_pagto_comissao' 
+       AND tbl_parametro_sistema.valor_decimal = tbl_forma_pagto.cod_forma_pagto; 
+    -- Caso exista exclui as informações da conta
+    IF not_found THEN
+        SET l_mensagem = 'Não foi parametrizada a forma de pagamento padrão para a integração das comissões com o contas a pagar.';
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT =  l_mensagem, MYSQL_ERRNO = 9999;
+    END IF;
+    
+    SET l_num_documento = CONCAT('COMISSAO-',in_mes_comissao,'/',in_ano_comissao);
+    SET l_mensagem = CONCAT('Conta a receber integrada a partir das comissões do representante ',in_cod_representante, ' em ',in_mes_comissao,'/',in_ano_comissao,' pelo usuário ',in_user_integracao,'.');
+    -- Insere uma capa para a conta a pagar
+    INSERT INTO tbl_conta_pagar 
+                (num_documento, cod_fornecedor, data_cadastro, ies_situacao, cod_forma_pagto, 
+                 num_parcelas, valor_total, cod_centro_custo, cod_plano_conta, tipo_registro, observacao)
+         VALUES (l_num_documento, in_cod_representante, now(), 'P', l_forma_pagto_comissao,
+                 1, l_valor_comissao, NULL, NULL, 'CR', l_mensagem);    
+    
+    SET l_cod_conta_pagar = LAST_INSERT_ID();
+     
+    -- Insere as parcelas da conta a pagar
+    INSERT INTO tbl_conta_pagar_pagto 
+           (cod_conta_pagar, seq_parcela, valor_parcela, data_vencimento, ies_pago)
+    VALUES (l_cod_conta_pagar, 1, l_valor_comissao, curdate(), 'N');
+         
+    UPDATE tbl_comissao_representante 
+       SET cod_conta_pagar = l_cod_conta_pagar
+     WHERE cod_representante = in_cod_representante
+       AND mes_comissao = in_mes_comissao
+       AND ano_comissao = in_ano_comissao
+       AND cod_conta_pagar IS NULL;
+END</Instruction>
+    <Instruction action="CREATE" type="PROCEDURE" object="baixa_pedido_venda_estoque">CREATE PROCEDURE baixa_pedido_venda_estoque(in_cod_pedido_venda INT)
+BEGIN
+    DECLARE not_found INT DEFAULT 0;
+    DECLARE l_cod_produto VARCHAR(15);
+    DECLARE l_qtd_produto DECIMAL(13,3);
+    DECLARE cq_pedido_venda_item CURSOR FOR
+     SELECT pv.cod_produto, pv.qtd_produto 
+       FROM tbl_pedido_venda_item pv, tbl_produto p
+      WHERE pv.cod_pedido_venda = in_cod_pedido_venda
+        AND p.cod_produto = pv.cod_produto
+        and p.controla_estoque = 'S';
+    DECLARE CONTINUE HANDLER FOR NOT FOUND SET not_found=1;
+
+     OPEN cq_pedido_venda_item;
+     read_loop: LOOP
+         FETCH cq_pedido_venda_item INTO l_cod_produto,
+                                         l_qtd_produto;
+         IF not_found THEN
+             LEAVE read_loop;
+         END IF;
+         
+         -- Atualiza o estoque do produto
+         UPDATE tbl_produto 
+            SET qtd_estoque = qtd_estoque - l_qtd_produto
+          WHERE cod_produto = l_cod_produto;
+
+     END LOOP;
+     CLOSE cq_pedido_venda_item;
+END</Instruction>
+    <Instruction action="CREATE" type="PROCEDURE" object="estorna_pedido_venda_estoque">CREATE PROCEDURE estorna_pedido_venda_estoque(in_cod_pedido_venda INT)
+BEGIN
+    DECLARE not_found INT DEFAULT 0;
+    DECLARE l_cod_produto VARCHAR(15);
+    DECLARE l_qtd_produto DECIMAL(13,3);
+    DECLARE cq_pedido_venda_item CURSOR FOR
+     SELECT pv.cod_produto, pv.qtd_produto 
+       FROM tbl_pedido_venda_item pv, tbl_produto p
+      WHERE pv.cod_pedido_venda = in_cod_pedido_venda
+        AND p.cod_produto = pv.cod_produto
+        and p.controla_estoque = 'S';
+    DECLARE CONTINUE HANDLER FOR NOT FOUND SET not_found=1;
+
+     OPEN cq_pedido_venda_item;
+     read_loop: LOOP
+         FETCH cq_pedido_venda_item INTO l_cod_produto,
+                                         l_qtd_produto;
+         IF not_found THEN
+             LEAVE read_loop;
+         END IF;
+         
+         -- Atualiza o estoque do produto
+         UPDATE tbl_produto 
+            SET qtd_estoque = qtd_estoque + l_qtd_produto
+          WHERE cod_produto = l_cod_produto;
+
+     END LOOP;
+     CLOSE cq_pedido_venda_item;
+END</Instruction>
+    <Instruction action="CREATE" type="PROCEDURE" object="inclui_pedido_compra_estoque">CREATE PROCEDURE inclui_pedido_compra_estoque(in_cod_pedido_compra INT)
+BEGIN
+    DECLARE not_found INT DEFAULT 0;
+    DECLARE l_cod_fornecedor VARCHAR(15);
+    DECLARE l_cod_produto VARCHAR(15);
+    DECLARE l_qtd_produto DECIMAL(13,3);
+    DECLARE l_preco_compra DECIMAL(13,3);
+    DECLARE cq_pedido_compra_item CURSOR FOR
+     SELECT cod_produto, qtd_produto, preco_compra 
+       FROM tbl_pedido_compra_item
+      WHERE cod_pedido_compra = in_cod_pedido_compra;
+    DECLARE CONTINUE HANDLER FOR NOT FOUND SET not_found=1;
+
+    -- Busca o fornecedor do pedido de compra
+    SELECT cod_fornecedor
+      INTO l_cod_fornecedor
+      FROM tbl_pedido_compra
+     WHERE cod_pedido_compra = in_cod_pedido_compra;
+     
+    
+     OPEN cq_pedido_compra_item;
+     read_loop: LOOP
+         FETCH cq_pedido_compra_item INTO l_cod_produto,
+                                          l_qtd_produto,
+                                          l_preco_compra;
+         IF not_found THEN
+             LEAVE read_loop;
+         END IF;
+         
+         -- Atualiza o estoque do produto
+         UPDATE tbl_produto 
+            SET qtd_estoque = qtd_estoque + l_qtd_produto
+          WHERE cod_produto = l_cod_produto
+            AND controla_estoque = 'S';
+         
+         -- Atualizando o valor do produto recebido pelo fornecedor
+         UPDATE tbl_fornecedor_produto
+            SET preco_compra = l_preco_compra,
+                data_atualizacao = now()
+          WHERE cod_fornecedor = l_cod_fornecedor
+            AND cod_produto = l_cod_produto;
+
+         -- Atualizando o valor do produto recebido pelo pedido de compra
+         UPDATE tbl_produto
+            SET preco_compra = l_preco_compra
+          WHERE cod_produto = l_cod_produto;
+
+     END LOOP;
+     CLOSE cq_pedido_compra_item;
+END</Instruction>
+    <Instruction action="CREATE" type="PROCEDURE" object="exclui_pedido_compra_estoque">CREATE PROCEDURE exclui_pedido_compra_estoque(in_cod_pedido_compra INT)
+BEGIN
+    DECLARE not_found INT DEFAULT 0;
+    DECLARE l_cod_produto VARCHAR(15);
+    DECLARE l_qtd_produto DECIMAL(13,3);
+    DECLARE cq_pedido_compra_item CURSOR FOR 
+     SELECT pc.cod_produto, pc.qtd_produto 
+       FROM tbl_pedido_compra_item pc, tbl_produto p
+      WHERE pc.cod_pedido_compra = in_cod_pedido_compra
+        AND p.cod_produto = pc.cod_produto 
+        AND p.controla_estoque = 'S';
+    DECLARE CONTINUE HANDLER FOR NOT FOUND SET not_found=1;
+
+     OPEN cq_pedido_compra_item;
+     read_loop: LOOP
+         FETCH cq_pedido_compra_item INTO l_cod_produto,
+                                          l_qtd_produto;
+         IF not_found THEN
+             LEAVE read_loop;
+         END IF;
+         
+         -- Atualiza o estoque do produto
+         UPDATE tbl_produto 
+            SET qtd_estoque = qtd_estoque - l_qtd_produto
+          WHERE cod_produto = l_cod_produto;
+        
+     END LOOP;
+     CLOSE cq_pedido_compra_item;
+END</Instruction>
+    <Instruction action="CREATE" type="PROCEDURE" object="importa_orcamento">CREATE PROCEDURE importa_orcamento(in_cod_orcamento INT)
+BEGIN
+    DECLARE not_found INT DEFAULT 0;
+    DECLARE l_cod_pedido_venda INTEGER;
+    DECLARE l_mensagem VARCHAR(128);
+    DECLARE CONTINUE HANDLER FOR NOT FOUND SET not_found=1;
+
+    -- Busca as informações do pedido de venda, caso exista
+   SELECT cod_orcamento 
+     INTO l_cod_pedido_venda
+     FROM tbl_pedido_venda 
+    WHERE cod_orcamento = in_cod_orcamento;
+   
+    -- Caso exista exclui as informações da conta
+    IF !not_found THEN
+        SET l_mensagem = CONCAT('Orçamento já importado para o pedido de venda ', l_cod_pedido_venda, '.');
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT =  l_mensagem, MYSQL_ERRNO = 9999;
+    END IF;
+
+   -- Copiando os dados do orçamento para o pedido de venda
+   INSERT INTO tbl_pedido_venda
+          (cod_cliente, data_cadastro, ies_situacao, observacao, 
+           cod_forma_pagto, num_parcelas, valor_total, 
+           cod_centro_custo, cod_plano_conta, cod_orcamento)
+   SELECT cod_cliente, now(), 'A', observacao, 
+          cod_forma_pagto, num_parcelas, valor_total, 
+          cod_centro_custo, cod_plano_conta, cod_orcamento
+     FROM tbl_orcamento
+    WHERE cod_orcamento = in_cod_orcamento;
+
+   SET l_cod_pedido_venda = LAST_INSERT_ID(); 
+
+    -- Copiando as informações dos itens do orçamento
+    INSERT INTO tbl_pedido_venda_item
+          (cod_pedido_venda, seq_produto, cod_produto, qtd_produto, preco_venda, val_desconto)
+     SELECT l_cod_pedido_venda, seq_produto, cod_produto, qtd_produto, preco_venda, val_desconto
+       FROM tbl_orcamento_item 
+      WHERE cod_orcamento = in_cod_orcamento;
+     
+    -- Copiando as informações dos pagamentos do orçamento
+    INSERT INTO tbl_pedido_venda_pagto 
+          (cod_pedido_venda, seq_parcela, valor_parcela, data_vencimento, observacao)
+   SELECT l_cod_pedido_venda, seq_parcela, valor_parcela, data_vencimento, observacao
+     FROM tbl_orcamento_pagto
+    WHERE cod_orcamento = in_cod_orcamento;
+         
+   UPDATE tbl_orcamento SET importado = 'S'
+    WHERE cod_orcamento = in_cod_orcamento;
+
+END</Instruction>
+    <Instruction action="CREATE" type="PROCEDURE" object="set_parametro_sistema">CREATE PROCEDURE set_parametro_sistema(in_nome_parametro VARCHAR(20),
+                                       in_valor_flag CHAR(1), 
+                                       in_valor_texto VARCHAR(255), 
+                                       in_valor_decimal DECIMAL(15,5), 
+                                       in_valor_datetime DATETIME,
+                                       in_user_atualizacao VARCHAR(16))
+BEGIN
+    DECLARE l_old_user_atu VARCHAR(255);
+    DECLARE not_found INT DEFAULT 0;
+    DECLARE CONTINUE HANDLER FOR NOT FOUND SET not_found=1;
+
+    SELECT user_atualizacao
+      INTO l_old_user_atu
+      FROM tbl_parametro_sistema
+     WHERE nome_parametro = in_nome_parametro;
+    IF not_found = 1 THEN
+        INSERT INTO tbl_parametro_sistema (nome_parametro,
+                                           valor_flag,
+                                           valor_texto,
+                                           valor_decimal,
+                                           valor_datetime,
+                                           user_atualizacao,                                           
+                                           data_atualizacao)
+        VALUES (in_nome_parametro,in_valor_flag,in_valor_texto,in_valor_decimal,in_valor_datetime,in_user_atualizacao,now());
+    ELSE
+        UPDATE tbl_parametro_sistema
+           SET valor_flag = in_valor_flag,
+               valor_texto = in_valor_texto,
+               valor_decimal = in_valor_decimal,
+               valor_datetime = in_valor_datetime,
+               user_atualizacao = in_user_atualizacao,
+               data_atualizacao = now()
+         WHERE nome_parametro = in_nome_parametro;
+    END IF;
+    SELECT l_old_user_atu;
+END</Instruction>
+    <Instruction action="CREATE" type="PROCEDURE" object="set_parametro_texto">CREATE PROCEDURE set_parametro_texto(in_nome_parametro VARCHAR(20), in_valor_texto VARCHAR(255), in_user_atu VARCHAR(16))
+BEGIN
+    CALL set_parametro_sistema(in_nome_parametro,NULL,in_valor_texto,NULL,NULL,in_user_atu);
+END</Instruction>
+    <Instruction action="CREATE" type="PROCEDURE" object="get_parametro_texto">CREATE PROCEDURE get_parametro_texto(in_nome_parametro VARCHAR(20))
+BEGIN
+    DECLARE l_valor_texto VARCHAR(255);
+    DECLARE not_found INT DEFAULT 0;
+    DECLARE CONTINUE HANDLER FOR NOT FOUND SET not_found=1;
+
+    SELECT valor_texto
+      INTO l_valor_texto
+      FROM tbl_parametro_sistema
+     WHERE nome_parametro = in_nome_parametro;
+    IF not_found = 1 THEN
+        SET l_valor_texto = NULL;
+    END IF;
+    SELECT l_valor_texto;
+END</Instruction>
+    <Instruction action="CREATE" type="PROCEDURE" object="set_parametro_numero">CREATE PROCEDURE set_parametro_numero(in_nome_parametro VARCHAR(20), in_valor_decimal DECIMAL(15,5), in_user_atu VARCHAR(16))
+BEGIN
+    CALL set_parametro_sistema(in_nome_parametro,NULL,NULL,in_valor_decimal,NULL,in_user_atu);
+END</Instruction>
+    <Instruction action="CREATE" type="PROCEDURE" object="get_parametro_numero">CREATE PROCEDURE get_parametro_numero(in_nome_parametro VARCHAR(20))
+BEGIN
+    DECLARE l_valor_num DECIMAL(15,5);
+    DECLARE not_found INT DEFAULT 0;
+    DECLARE CONTINUE HANDLER FOR NOT FOUND SET not_found=1;
+
+    SELECT valor_decimal
+      INTO l_valor_num
+      FROM tbl_parametro_sistema
+     WHERE nome_parametro = in_nome_parametro;
+    IF not_found = 1 THEN
+        SET l_valor_num = 0;
+    END IF;
+    SELECT l_valor_num;
+END</Instruction>
+    <Instruction action="CREATE" type="PROCEDURE" object="set_server_smtp">CREATE PROCEDURE set_server_smtp(new_server VARCHAR(100), new_port INT, new_flag CHAR(1), user_atu VARCHAR(16))
+BEGIN
+   CALL set_parametro_sistema('server_smtp',new_flag,new_server,new_port,NULL,user_atu);
+END</Instruction>
+    <Instruction action="CREATE" type="TRIGGER" object="trad_pedido_venda" subaction="AFTER DELETE" subtype="FOR EACH ROW" subobject="tbl_pedido_venda">CREATE TRIGGER trad_pedido_venda
+AFTER DELETE ON tbl_pedido_venda 
+FOR EACH ROW 
+BEGIN
+    IF OLD.cod_orcamento IS NOT NULL THEN
+        UPDATE tbl_orcamento SET importado = 'N'
+         WHERE cod_orcamento = OLD.cod_orcamento; 
+    END IF;
+END;</Instruction>
+    <Instruction action="CREATE" type="TRIGGER" object="trau_conta_receber_pagto" subaction="AFTER UPDATE" subtype="FOR EACH ROW" subobject="tbl_conta_receber_pagto">CREATE TRIGGER trau_conta_receber_pagto
+AFTER UPDATE ON tbl_conta_receber_pagto
+FOR EACH ROW
+BEGIN
+    DECLARE l_cont_total INT(10);
+    DECLARE l_cont_recebto INT(10);
+    DECLARE l_tipo_registro CHAR(02);
+    DECLARE l_num_documento CHAR(25);
+    DECLARE l_cod_centro_custo VARCHAR(15);
+    DECLARE l_cod_plano_conta VARCHAR(18);
+
+    SELECT tipo_registro, num_documento, cod_centro_custo, cod_plano_conta
+      INTO l_tipo_registro, l_num_documento, l_cod_centro_custo, l_cod_plano_conta
+      FROM tbl_conta_receber
+     WHERE cod_conta_receber = NEW.cod_conta_receber;
+
+    IF OLD.ies_recebido = 'S' AND NEW.ies_recebido = 'N' THEN
+        DELETE FROM tbl_lancamento_caixa
+         WHERE tipo_documento = 'CR'
+           AND cod_documento = NEW.cod_conta_receber
+           AND seq_documento = NEW.seq_parcela;
+    ELSE
+        IF NEW.ies_recebido = 'S' THEN
+            INSERT INTO tbl_lancamento_caixa 
+                   (tipo_documento,cod_documento,seq_documento,
+                    tipo_lancamento,data_lancamento,valor_lancamento, 
+                    cod_centro_custo, cod_plano_conta)
+            VALUES (l_tipo_registro,NEW.cod_conta_receber,NEW.seq_parcela,
+                    'E',now(),NEW.valor_recebido,
+                    l_cod_centro_custo, l_cod_plano_conta);
+        END IF;    
+    END IF;
+
+    -- Se for um pedido de compra deve atualizar o pagamento do mesmo
+    IF l_tipo_registro = 'PV' THEN
+        UPDATE tbl_pedido_venda_pagto SET ies_recebido = NEW.ies_recebido
+         WHERE cod_pedido_venda = l_num_documento
+           AND seq_parcela = NEW.seq_parcela;
+    END IF;
+    
+    SELECT COUNT(*)
+      INTO l_cont_recebto
+      FROM tbl_conta_receber_pagto
+     WHERE cod_conta_receber = NEW.cod_conta_receber
+       AND ies_recebido = 'S';
+
+    IF l_cont_recebto &gt; 0 THEN
+        SELECT COUNT(*)
+          INTO l_cont_total
+          FROM tbl_conta_receber_pagto
+         WHERE cod_conta_receber = NEW.cod_conta_receber;
+
+        IF l_cont_recebto = l_cont_total THEN
+            UPDATE tbl_conta_receber
+               SET ies_situacao = 'L'  -- Liquidado 
+             WHERE cod_conta_receber = NEW.cod_conta_receber;
+        ELSE
+            UPDATE tbl_conta_receber
+               SET ies_situacao = 'A' -- Andamento
+             WHERE cod_conta_receber = NEW.cod_conta_receber;
+        END IF;
+    ELSE 
+        UPDATE tbl_conta_receber
+           SET ies_situacao = 'P' -- Pendente
+         WHERE cod_conta_receber = NEW.cod_conta_receber;
+    END IF;
+
+END;</Instruction>
+    <Instruction action="CREATE" type="TRIGGER" object="trau_conta_pagar_pagto" subaction="AFTER DELETE" subtype="FOR EACH ROW" subobject="tbl_conta_pagar_pagto">CREATE TRIGGER trau_conta_pagar_pagto
+AFTER UPDATE ON tbl_conta_pagar_pagto
+FOR EACH ROW
+BEGIN
+    DECLARE l_cont_total INT(10);
+    DECLARE l_count_pago INT(10);
+    DECLARE l_tipo_registro CHAR(02);
+    DECLARE l_num_documento CHAR(25);
+    DECLARE l_cod_centro_custo VARCHAR(15);
+    DECLARE l_cod_plano_conta VARCHAR(18);
+
+    SELECT tipo_registro, num_documento, cod_centro_custo, cod_plano_conta
+      INTO l_tipo_registro, l_num_documento, l_cod_centro_custo, l_cod_plano_conta
+      FROM tbl_conta_pagar
+     WHERE cod_conta_pagar = NEW.cod_conta_pagar;
+
+    IF OLD.ies_pago = 'S' AND NEW.ies_pago = 'N' THEN
+        DELETE FROM tbl_lancamento_caixa
+         WHERE tipo_documento = l_tipo_registro
+           AND cod_documento = NEW.cod_conta_pagar
+           AND seq_documento = NEW.seq_parcela;
+    ELSE
+       IF NEW.ies_pago = 'S' THEN
+            INSERT INTO tbl_lancamento_caixa 
+                   (tipo_documento,cod_documento,seq_documento,
+                    tipo_lancamento,data_lancamento,valor_lancamento, 
+                    cod_centro_custo, cod_plano_conta)
+            VALUES (l_tipo_registro,NEW.cod_conta_pagar,NEW.seq_parcela,
+                    'S',now(),NEW.valor_pago,
+                    l_cod_centro_custo, l_cod_plano_conta);
+        END IF;
+    END IF;
+
+    -- Se for um pedido de compra deve atualizar o pagamento do mesmo
+    IF l_tipo_registro = 'PC' THEN
+        UPDATE tbl_pedido_compra_pagto SET ies_pago = NEW.ies_pago
+         WHERE cod_pedido_compra = l_num_documento
+           AND seq_parcela = NEW.seq_parcela;
+    END IF;
+
+    SELECT COUNT(*)
+      INTO l_count_pago
+      FROM tbl_conta_pagar_pagto
+     WHERE cod_conta_pagar = NEW.cod_conta_pagar
+       AND ies_pago = 'S';
+
+    IF l_count_pago &gt; 0 THEN
+        SELECT COUNT(*)
+          INTO l_cont_total
+          FROM tbl_conta_pagar_pagto
+         WHERE cod_conta_pagar = NEW.cod_conta_pagar;
+
+        IF l_count_pago = l_cont_total THEN
+            UPDATE tbl_conta_pagar
+               SET ies_situacao = 'L'  -- Liquidado
+             WHERE cod_conta_pagar = NEW.cod_conta_pagar;
+        ELSE
+            UPDATE tbl_conta_pagar
+               SET ies_situacao = 'A' -- Andamento
+             WHERE cod_conta_pagar = NEW.cod_conta_pagar;
+        END IF;
+    ELSE 
+        UPDATE tbl_conta_pagar
+           SET ies_situacao = 'P' -- Pendente
+         WHERE cod_conta_pagar = NEW.cod_conta_pagar;
+    END IF;
+
+END;</Instruction>
+  </Instructions>
+</Atualization>

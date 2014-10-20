@@ -1,0 +1,456 @@
+<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"
+ xmlns:s="uuid:BDC6E3F0-6DA3-11d1-A2A3-00AA00C14882"
+ xmlns:rs="urn:schemas-microsoft-com:rowset" xmlns:z="#RowsetSchema"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+  <LastAuthor>SoftGreen Softwares</LastAuthor>
+  <Version>12</Version>
+ </DocumentProperties>
+ <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+  <ActiveSheet>1</ActiveSheet>
+  <HidePivotTableFieldList/>
+  <AcceptLabelsInFormulas/>
+  <ProtectStructure>False</ProtectStructure>
+  <ProtectWindows>False</ProtectWindows>
+ </ExcelWorkbook>
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="tbDataField">
+    <Alignment ss:Horizontal="Center" ss:Vertical="Bottom" />
+    <Borders>
+      <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2" ss:Color="#808080" />
+      <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="2" ss:Color="#808080" />
+    </Borders>
+    <Font ss:Color="#000080" ss:Bold="1" />
+    <Interior />
+  </Style>
+  <Style ss:ID="tbDataNumber">
+    <Alignment ss:Horizontal="Center" ss:Vertical="Bottom" />
+    <Borders />
+    <Font ss:Color="#000080" ss:Bold="1" />
+    <Interior />
+  </Style>
+  <Style ss:ID="tbDataString">
+    <Alignment ss:Vertical="Bottom" />
+    <Borders>
+      <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#808080" />
+    </Borders>
+    <Interior />
+  </Style>
+  <Style ss:ID="tbDataDateTime">
+    <Alignment ss:Vertical="Bottom" />
+    <Borders>
+      <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#808080" />
+    </Borders>
+    <Interior />
+    <NumberFormat ss:Format="d\a\ty\T\imy" />
+  </Style>
+  <Style ss:ID="tbDataDate">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#808080"/>
+   </Borders>
+   <Interior/>   
+  </Style>
+  <Style ss:ID="tdPageField">
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000"/>
+   </Borders>
+  </Style>
+  <Style ss:ID="tdLineTitle">
+   <Borders>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000"/>
+   </Borders>
+   <Font ss:Bold="1"/>
+  </Style>
+  <Style ss:ID="tdColumnTitle">
+   <Font ss:Size="9" ss:Color="#FFCC00" ss:Bold="1"/>
+   <Interior ss:Color="#000000" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="tdLineData">
+   <Borders>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000"/>
+   </Borders>
+  </Style>
+  <Style ss:ID="tdLineDataDate" ss:Parent="tdLineData">
+   <NumberFormat ss:Format="dd/mm/yyyy"/>
+  </Style>
+  <Style ss:ID="tdDataFieldLeft">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <Borders>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000"/>
+   </Borders>
+   <NumberFormat/>
+  </Style>
+  <Style ss:ID="tdDataFieldMiddle">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <Borders>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000"/>
+   </Borders>
+   <NumberFormat ss:Format="_(&quot;R$ &quot;* #,##0.00_);_(&quot;R$ &quot;* \(#,##0.00\);_(&quot;R$ &quot;* &quot;-&quot;??_);_(@_)"/>
+  </Style>
+  <Style ss:ID="tdDataFieldRight">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <Borders>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000"/>
+   </Borders>
+   <NumberFormat ss:Format="_(&quot;R$ &quot;* #,##0.00_);_(&quot;R$ &quot;* \(#,##0.00\);_(&quot;R$ &quot;* &quot;-&quot;??_);_(@_)"/>
+  </Style>
+  <Style ss:ID="tdLineTotal">
+   <Font ss:Color="#FFCC00" ss:Bold="1"/>
+   <Interior ss:Color="#000000" ss:Pattern="Solid"/>
+   <NumberFormat ss:Format="_(&quot;R$ &quot;* #,##0.00_);_(&quot;R$ &quot;* \(#,##0.00\);_(&quot;R$ &quot;* &quot;-&quot;??_);_(@_)"/>
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="Dados">
+  <Table ss:ExpandedColumnCount="15" ss:ExpandedRowCount="2" x:FullColumns="1"
+   x:FullRows="1">
+   <Column ss:Width="96.75"/>
+   <Column ss:Width="63"/>
+   <Column ss:Width="239.25"/>
+   <Column ss:Width="72.75"/>
+   <Column ss:Width="26.25"/>
+   <Column ss:Width="24.75"/>
+   <Column ss:Width="63.75"/>
+   <Column ss:Width="69"/>
+   <Column ss:Width="89.25"/>
+   <Column ss:Width="55.5"/>
+   <Column ss:Width="77.25"/>
+   <Column ss:Width="88.5"/>
+   <Column ss:Width="87"/>
+   <Column ss:Width="95.25"/>
+   <Column ss:Width="96"/>
+   <Row ss:AutoFitHeight="0" ss:Height="13.5">
+    <Cell ss:StyleID="tbDataField"><Data ss:Type="String">cod_pedido_venda</Data></Cell>
+    <Cell ss:StyleID="tbDataField"><Data ss:Type="String">cod_cliente</Data></Cell>
+    <Cell ss:StyleID="tbDataField"><Data ss:Type="String">den_cliente</Data></Cell>
+    <Cell ss:StyleID="tbDataField"><Data ss:Type="String">data_cadastro</Data></Cell>
+    <Cell ss:StyleID="tbDataField"><Data ss:Type="String">ano</Data></Cell>
+    <Cell ss:StyleID="tbDataField"><Data ss:Type="String">mes</Data></Cell>
+    <Cell ss:StyleID="tbDataField"><Data ss:Type="String">ies_situacao</Data></Cell>
+    <Cell ss:StyleID="tbDataField"><Data ss:Type="String">den_situacao</Data></Cell>
+    <Cell ss:StyleID="tbDataField"><Data ss:Type="String">den_forma_pagto</Data></Cell>
+    <Cell ss:StyleID="tbDataField"><Data ss:Type="String">valor_total</Data></Cell>
+    <Cell ss:StyleID="tbDataField"><Data ss:Type="String">valor_recebido</Data></Cell>
+    <Cell ss:StyleID="tbDataField"><Data ss:Type="String">cod_centro_custo</Data></Cell>
+    <Cell ss:StyleID="tbDataField"><Data ss:Type="String">cod_plano_conta</Data></Cell>
+    <Cell ss:StyleID="tbDataField"><Data ss:Type="String">cod_representante</Data></Cell>
+    <Cell ss:StyleID="tbDataField"><Data ss:Type="String">den_representante</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="12">
+    <Cell ss:StyleID="tbDataString"/>
+    <Cell ss:StyleID="tbDataString"/>
+    <Cell ss:StyleID="tbDataString"/>
+    <Cell ss:StyleID="tbDataDate"/>
+    <Cell ss:StyleID="tbDataString"/>
+    <Cell ss:StyleID="tbDataString"/>
+    <Cell ss:StyleID="tbDataString"/>
+    <Cell ss:StyleID="tbDataString"/>
+    <Cell ss:StyleID="tbDataString"/>
+    <Cell ss:StyleID="tbDataString"/>
+    <Cell ss:StyleID="tbDataString"/>
+    <Cell ss:StyleID="tbDataString"/>
+    <Cell ss:StyleID="tbDataString"/>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <TabColorIndex>39</TabColorIndex>
+  </WorksheetOptions>
+ </Worksheet>
+ 
+ <Worksheet ss:Name="Análise Vendas">
+  <Table ss:ExpandedColumnCount="6" ss:ExpandedRowCount="8" x:FullColumns="1" x:FullRows="1">
+   <Column ss:Width="105"/>
+   <Column ss:Width="80" ss:Span="1"/>
+   <Column ss:Index="4" ss:Width="135"/>
+   <Column ss:Width="80"/>
+   <Column ss:Width="80"/>
+   <Row>
+    <Cell ss:StyleID="tdPageField"><Data ss:Type="String">Código Cliente</Data></Cell>
+    <Cell ss:StyleID="tdPageField"><Data ss:Type="String">(Tudo)</Data></Cell>
+    <Cell ss:Index="4" ss:StyleID="tdPageField"><Data ss:Type="String">Denominação Cliente</Data></Cell>
+    <Cell ss:StyleID="tdPageField"><Data ss:Type="String">(Tudo)</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="tdPageField"><Data ss:Type="String">Código Representante</Data></Cell>
+    <Cell ss:StyleID="tdPageField"><Data ss:Type="String">(Tudo)</Data></Cell>
+    <Cell ss:Index="4" ss:StyleID="tdPageField"><Data ss:Type="String">Denominação Representante</Data></Cell>
+    <Cell ss:StyleID="tdPageField"><Data ss:Type="String">(Tudo)</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="tdPageField"><Data ss:Type="String">Ano</Data></Cell>
+    <Cell ss:StyleID="tdPageField"><Data ss:Type="String">(Tudo)</Data></Cell>
+    <Cell ss:Index="4" ss:StyleID="tdPageField"><Data ss:Type="String">Mês</Data></Cell>
+    <Cell ss:StyleID="tdPageField"><Data ss:Type="String">(Tudo)</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="tdPageField"><Data ss:Type="String">Plano Conta</Data></Cell>
+    <Cell ss:StyleID="tdPageField"><Data ss:Type="String">(Tudo)</Data></Cell>
+    <Cell ss:Index="4" ss:StyleID="tdPageField"><Data ss:Type="String">Centro Custo</Data></Cell>
+    <Cell ss:StyleID="tdPageField"><Data ss:Type="String">(Tudo)</Data></Cell>
+   </Row>
+   <Row ss:Index="6">
+    <Cell ss:StyleID="tdLineTitle"><Data ss:Type="String">Data Cadastro</Data></Cell>
+    <Cell ss:StyleID="tdLineTitle"><Data ss:Type="String">Situação</Data></Cell>
+    <Cell ss:StyleID="tdLineTitle"><Data ss:Type="String">Forma Pagto</Data></Cell>
+    <Cell ss:StyleID="tdColumnTitle"><Data ss:Type="String">Nº Pedidos</Data></Cell>
+    <Cell ss:StyleID="tdColumnTitle"><Data ss:Type="String">Valor Total</Data></Cell>
+    <Cell ss:StyleID="tdColumnTitle"><Data ss:Type="String">Valor Recebido</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="tdLineData"><Data ss:Type="String">(vazio)</Data></Cell>
+    <Cell ss:StyleID="tdLineData"><Data ss:Type="String">(vazio)</Data></Cell>
+    <Cell ss:StyleID="tdLineData"><Data ss:Type="String">(vazio)</Data></Cell>
+    <Cell ss:StyleID="tdDataFieldLeft"/>
+    <Cell ss:StyleID="tdDataFieldMiddle"/>
+    <Cell ss:StyleID="tdDataFieldRight"/>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="tdLineTotal"><Data ss:Type="String">Total geral</Data></Cell>
+    <Cell ss:StyleID="tdLineTotal"/>
+    <Cell ss:StyleID="tdLineTotal"/>
+    <Cell ss:StyleID="tdLineTotal"/>
+    <Cell ss:StyleID="tdLineTotal"/>
+    <Cell ss:StyleID="tdLineTotal"/>
+   </Row>
+  </Table>
+  
+  <PivotTable xmlns="urn:schemas-microsoft-com:office:excel">
+   <Name>analise_vendas</Name>
+   <PageFieldOrder>OverThenDown</PageFieldOrder>
+   <PageFieldWrapCount>2</PageFieldWrapCount>
+   <AutoFormatName>Table10</AutoFormatName>
+   <AutoFormatNumber/>
+   <AutoFormatBorder/>
+   <AutoFormatFont/>
+   <AutoFormatPattern/>
+   <AutoFormatAlignment/>
+   <ImmediateItemsOnDrop/>
+   <ShowPageMultipleItemLabel/>
+   <Location>R1C1:R8C6</Location>
+   <VersionLastUpdate>2</VersionLastUpdate>
+   <DefaultVersion>1</DefaultVersion>
+   <PivotField>
+    <Name>Pedido Venda</Name>
+    <SourceName>cod_pedido_venda</SourceName>
+    <Subtotal>None</Subtotal>
+   </PivotField>
+   <PivotField>
+    <Name>Código Cliente</Name>
+    <SourceName>cod_cliente</SourceName>
+    <Orientation>Page</Orientation>
+    <Subtotal>None</Subtotal>
+    <AutoShowField>Nº Pedidos</AutoShowField>
+    <Position>1</Position>
+    <DataType>Integer</DataType>
+    <PivotItem>
+     <Name></Name>
+    </PivotItem>
+   </PivotField>
+   <PivotField>
+    <Name>Denominação Cliente</Name>
+    <SourceName>den_cliente</SourceName>
+    <Orientation>Page</Orientation>
+    <Subtotal>None</Subtotal>
+    <Position>2</Position>
+    <PivotItem>
+     <Name></Name>
+    </PivotItem>
+   </PivotField>
+   <PivotField>
+    <Name>Data Cadastro</Name>
+    <SourceName>data_cadastro</SourceName>
+    <NumberFormat>dd/mm/yyyy</NumberFormat>
+    <Orientation>Row</Orientation>
+    <Subtotal>None</Subtotal>
+    <Position>1</Position>
+    <PivotItem>
+     <Name></Name>
+    </PivotItem>
+   </PivotField>
+   <PivotField>
+    <Name>Ano</Name>
+    <SourceName>ano</SourceName>
+    <Orientation>Page</Orientation>
+    <Subtotal>None</Subtotal>
+    <Position>5</Position>
+    <PivotItem>
+     <Name></Name>
+    </PivotItem>
+   </PivotField>
+   <PivotField>
+    <Name>Mês</Name>
+    <SourceName>mes</SourceName>
+    <Orientation>Page</Orientation>
+    <Subtotal>None</Subtotal>
+    <Position>6</Position>
+    <DataType>Integer</DataType>
+    <PivotItem>
+     <Name></Name>
+    </PivotItem>
+   </PivotField>
+   <PivotField>
+    <Name>Sigla Situação</Name>
+    <SourceName>ies_situacao</SourceName>
+    <Subtotal>None</Subtotal>
+   </PivotField>
+   <PivotField>
+    <Name>Situação</Name>
+    <SourceName>den_situacao</SourceName>
+    <Orientation>Row</Orientation>
+    <Subtotal>None</Subtotal>
+    <Position>2</Position>
+    <PivotItem>
+     <Name></Name>
+    </PivotItem>
+   </PivotField>
+   <PivotField>
+    <Name>Forma Pagto</Name>
+    <SourceName>den_forma_pagto</SourceName>
+    <Orientation>Row</Orientation>
+    <Subtotal>None</Subtotal>
+    <Position>3</Position>
+    <PivotItem>
+     <Name></Name>
+    </PivotItem>
+   </PivotField>
+   <PivotField>
+    <Name>Valor Total</Name>
+    <SourceName>valor_total</SourceName>
+    <Subtotal>None</Subtotal>
+   </PivotField>
+   <PivotField>
+    <Name>Valor Recebido</Name>
+    <SourceName>valor_recebido</SourceName>
+    <Subtotal>None</Subtotal>
+   </PivotField>
+   <PivotField>
+    <Name>Centro Custo</Name>
+    <SourceName>cod_centro_custo</SourceName>
+    <Orientation>Page</Orientation>
+    <Subtotal>None</Subtotal>
+    <Position>8</Position>
+    <PivotItem>
+     <Name></Name>
+    </PivotItem>
+   </PivotField>
+   <PivotField>
+    <Name>Plano Conta</Name>
+    <SourceName>cod_plano_conta</SourceName>
+    <Orientation>Page</Orientation>
+    <Subtotal>None</Subtotal>
+    <Position>7</Position>
+    <PivotItem>
+     <Name></Name>
+    </PivotItem>
+   </PivotField>
+   <PivotField>
+    <Name>Código Representante</Name>
+    <SourceName>cod_representante</SourceName>
+    <Orientation>Page</Orientation>
+    <Position>3</Position>
+    <PivotItem>
+     <Name></Name>
+    </PivotItem>
+   </PivotField>
+   <PivotField>
+    <Name>Denominação Representante</Name>
+    <SourceName>den_representante</SourceName>
+    <Orientation>Page</Orientation>
+    <Position>4</Position>
+    <PivotItem>
+     <Name></Name>
+    </PivotItem>
+   </PivotField>
+   <PivotField>
+    <DataField/>
+    <Name>Dados</Name>
+    <Orientation>Column</Orientation>
+   </PivotField>
+   <PivotField>
+    <Name>Nº Pedidos</Name>
+    <ParentField>Pedido Venda</ParentField>
+    <Orientation>Data</Orientation>
+    <Function>Count</Function>
+    <Position>1</Position>
+   </PivotField>
+   <PivotField>
+    <Name>Soma de Valor Total</Name>
+    <ParentField>Valor Total</ParentField>
+    <NumberFormat>_(&quot;R$ &quot;* #,##0.00_);_(&quot;R$ &quot;* \(#,##0.00\);_(&quot;R$ &quot;* &quot;-&quot;??_);_(@_)</NumberFormat>
+    <Orientation>Data</Orientation>
+    <Position>2</Position>
+   </PivotField>
+   <PivotField>
+    <Name>Soma de Valor Recebido</Name>
+    <ParentField>Valor Recebido</ParentField>
+    <NumberFormat>_(&quot;R$ &quot;* #,##0.00_);_(&quot;R$ &quot;* \(#,##0.00\);_(&quot;R$ &quot;* &quot;-&quot;??_);_(@_)</NumberFormat>
+    <Orientation>Data</Orientation>
+    <Position>3</Position>
+   </PivotField>
+   <PTLineItems>
+    <PTLineItem>
+     <Item>0</Item>
+     <Item>0</Item>
+     <Item>0</Item>
+    </PTLineItem>
+    <PTLineItem>
+     <ItemType>Grand</ItemType>
+     <Item>0</Item>
+    </PTLineItem>
+   </PTLineItems>
+   <PTLineItems>
+    <Orientation>Column</Orientation>
+    <PTLineItem>
+     <Item>0</Item>
+    </PTLineItem>
+    <PTLineItem>
+     <DataField>2</DataField>
+     <Item>1</Item>
+    </PTLineItem>
+    <PTLineItem>
+     <DataField>3</DataField>
+     <Item>2</Item>
+    </PTLineItem>
+   </PTLineItems>
+   <PTSource>
+    <CacheIndex>1</CacheIndex>
+    <VersionLastRefresh>2</VersionLastRefresh>
+    <RefreshName>Jackson Patrick Werka</RefreshName>
+    <RefreshDate>2012-10-31T22:45:03</RefreshDate>
+    <RefreshDateCopy>2012-10-31T22:45:03</RefreshDateCopy>
+    <NoSaveData/>
+    <RefreshOnFileOpen/>
+    <ConsolidationReference>
+     <FileName>[cns_pedidos_venda.xml]Dados</FileName>
+     <Reference>R1C1:R2C15</Reference>
+    </ConsolidationReference>
+   </PTSource>
+  </PivotTable>
+
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <TabColorIndex>11</TabColorIndex>
+  </WorksheetOptions>
+  
+ </Worksheet>
+</Workbook>

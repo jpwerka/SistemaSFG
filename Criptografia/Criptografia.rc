@@ -1,0 +1,62 @@
+/****************************************************************************
+Aqui vão todos os recursos do meu projeto
+*****************************************************************************/
+#include <windows.h>
+
+MAINICON ICON "sfgicon.ico"
+
+CRIPTOGRAFA DIALOGEX 0, 0, 191, 123
+STYLE DS_SYSMODAL | DS_MODALFRAME | DS_CENTER | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Criptografar Informações"
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+FONT 8, "MS Sans Serif"
+{
+
+	CONTROL "Informação visível", -1, "BUTTON", BS_GROUPBOX | WS_CHILD | WS_VISIBLE | WS_GROUP, 4, 4, 182, 46, WS_EX_TRANSPARENT
+	CONTROL "Normal:", -1, STATIC, SS_RIGHT | WS_CHILD , 6, 17, 46, 9, WS_EX_TRANSPARENT
+	CONTROL "", 1000, EDIT, ES_LEFT | ES_AUTOHSCROLL | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 54, 15, 125, 14
+	CONTROL "Criptografado:", -1, STATIC, SS_RIGHT | WS_CHILD | WS_VISIBLE | WS_GROUP, 6, 33, 46, 9, WS_EX_TRANSPARENT
+	CONTROL "", 1001, EDIT, ES_LEFT | ES_READONLY | ES_AUTOHSCROLL | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 54, 31, 125, 14
+	CONTROL "Informação mascarada", -1, "BUTTON", BS_GROUPBOX | WS_CHILD | WS_VISIBLE  | WS_GROUP, 4, 54, 182, 46, WS_EX_TRANSPARENT
+	CONTROL "Normal:", -1, STATIC, SS_RIGHT | WS_CHILD, 6, 67, 46, 9, WS_EX_TRANSPARENT
+	CONTROL "", 1002, EDIT, ES_LEFT | ES_PASSWORD | ES_AUTOHSCROLL | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 54, 65, 125, 14
+	CONTROL "Criptografado:", -1, STATIC, SS_RIGHT | WS_CHILD | WS_VISIBLE | WS_GROUP, 6, 83, 46, 9, WS_EX_TRANSPARENT
+	CONTROL "", 1003, EDIT, ES_LEFT | ES_READONLY | ES_AUTOHSCROLL | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 54, 81, 125, 14, WS_EX_TRANSPARENT
+	CONTROL "C&riptografar", IDOK, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 126, 104, 60, 14
+	CONTROL "&Cancelar", IDCANCEL, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 62, 104, 60, 14
+}
+
+/* Informações sobre a versão do arquivo */
+1 VERSIONINFO
+FILEVERSION 0,1,1,1
+PRODUCTVERSION 0,1,1,1
+FILEFLAGSMASK VS_FFI_FILEFLAGSMASK
+FILEOS VOS__WINDOWS32
+FILETYPE VFT_APP
+{
+ BLOCK "StringFileInfo"
+ {
+  BLOCK "041604E4"
+  {
+   VALUE "CompanyName", "SoftGreen\0"
+   VALUE "FileDescription", "Biblioteca para informações do sistema\0"
+   VALUE "FileVersion", "0.1.1.1\0"
+   VALUE "InternalName", "versioninfo.dll\0"
+   VALUE "LegalCopyright", "© Copyright 2007 By Jackson Patrick Werka\0"
+   VALUE "LegalTrademarks", "jpwerka@bol.com.br\0"
+   VALUE "OriginalFilename", "versioninfo.dll\0"
+   VALUE "ProductName", "VersionInfo\0"
+   VALUE "ProductVersion", "0.1.1.1\0"
+   VALUE "Comments", "Biblioteca para apresentar informações do sistema de forma personalizada.\0"
+  }
+ }
+
+ BLOCK "VarFileInfo"
+ {
+  VALUE "Translation", 1046, 1252
+ }
+
+}
+
+1 24 "CallCalendar.exe.Manifest"
+

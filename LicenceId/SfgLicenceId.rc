@@ -1,0 +1,41 @@
+/****************************************************************************
+Aqui vão todos os recursos do meu projeto
+*****************************************************************************/
+#include <windows.h>
+
+MAINICON ICON "sfgicon.ico"
+
+/* Informações sobre a versão do arquivo */
+1 VERSIONINFO
+FILEVERSION 1,0,0,0
+PRODUCTVERSION 1,0,0,0
+FILEFLAGSMASK VS_FFI_FILEFLAGSMASK
+FILEOS VOS__WINDOWS32
+FILETYPE VFT_APP
+{
+ BLOCK "StringFileInfo"
+ {
+  BLOCK "041604E4"
+  {
+   VALUE "CompanyName", "SoftGreen\0"
+   VALUE "FileDescription", "Identificador de máquina para o Sistema SFG\0"
+   VALUE "FileVersion", "1.0.0.0\0"
+   VALUE "InternalName", "SfgLicenceId.exe\0"
+   VALUE "LegalCopyright", "© Copyright 2012 By SoftGreen Softwares\0"
+   VALUE "LegalTrademarks", "contato@sofgreen.inf.br\0"
+   VALUE "OriginalFilename", "SfgLicenceId.exe\0"
+   VALUE "ProductName", "SfgLicenceId\0"
+   VALUE "ProductVersion", "1.0.0.0\0"
+   VALUE "Comments", "Utilitário para recuperar o identificador da máquina para gerar as licenças de uso do Sistema SFG.\0"
+  }
+ }
+
+ BLOCK "VarFileInfo"
+ {
+  VALUE "Translation", 1046, 1252
+ }
+
+}
+
+1 24 "SfgLicenceId.exe.Manifest"
+

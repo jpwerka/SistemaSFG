@@ -1,0 +1,106 @@
+/****************************************************************************
+Aqui vão todas as minhas figuras do meu projeto
+*****************************************************************************/
+PRIMEIRO    BITMAP "btfirst.bmp"
+ANTERIOR    BITMAP "btprew.bmp"
+PROXIMO     BITMAP "btnext.bmp"
+ULTIMO      BITMAP "btlast.bmp"
+OBSERVACAO  BITMAP "btobs.bmp"
+EDITAR      BITMAP "bteditar.bmp"
+CANCELAR    BITMAP "btcancel.bmp"
+NOVO        BITMAP "btnovo.bmp"
+AJUDA       BITMAP "btajuda.bmp"
+SALVAR      BITMAP "btsalvar.bmp"
+SAIR        BITMAP "btsair.bmp"
+FILTRAR     BITMAP "btfiltrar.bmp"
+COPIAR      BITMAP "btcopiar.bmp"
+PESQUISA    BITMAP "btpesquisar.bmp"
+HISTORICO   BITMAP "bthistorico.bmp"
+EXCLUIR     BITMAP "btexcluir.bmp"
+VAPARA      BITMAP "btvapara.bmp"
+DESFAZER    BITMAP "btdesfaz.bmp"
+ADICIONAR   BITMAP "btadicionar.bmp"
+RELATORIO   BITMAP "btrelat.bmp"
+ANOTAR      BITMAP "btanotar.bmp"
+FILTRARM    BITMAP "btfiltrarm.bmp"
+FILTRARN    BITMAP "btfiltrarn.bmp"
+PESQUISAM   BITMAP "btpesquisarm.bmp"
+PROCESSAR   BITMAP "btprocessar.bmp"
+CONFIRMAR   BITMAP "btconfirmar.bmp"
+ATUALIZAR   BITMAP "btrefresh.bmp"
+CALENDAR    BITMAP "btcalendar.bmp"
+EXCLUIRM    BITMAP "btexcluirm.bmp"
+ADICIONARM  BITMAP "btadicionarm.bmp"
+CALENDARH   BITMAP "btcalendarh.bmp"
+CIFRAO      BITMAP "btcifrao.bmp"
+LISTAR      BITMAP "btlistar.bmp"
+CASAM       BITMAP "CASAM.bmp"
+FECHANEGC   BITMAP "btFECHARNEGOCIO.bmp"
+PERCENTUAL  BITMAP "btpercent.bmp"
+ADDITEM     BITMAP "btadditem.bmp"
+ADDCHILD    BITMAP "btaddchild.bmp"
+EMAIL       BITMAP "btmail.bmp"
+CAMINHAO    BITMAP "btcaminhao.bmp"
+EXPORTTO    BITMAP "btexport.bmp"
+LOGOGREEN   BITMAP "LogoGreen.bmp"
+SFGCHECKBOX BITMAP "checkbox.bmp"
+MARCADAGUA  BITMAP "MarcaDagua.bmp"
+
+MAINICON    ICON "sfgicon.ico"
+
+1 24 "CafePontoCom.exe.Manifest"
+
+/* Informações sobre a versão do arquivo */
+1 VERSIONINFO
+FILEVERSION 1,5,0,1
+PRODUCTVERSION 1,5,0,1
+FILEFLAGSMASK VS_FFI_FILEFLAGSMASK
+FILEOS VOS__WINDOWS32
+FILETYPE VFT_APP
+{
+ BLOCK "StringFileInfo"
+ {
+  BLOCK "041604E4"
+  {
+   VALUE "CompanyName", "SoftGreen\0"
+   VALUE "FileDescription", "Sistema para gerenciar pequenas empresas.\0"
+   VALUE "FileVersion", "1.5.0.1\0"
+   VALUE "InternalName", "SistemaSFG.exe\0"
+   VALUE "LegalCopyright", "© Copyright 2012 By SoftGreen\0"
+   VALUE "LegalTrademarks", "www.softgreen.inf.br\0"
+   VALUE "OriginalFilename", "SistemaSFG.exe\0"
+   VALUE "ProductName", "SistemaSFG\0"
+   VALUE "ProductVersion", "1.5.0.1\0"
+   VALUE "Comments", "Este programa está protegido por © Copyright.\r\n"
+                     "A sua distribuição ou uso sem estar devidamente licenciado "\
+                     "implica no direito dos proprietários do mesmo poderem acionar "\
+                     "todos os meios legais passíveis para requerer seus créditos.\0"
+  }
+ }
+
+ BLOCK "VarFileInfo"
+ {
+  VALUE "Translation", 1046, 1252
+ }
+
+}
+
+INFOSOBRE RCDATA
+BEGIN
+"O sistema SFG possui total controle de estoque com módulos para "\
+"controle de entradas e saídas via pedidos de compra e venda contando "\
+"ainda com um controle detalhado de movimentações financeiras. \r\n"\
+"Possui integração com o Microsoft Excel® permitindo a nível gerencial "\
+"análises customizadas das movimentações do sistema. \r\n"\
+"Possui controle personalizado de acesso por usuário e/ou grupo permitindo "\
+"assim cada usuário ter acesso somente ao que é necessário. \r\n"\
+"Possui vários relatórios para análise das informações com possibilidade de "\
+"envio de email direto do sistema, bem como exportar para vários formatos "\
+"de arquivos diferentes facilitando a troca de informações com outros aplicativos.\0" 
+END
+
+MAILPEDCOMPRA RCDATA "mailpedcompra.html"
+
+MENUPADRAO RCDATA "DB\MenuPadrao.xml"
+
+

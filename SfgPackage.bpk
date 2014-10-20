@@ -1,0 +1,207 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.00"/>
+    <PROJECT value="Install\SfgPackage.bpl"/>
+    <OBJFILES value="SfgPackage.obj Utils\uSfgTools.obj Utils\uSfgToolTip.obj 
+      Utils\uSfgToolbar.obj Utils\uSfgMsgOption.obj Utils\uSfgBrowse.obj 
+      Utils\uSfgSearch.obj Utils\uSfgToExcel.obj Utils\uSfgVaPara.obj 
+      Utils\uSfgWorkEdition.obj Utils\uSfgPreview.obj Utils\uSfgGlobals.obj 
+      Utils\uSfgCalendar.obj Utils\uSfgDrawCmp.obj Utils\ThemedDBGrid.obj 
+      Utils\uSfgDinForms.obj Utils\uRelatBase01.obj Utils\uFormBase02.obj 
+      Utils\uFormBase01.obj Utils\uDataModule.obj Utils\uDataBase.obj 
+      Utils\uSfgMetaData.obj"/>
+    <RESFILES value="Resource\SfgPackage.res"/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES) Utils\uSfgToolbar.dfm Utils\uSfgBrowse.dfm 
+      Utils\uSfgSearch.dfm Utils\uSfgVaPara.dfm Utils\uSfgPreview.dfm 
+      Utils\uRelatBase01.dfm Utils\uFormBase02.dfm Utils\uFormBase01.dfm 
+      Utils\uDataModule.dfm"/>
+    <LIBFILES value=""/>
+    <LIBRARIES value="xmlrtl.lib dsnap.lib ZPlain60.lib ZDbc60.lib ZCore60.lib ZParseSql60.lib 
+      ZComponent60.lib IndyProtocols60.lib IndySystem60.lib IndyCore60.lib 
+      dbxcds.lib dclocx.lib soaprtl.lib bcbie.lib nmfast.lib dbexpress.lib 
+      inetdbxpress.lib inetdbbde.lib bcbsmp.lib dsnapcon.lib dsnapcrba.lib 
+      visualdbclx.lib teeqr.lib dss.lib tee.lib teedb.lib teeui.lib qrpt.lib 
+      bdecds.lib cds.lib ibxpress.lib bdertl.lib adortl.lib CustomBCB60RT.lib 
+      ThemeManager60.lib frxTee6.lib frxBDE6.lib frxDB6.lib frxADO6.lib 
+      fsTee6.lib fsBDE6.lib fsADO6.lib fsDB6.lib vcldbx.lib SfgCustom60.lib 
+      frxe6.lib fs6.lib frx6.lib vclx.lib bcb2kaxserver.lib SfgCustom60.lib"/>
+    <SPARELIBS value="rtl.lib vcl.lib dbrtl.lib vcldb.lib SfgCustom60.lib bcb2kaxserver.lib 
+      vclx.lib frx6.lib fs6.lib frxe6.lib SfgCustom60.lib vcldbx.lib fsDB6.lib 
+      fsADO6.lib fsBDE6.lib fsTee6.lib frxADO6.lib frxDB6.lib frxBDE6.lib 
+      frxTee6.lib ThemeManager60.lib CustomBCB60RT.lib adortl.lib bdertl.lib 
+      ibxpress.lib cds.lib bdecds.lib qrpt.lib teeui.lib teedb.lib tee.lib 
+      dss.lib teeqr.lib visualdbclx.lib dsnapcrba.lib dsnapcon.lib bcbsmp.lib 
+      inetdbbde.lib inetdbxpress.lib dbexpress.lib nmfast.lib bcbie.lib 
+      soaprtl.lib dclocx.lib dbxcds.lib IndyCore60.lib IndySystem60.lib 
+      IndyProtocols60.lib ZComponent60.lib ZParseSql60.lib ZCore60.lib 
+      ZDbc60.lib ZPlain60.lib dsnap.lib xmlrtl.lib"/>
+    <PACKAGES value="rtl.bpi vcl.bpi dbrtl.bpi vcldb.bpi"/>
+    <PATHCPP value=".;Utils;Utils;Utils;Utils;Utils;Utils;Utils;Utils;Utils;Utils;Utils;Utils;Utils;Utils;Utils;Utils;Utils;Utils;Utils"/>
+    <PATHPAS value=".;Utils;Utils"/>
+    <PATHRC value=".;Resource;Resource"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="ilink32"/>
+    <USERDEFINES value="_DEBUG;_WINSOCKAPI_"/>
+    <SYSDEFINES value="NO_STRICT;_RTLDLL;USEPACKAGES"/>
+    <MAINSOURCE value="SfgPackage.cpp"/>
+    <INCLUDEPATH value="Resource;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\projects\include;Utils"/>
+    <LIBPATH value="Resource;$(BCB)\lib;$(BCB)\lib\obj;$(BCB)\lib\psdk;$(BCB)\projects\lib;$(BCB)\projects\bpl;$(BCB)\projects\obj;Utils"/>
+    <WARNINGS value="-w-par"/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-IResource -I$(BCB)\include -I$(BCB)\include\vcl -I$(BCB)\projects\include 
+      -IUtils -src_suffix cpp -D_DEBUG -D_WINSOCKAPI_ -boa"/>
+    <CFLAG1 value="-Od -H=$(BCB)\lib\vcl60.csm -Hc -Vx -Ve -X- -r- -a8 -b- -k -y -v -vi- -c 
+      -tWM"/>
+    <PFLAGS value="-$Y+ -$W -$O- -$A8 -v -JPHNE -M"/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zi"/>
+    <LFLAGS value="-D&quot;Sfg Comum Package&quot; -aa -Tpp -Gpr -x -Gn -Gl -Gi -v"/>
+    <OTHERFILES value=""/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0pkg32.obj $(PACKAGES) Memmgr.Lib sysinit.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cp32mti.lib"/>
+    <OTHERFILES value=""/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="SfgPackage.cpp" FORMNAME="" UNITNAME="SfgPackage" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="c:\arquivos de programas\borland\cbuilder6\projects\include\rtl.bpi" FORMNAME="" UNITNAME="rtl" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="c:\arquivos de programas\borland\cbuilder6\projects\include\vcl.bpi" FORMNAME="" UNITNAME="vcl" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="c:\arquivos de programas\borland\cbuilder6\projects\include\dbrtl.bpi" FORMNAME="" UNITNAME="dbrtl" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="c:\arquivos de programas\borland\cbuilder6\projects\include\vcldb.bpi" FORMNAME="" UNITNAME="vcldb" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Utils\uSfgTools.cpp" FORMNAME="" UNITNAME="uSfgTools" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Utils\uSfgToolTip.cpp" FORMNAME="" UNITNAME="uSfgToolTip" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Utils\uSfgToolbar.cpp" FORMNAME="SfgToolbar" UNITNAME="uSfgToolbar" CONTAINERID="CCompiler" DESIGNCLASS="TFrame" LOCALCOMMAND=""/>
+      <FILE FILENAME="Utils\uSfgMsgOption.cpp" FORMNAME="" UNITNAME="uSfgMsgOption" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Utils\uSfgBrowse.cpp" FORMNAME="frmBrowse" UNITNAME="uSfgBrowse" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Utils\uSfgSearch.cpp" FORMNAME="frmSearch" UNITNAME="uSfgSearch" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Utils\uSfgToExcel.cpp" FORMNAME="" UNITNAME="uSfgToExcel" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Utils\uSfgVaPara.cpp" FORMNAME="SfgVaPara" UNITNAME="uSfgVaPara" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Utils\uSfgWorkEdition.cpp" FORMNAME="" UNITNAME="uSfgWorkEdition" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Utils\uSfgPreview.cpp" FORMNAME="SfgPreview" UNITNAME="uSfgPreview" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Utils\uSfgGlobals.cpp" FORMNAME="" UNITNAME="uSfgGlobals" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Utils\uSfgCalendar.cpp" FORMNAME="" UNITNAME="uSfgCalendar" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Utils\uSfgDrawCmp.cpp" FORMNAME="" UNITNAME="uSfgDrawCmp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Utils\ThemedDBGrid.pas" FORMNAME="" UNITNAME="ThemedDBGrid" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Utils\uSfgDinForms.pas" FORMNAME="" UNITNAME="uSfgDinForms" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Utils\uRelatBase01.cpp" FORMNAME="frmRelatBase01" UNITNAME="uRelatBase01" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Utils\uFormBase02.cpp" FORMNAME="frmBase02" UNITNAME="uFormBase02" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Utils\uFormBase01.cpp" FORMNAME="frmBase01" UNITNAME="uFormBase01" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Utils\uDataModule.cpp" FORMNAME="SfgDataCenter" UNITNAME="uDataModule" CONTAINERID="CCompiler" DESIGNCLASS="TDataModule" LOCALCOMMAND=""/>
+      <FILE FILENAME="Utils\uDataBase.cpp" FORMNAME="" UNITNAME="uDataBase" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Resource\SfgPackage.rc" FORMNAME="" UNITNAME="SfgPackage.rc" CONTAINERID="RCCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Utils\uSfgMetaData.cpp" FORMNAME="" UNITNAME="uSfgMetaData" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+
+  <IDEOPTIONS>
+[Version Info]
+IncludeVerInfo=0
+AutoIncBuild=0
+MajorVer=1
+MinorVer=0
+Release=0
+Build=0
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=1046
+CodePage=1252
+
+[Version Info Keys]
+CompanyName=
+FileDescription=
+FileVersion=1.0.0.0
+InternalName=
+LegalCopyright=
+LegalTrademarks=
+OriginalFilename=
+ProductName=
+ProductVersion=1.0.0.0
+Comments=
+
+[HistoryLists\hlIncludePath]
+Count=6
+Item0=Resource;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\projects\include;Utils
+Item1=LicenceServer;Resource;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\projects\include;Utils
+Item2=$(BCB)\include;$(BCB)\include\vcl;$(BCB)\projects\include;Utils
+Item3=Resource;$(BCB)\include;$(BCB)\include\vcl;$(BCB)projects\include;Utils
+Item4=$(BCB)\include;$(BCB)\include\vcl;$(BCB)projects\include;Utils
+Item5=Utils;C:\Arquivos de programas\Borland\CBuilder6\Projects;$(BCB)\include;$(BCB)\include\vcl
+
+[HistoryLists\hlLibraryPath]
+Count=6
+Item0=Resource;$(BCB)\lib;$(BCB)\lib\obj;$(BCB)\lib\psdk;$(BCB)\projects\lib;$(BCB)\projects\bpl;$(BCB)\projects\obj;Utils
+Item1=LicenceServer;Resource;$(BCB)\lib;$(BCB)\lib\obj;$(BCB)\lib\psdk;$(BCB)\projects\lib;$(BCB)\projects\bpl;$(BCB)\projects\obj;Utils
+Item2=LicenceServer;Resource;$(BCB)\lib;$(BCB)\lib\obj;$(BCB)\projects\lib;$(BCB)\projects\bpl;$(BCB)\projects\obj;Utils
+Item3=$(BCB)\lib;$(BCB)\lib\obj;$(BCB)\projects\lib;$(BCB)\projects\bpl;$(BCB)\projects\obj;Utils
+Item4=Resource;$(BCB)\lib;$(BCB)\lib\obj;$(BCB)\projects\lib;$(BCB)\projects\bpl;$(BCB)\projects\obj;Utils
+Item5=Utils;C:\Arquivos de programas\Borland\CBuilder6\Projects;$(BCB)\lib\obj;$(BCB)\lib
+
+[HistoryLists\hlDebugSourcePath]
+Count=1
+Item0=$(BCB)\source\vcl
+
+[HistoryLists\hlConditionals]
+Count=2
+Item0=_DEBUG;_WINSOCKAPI_
+Item1=_DEBUG
+
+[HistoryLists\hlFinalOutputDir]
+Count=2
+Item0=Install\
+Item1=Install
+
+[HistoryLists\hIBPIOutputDir]
+Count=1
+Item0=Install
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=
+Launcher=
+UseLauncher=0
+DebugCWD=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteLauncher=
+RemoteCWD=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=1
+LinkCGLIB=0
+
+[CORBA]
+AddServerUnit=1
+AddClientUnit=1
+PrecompiledHeaders=1
+
+[Language]
+ActiveLang=
+ProjectLang=
+RootDir=
+
+[Linker]
+LibPrefix=
+LibSuffix=
+LibVersion=
+  </IDEOPTIONS>
+</PROJECT>

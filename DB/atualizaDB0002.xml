@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="yes"?>
+<Atualization>
+  <FileInfoAtuDB file_atudbname="ATUDB00002" file_atudbdate="22/11/2012" file_requisito="ATUDB00001"></FileInfoAtuDB>
+  <Informations>
+    <Information>Criação da tabela de representantes.</Information>
+    <Information>Inclusão da chave estrangeira na tabela representante para o código da cidade.</Information>
+    <Information>Inclusão do campo representante na tabela pedidos de venda.</Information>
+    <Information>Inclusão do campo data de fechamento na tabela pedidos de venda.</Information>
+    <Information>Criação da tabela de comissões do representantes.</Information>
+    <Information>Inclusão da chave estrangeira na tabela comissão dos representantes para o código do representante.</Information>
+    <Information>Inclusão da chave estrangeira na tabela comissão dos representantes para o código da conta a pagar.</Information>
+    <Information>Inclusão da chave estrangeira na tabela comissão dos representantes para o código do pedido de venda.</Information>
+    <Information>Inclusão da chave estrangeira na tabela comissão dos representantes para o código da parcela do pedido de venda.</Information>
+    <Information>Alteração da visualização de consulta de pedidos de venda.</Information>
+    <Information>Alteração da visualização de consulta de contas a pagar.</Information>
+    <Information>Exclusão, caso exista, do procedimento de fechamento de pedidos de venda.</Information>
+    <Information>Reinculsão do procedimento de fechamento de pedidos de venda.</Information>
+    <Information>Exclusão, caso exista, do procedimento de reabertura de pedidos de venda.</Information>
+    <Information>Reinclusão do procedimento de reabertura de pedidos de venda.</Information>
+    <Information>Exclusão, caso exista, do procedimento de fechamento das comissões do representante.</Information>
+    <Information>Criação do procedimento para fechamento das comissões do representante.</Information>
+  </Informations>
+  <Instructions>
+    <Instruction action="CREATE" type="TABLE" object="tbl_representante">CREATE TABLE tbl_representante (
+  cod_representante VARCHAR(15) NOT NULL DEFAULT '0',
+  tipo_pessoa CHAR(1),
+  cpf_cnpj VARCHAR(16),
+  den_representante VARCHAR(50) NOT NULL,
+  logradouro VARCHAR(50),
+  numero INTEGER,
+  complemento VARCHAR(10),
+  bairro VARCHAR(30),
+  cod_cidade VARCHAR(5),
+  cod_uf VARCHAR(2),
+  cep VARCHAR(12),
+  data_nasc_fund date,
+  rg_ie VARCHAR(20),
+  telefone VARCHAR(15),
+  fax VARCHAR(15),
+  celular VARCHAR(15),
+  data_cadastro date,
+  ies_ativo CHAR(1) DEFAULT 'S',
+  email VARCHAR(40),
+  contato VARCHAR(40),
+  url VARCHAR(40),
+  perc_comissao DECIMAL(10,3),
+  PRIMARY KEY (cod_representante)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_representante" subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk1_tbl_representante">ALTER TABLE tbl_representante 
+  ADD CONSTRAINT fk1_tbl_representante FOREIGN KEY (cod_cidade)
+    REFERENCES tbl_cidade (cod_cidade);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_pedido_venda" subaction="ADD" subtype="COLUMN" subobject="cod_representante">ALTER TABLE tbl_pedido_venda ADD COLUMN cod_representante VARCHAR(15);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_pedido_venda" subaction="ADD" subtype="COLUMN" subobject="data_fechamento">ALTER TABLE tbl_pedido_venda ADD COLUMN data_fechamento DATETIME;</Instruction>
+    <Instruction action="CREATE" type="TABLE" object="tbl_comissao_representante">CREATE TABLE tbl_comissao_representante (
+	cod_representante   VARCHAR(15) NOT NULL,
+	cod_pedido_venda    INTEGER NOT NULL,
+	seq_parcela         INTEGER NOT NULL,
+	valor_calculo       DECIMAL(13,3),
+	perc_comissao       DECIMAL(10,3),
+	valor_comissao      DECIMAL(13,3),
+   valor_base_calculo  SMALLINT,
+   mes_comissao        SMALLINT,
+   ano_comissao        SMALLINT,
+   data_calculo        DATETIME,
+   cod_conta_pagar     INTEGER,
+   PRIMARY KEY (cod_representante,cod_pedido_venda,seq_parcela)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_comissao_representante " subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk1_tbl_comissao_representante">ALTER TABLE tbl_comissao_representante 
+  ADD CONSTRAINT fk1_tbl_comissao_representante FOREIGN KEY (cod_representante)
+    REFERENCES tbl_representante (cod_representante);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_comissao_representante " subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk2_tbl_comissao_representante">ALTER TABLE tbl_comissao_representante 
+  ADD CONSTRAINT fk2_tbl_comissao_representante FOREIGN KEY (cod_conta_pagar)
+    REFERENCES tbl_conta_pagar (cod_conta_pagar);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_comissao_representante " subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk3_tbl_comissao_representante">ALTER TABLE tbl_comissao_representante 
+  ADD CONSTRAINT fk3_tbl_comissao_representante FOREIGN KEY (cod_pedido_venda)
+    REFERENCES tbl_pedido_venda (cod_pedido_venda);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_comissao_representante " subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk4_tbl_comissao_representante">ALTER TABLE tbl_comissao_representante 
+  ADD CONSTRAINT fk4_tbl_comissao_representante FOREIGN KEY (cod_pedido_venda, seq_parcela)
+    REFERENCES tbl_pedido_venda_pagto (cod_pedido_venda, seq_parcela);</Instruction>
+    <Instruction action="CREATE" type="VIEW" object="cns_pedido_venda">CREATE OR REPLACE VIEW cns_pedido_venda AS
+SELECT pv.cod_pedido_venda, 
+       pv.cod_cliente, c.den_cliente,
+       pv.data_cadastro, 
+       CASE pv.ies_situacao
+        WHEN 'A' THEN 1
+        WHEN 'F' THEN 4
+        ELSE 5 END ord_situacao,
+       pv.ies_situacao, 
+       CASE pv.ies_situacao
+        WHEN 'A' THEN 'Aberto'
+        WHEN 'F' THEN 'Fechado'
+        WHEN 'C' THEN 'Cancelado'
+        ELSE 'Indefinido' END den_situacao,
+       pg.den_forma_pagto, 
+       pv.valor_total, 
+       IFNULL((SELECT sum(crp.valor_recebido) 
+          FROM tbl_conta_receber cr,
+               tbl_conta_receber_pagto crp
+         WHERE cr.cod_conta_receber = crp.cod_conta_receber
+           AND cr.tipo_registro = 'PV'
+           AND cr.num_documento = pv.cod_pedido_venda),0) valor_recebido,       
+       pv.cod_centro_custo, pv.cod_plano_conta,
+       pv.cod_representante,
+       (SELECT den_representante
+          FROM tbl_representante
+         WHERE cod_representante = pv.cod_representante) den_representante
+  FROM tbl_pedido_venda pv
+ INNER JOIN tbl_cliente c
+    ON c.cod_cliente = pv.cod_cliente
+ INNER JOIN tbl_forma_pagto pg
+    ON pg.cod_forma_pagto = pv.cod_forma_pagto</Instruction>
+    <Instruction action="CREATE" type="VIEW" object="cns_pedido_venda">CREATE OR REPLACE VIEW cns_conta_pagar AS 
+SELECT cp.cod_conta_pagar, 
+       cp.cod_fornecedor, f.den_fornecedor,
+       cp.data_cadastro, cp.num_documento,
+       CASE cp.ies_situacao 
+         WHEN 'P' THEN 1
+         WHEN 'A' THEN 2 
+         WHEN 'L' THEN 3
+         WHEN 'C' THEN 4
+         ELSE 5 END AS ord_situacao,
+       cp.ies_situacao,
+       CASE cp.ies_situacao 
+         WHEN 'P' THEN 'Pendente' 
+         WHEN 'A' THEN 'Andamento' 
+         WHEN 'L' THEN 'Liquidado' 
+         WHEN 'C' THEN 'Cancelado' end AS den_situacao,
+       CASE cp.tipo_registro 
+         WHEN 'CP' THEN 'Manual'
+         WHEN 'CR' THEN 'Comissão'
+         WHEN 'PC' THEN 'Pedido Compra' END AS tip_registro,         
+       pg.den_forma_pagto,
+       cp.num_parcelas,
+       cp.valor_total,
+       IFNULL((SELECT sum(cpp.valor_pago) 
+          FROM tbl_conta_pagar_pagto cpp
+         WHERE cpp.cod_conta_pagar = cp.cod_conta_pagar),0) valor_pago,                
+       cp.cod_plano_conta, cp.cod_centro_custo
+    FROM tbl_conta_pagar cp 
+   INNER JOIN tbl_fornecedor f
+      ON f.cod_fornecedor = cp.cod_fornecedor
+   INNER JOIN tbl_forma_pagto pg
+      ON pg.cod_forma_pagto = cp.cod_forma_pagto</Instruction>
+    <Instruction action="DROP" type="PROCEDURE" object="fecha_pedido_venda">DROP PROCEDURE IF EXISTS fecha_pedido_venda;</Instruction>
+    <Instruction action="CREATE" type="PROCEDURE" object="fecha_pedido_venda">CREATE PROCEDURE fecha_pedido_venda(in_cod_pedido_venda INT, in_liquida SMALLINT)
+BEGIN
+    DECLARE not_found INT DEFAULT 0;
+    DECLARE l_cod_conta_receber INTEGER;
+    DECLARE l_mensagem VARCHAR(128);
+    DECLARE l_cod_cliente VARCHAR(15);
+    DECLARE l_cod_forma_pagto SMALLINT;
+    DECLARE l_num_parcelas SMALLINT;
+    DECLARE l_valor_total DECIMAL(13,3);
+    DECLARE l_cod_centro_custo VARCHAR(15);
+    DECLARE l_cod_plano_conta VARCHAR(18);
+    DECLARE l_seq_parcela INTEGER;
+    DECLARE l_valor_parcela DECIMAL(13,3);
+    DECLARE l_data_vencimento DATETIME;
+    DECLARE l_observacao VARCHAR(100);
+    DECLARE cq_pedido_venda_pagto CURSOR FOR
+     SELECT seq_parcela, valor_parcela, data_vencimento, observacao
+       FROM tbl_pedido_venda_pagto
+      WHERE cod_pedido_venda = in_cod_pedido_venda;
+    DECLARE CONTINUE HANDLER FOR NOT FOUND SET not_found=1;
+
+    -- Busca as informações do pedido de compra
+    SELECT cod_conta_receber
+      INTO l_cod_conta_receber
+      FROM tbl_conta_receber
+     WHERE num_documento = in_cod_pedido_venda
+       AND tipo_registro = 'PV';
+
+    -- Caso exista exclui as informações da conta
+    IF !not_found THEN
+        SET l_mensagem = CONCAT('Pedido de venda já integrado com a conta a receber ', l_cod_conta_receber, '.');
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT =  l_mensagem, MYSQL_ERRNO = 9999;
+    END IF;
+
+    -- Busca as informações do pedido de compra
+    SELECT cod_cliente, cod_forma_pagto, num_parcelas, valor_total, cod_centro_custo, cod_plano_conta
+      INTO l_cod_cliente, l_cod_forma_pagto, l_num_parcelas, l_valor_total, l_cod_centro_custo, l_cod_plano_conta 
+      FROM tbl_pedido_venda
+     WHERE cod_pedido_venda = in_cod_pedido_venda;
+     
+    -- Insere uma capa para a conta a pagar
+    INSERT INTO tbl_conta_receber 
+                (num_documento, cod_cliente, data_cadastro, ies_situacao, cod_forma_pagto, 
+                 num_parcelas, valor_total, cod_centro_custo, cod_plano_conta, tipo_registro)
+         VALUES (in_cod_pedido_venda, l_cod_cliente, now(), 'P', l_cod_forma_pagto,
+                 l_num_parcelas, l_valor_total, l_cod_centro_custo, l_cod_plano_conta, 'PV');    
+    
+     SET l_cod_conta_receber = LAST_INSERT_ID();
+     
+     -- Insere as parcelas da conta a pagar
+     SET not_found = 0;
+     OPEN cq_pedido_venda_pagto;
+     read_loop: LOOP
+         FETCH cq_pedido_venda_pagto INTO l_seq_parcela,
+                                           l_valor_parcela,
+                                           l_data_vencimento,
+                                           l_observacao;
+         IF not_found THEN
+             LEAVE read_loop;
+         END IF;
+         
+         INSERT INTO tbl_conta_receber_pagto 
+                     (cod_conta_receber, seq_parcela, valor_parcela, data_vencimento, ies_recebido, observacao)
+              VALUES (l_cod_conta_receber, l_seq_parcela, l_valor_parcela, l_data_vencimento, 'N', l_observacao);
+         
+     END LOOP;
+     CLOSE cq_pedido_venda_pagto;
+     
+     IF in_liquida &gt; 0 THEN 
+        UPDATE tbl_conta_receber_pagto 
+           SET valor_recebido = valor_parcela, data_recebimento = now(), ies_recebido = 'S'
+         WHERE cod_conta_receber = l_cod_conta_receber;
+     END IF;
+     
+     CALL baixa_pedido_venda_estoque(in_cod_pedido_venda);
+     
+     UPDATE tbl_pedido_venda
+        SET ies_situacao = 'F',
+            data_fechamento = now()
+      WHERE cod_pedido_venda = in_cod_pedido_venda;
+
+END</Instruction>
+    <Instruction action="DROP" type="PROCEDURE" object="reabre_pedido_venda">DROP PROCEDURE IF EXISTS reabre_pedido_venda;</Instruction>
+    <Instruction action="CREATE" type="PROCEDURE" object="reabre_pedido_venda">CREATE PROCEDURE reabre_pedido_venda(in_cod_pedido_venda INT)
+BEGIN
+    DECLARE not_found INT DEFAULT 0;
+    DECLARE l_cod_conta_receber INT;
+    DECLARE l_ies_situacao CHAR(1);
+    DECLARE l_cod_representante VARCHAR(15);
+    DECLARE l_mensagem VARCHAR(128);
+    DECLARE CONTINUE HANDLER FOR NOT FOUND SET not_found=1;
+
+    -- Busca as informações do cálculo de comissão do representante
+    SELECT DISTINCT cod_representante
+      INTO l_cod_representante
+      FROM tbl_comissao_representante
+     WHERE cod_pedido_venda = in_cod_pedido_venda;
+
+    -- Caso exista não pode deixar reabrir o pedido de venda
+    IF !not_found THEN
+        SET l_mensagem = CONCAT('Pedido de venda já calculado comissão para o representante ',l_cod_representante,'.');
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT =  l_mensagem, MYSQL_ERRNO = 9999;
+    END IF;
+
+    SET not_found = 0;
+    -- Busca as informações do pedido de compra
+    SELECT cod_conta_receber, ies_situacao
+      INTO l_cod_conta_receber, l_ies_situacao
+      FROM tbl_conta_receber
+     WHERE num_documento = in_cod_pedido_venda
+       AND tipo_registro = 'PV';
+       
+    -- Caso exista valida a situação da conta a pagar
+    IF !not_found THEN
+        IF l_ies_situacao != 'P' THEN
+            SET l_mensagem = CONCAT('Conta a receber ', l_cod_conta_receber, ' do pedido de venda não está pendente.');
+            SIGNAL SQLSTATE '45000'
+            SET MESSAGE_TEXT =  l_mensagem, MYSQL_ERRNO = 9999;
+         END IF;
+ 
+         DELETE FROM tbl_conta_receber_pagto
+         WHERE cod_conta_receber = l_cod_conta_receber;
+         
+        DELETE FROM tbl_conta_receber
+         WHERE cod_conta_receber = l_cod_conta_receber;
+         
+    END IF;
+
+    CALL estorna_pedido_venda_estoque(in_cod_pedido_venda);
+ 
+    UPDATE tbl_pedido_venda
+       SET ies_situacao = 'A',
+           data_fechamento = NULL
+     WHERE cod_pedido_venda = in_cod_pedido_venda;
+
+END</Instruction>
+    <Instruction action="DROP" type="PROCEDURE" object="fecha_comissao_representante">DROP PROCEDURE IF EXISTS fecha_comissao_representante;</Instruction>
+    <Instruction action="CREATE" type="PROCEDURE" object="fecha_comissao_representante">CREATE PROCEDURE fecha_comissao_representante(in_cod_representante VARCHAR(15), in_mes_comissao SMALLINT, in_ano_comissao SMALLINT, in_user_integracao VARCHAR(16))
+BEGIN
+    DECLARE not_found INT DEFAULT 0;
+    DECLARE l_mensagem VARCHAR(255);
+    DECLARE l_valor_comissao DECIMAL(13,3);
+    DECLARE l_forma_pagto_comissao INTEGER;
+    DECLARE l_num_documento VARCHAR(25);
+    DECLARE l_cod_conta_pagar INTEGER;
+    DECLARE CONTINUE HANDLER FOR NOT FOUND SET not_found=1;
+    -- Efetua a somatória das comissões do representante para o período
+    SELECT SUM(valor_comissao)
+      INTO l_valor_comissao
+      FROM tbl_comissao_representante
+     WHERE cod_representante = in_cod_representante
+       AND mes_comissao = in_mes_comissao
+       AND ano_comissao = in_ano_comissao
+       AND cod_conta_pagar IS NULL;
+       
+    IF l_valor_comissao IS NULL THEN
+        SET l_mensagem = CONCAT('Não foram encontradas comissões pendentes de integração para o representante ', in_cod_representante, ' em ',in_mes_comissao,'/',in_ano_comissao,'.');
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT =  l_mensagem, MYSQL_ERRNO = 9999;
+    END IF;
+    -- Busca a condição de pagamento parametrizada para a integração
+    SELECT tbl_forma_pagto.cod_forma_pagto
+      INTO l_forma_pagto_comissao
+      FROM tbl_parametro_sistema,
+           tbl_forma_pagto
+     WHERE tbl_parametro_sistema.nome_parametro = 'forma_pagto_comissao' 
+       AND tbl_parametro_sistema.valor_decimal = tbl_forma_pagto.cod_forma_pagto; 
+    -- Caso exista exclui as informações da conta
+    IF not_found THEN
+        SET l_mensagem = 'Não foi parametrizada a forma de pagamento padrão para a integração das comissões com o contas a pagar.';
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT =  l_mensagem, MYSQL_ERRNO = 9999;
+    END IF;
+    
+    SET l_num_documento = CONCAT('COMISSAO-',in_mes_comissao,'/',in_ano_comissao);
+    SET l_mensagem = CONCAT('Conta a receber integrada a partir das comissões do representante ',in_cod_representante, ' em ',in_mes_comissao,'/',in_ano_comissao,' pelo usuário ',in_user_integracao,'.');
+    -- Insere uma capa para a conta a pagar
+    INSERT INTO tbl_conta_pagar 
+                (num_documento, cod_fornecedor, data_cadastro, ies_situacao, cod_forma_pagto, 
+                 num_parcelas, valor_total, cod_centro_custo, cod_plano_conta, tipo_registro, observacao)
+         VALUES (l_num_documento, in_cod_representante, now(), 'P', l_forma_pagto_comissao,
+                 1, l_valor_comissao, NULL, NULL, 'CR', l_mensagem);    
+    
+    SET l_cod_conta_pagar = LAST_INSERT_ID();
+     
+    -- Insere as parcelas da conta a pagar
+    INSERT INTO tbl_conta_pagar_pagto 
+           (cod_conta_pagar, seq_parcela, valor_parcela, data_vencimento, ies_pago)
+    VALUES (l_cod_conta_pagar, 1, l_valor_comissao, curdate(), 'N');
+         
+    UPDATE tbl_comissao_representante 
+       SET cod_conta_pagar = l_cod_conta_pagar
+     WHERE cod_representante = in_cod_representante
+       AND mes_comissao = in_mes_comissao
+       AND ano_comissao = in_ano_comissao
+       AND cod_conta_pagar IS NULL;
+END</Instruction>
+  </Instructions>
+</Atualization>

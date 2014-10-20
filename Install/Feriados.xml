@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<!DOCTYPE FeriadosFixos>
+<Configuracoes>
+    <Feriados>
+        <Feriado dia="01/01">
+            <descricao>Ano Novo</descricao>
+            <dica>Ano Novo</dica>
+        </Feriado>
+        <Feriado dia="01/05">
+            <descricao>Dia do Trabalho</descricao>
+        </Feriado>
+        <Feriado dia="02/11">
+            <descricao>Finados</descricao>
+        </Feriado>
+        <Feriado dia="07/09">
+            <descricao>Dia da Independência</descricao>
+           <dica>Feriado nacional do Dia da Independência</dica>
+        </Feriado>
+        <Feriado dia="12/10">
+            <descricao>N. S. Aparecida</descricao>
+            <dica>Feriado nacional do dia de Nossa Senhora Aparecida</dica>
+        </Feriado>
+        <Feriado dia="15/11">
+            <descricao>Proclamação da República</descricao>
+        </Feriado>
+        <Feriado dia="21/04">
+            <descricao>Tiradentes</descricao>
+        </Feriado>
+        <Feriado dia="23/09">
+            <descricao>Aniv. São Bento do Sul</descricao>
+        </Feriado>
+        <Feriado dia="25/12">
+            <descricao>Natal</descricao>
+        </Feriado>
+    </Feriados>
+    <Emenda value="1" />
+    <MaiorAnoSeculo value="70" />
+    <MilenioAtual value="2000" />
+    <Cores>
+        <CorNormal value="16711680" />
+        <CorFeriado value="0000255" />
+        <CorEmenda value="6723891" />
+    </Cores>
+</Configuracoes>

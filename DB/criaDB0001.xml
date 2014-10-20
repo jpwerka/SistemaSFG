@@ -1,0 +1,746 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="yes"?>
+<Atualization>
+  <FileInfoAtuDB file_atudbname="CRTDB00001" file_atudbdate="22/11/2012" file_requisito=""></FileInfoAtuDB>
+  <Informations>
+    <Information>Criação da tabela de familias.</Information>
+    <Information>Criação da tabela de unidades de medida.</Information>
+    <Information>Criação da tabela de produtos.</Information>
+    <Information>Inclusão da chave estrangeira na tabela produtos para o código da familia.</Information>
+    <Information>Inclusão da chave estrangeira na tabela produtos para o código da unidade de medida.</Information>
+    <Information>Criação da tabela de unidade de federação.</Information>
+    <Information>Criação da tabela de cidades.</Information>
+    <Information>Inclusão da chave estrangeira na tabela cidades para o código da unidade de federação.</Information>
+    <Information>Criação da tabela de clientes.</Information>
+    <Information>Inclusão da chave estrangeira na tabela clientes para o código da cidade.</Information>
+    <Information>Criação da tabela de fornecedores.</Information>
+    <Information>Inclusão da chave estrangeira na tabela fornecedores para o código da cidade.</Information>
+    <Information>Criação da tabela de fornecedores x produtos.</Information>
+    <Information>Inclusão da chave estrangeira na tabela fornecedores x produtos para o código do fornecedor.</Information>
+    <Information>Inclusão da chave estrangeira na tabela fornecedores x produtos para o código do produto.</Information>
+    <Information>Criação da tabela de plano de contas.</Information>
+    <Information>Criação da tabela de formas de pagamento. </Information>
+    <Information>Criação da tabela de centros de custo.</Information>
+    <Information>Criação da tabela de orçamentos.</Information>
+    <Information>Inclusão da chave estrangeira na tabela orçamentos para o código do cliente. </Information>
+    <Information>Inclusão da chave estrangeira na tabela orçamentos para o código do plano de conta.</Information>
+    <Information>Inclusão da chave estrangeira na tabela orçamentos para o código do centro de custo.</Information>
+    <Information>Inclusão da chave estrangeira na tabela orçamentos para o código da forma de pagamento.</Information>
+    <Information>Criação da tabela de itens do orçamento.</Information>
+    <Information>Inclusão da chave estrangeira na tabela itens do orçamento para o código do orçamento.</Information>
+    <Information>Inclusão da chave estrangeira na tabela itens do orçamento para o código do produto.</Information>
+    <Information>Criação da tabela de pagamentos do orçamento.</Information>
+    <Information>Inclusão da chave estrangeira na tabela pagamentos do orçamento para o código do orçamento.</Information>
+    <Information>Criação da tabela de pedidos de venda.</Information>
+    <Information>Inclusão da chave estrangeira na tabela pedidos de venda para o código do cliente.</Information>
+    <Information>Inclusão da chave estrangeira na tabela pedidos de venda para o código do plano de conta.</Information>
+    <Information>Inclusão da chave estrangeira na tabela pedidos de venda para o código do centro de custo.</Information>
+    <Information>Inclusão da chave estrangeira na tabela pedidos de venda para o código da forma de pagamento.</Information>
+    <Information>Inclusão da chave estrangeira na tabela pedidos de venda para o código do orçamento.</Information>
+    <Information>Criação da tabela de itens do pedido de venda.</Information>
+    <Information>Inclusão da chave estrangeira na tabela itens do pedido de venda para o código do pedido de venda.</Information>
+    <Information>Inclusão da chave estrangeira na tabela itens do pedido de venda para o código do produto.</Information>
+    <Information>Criação da tabela de pagamentos do pedido de venda.</Information>
+    <Information>Inclusão da chave estrangeira na tabela pagamentos do pedido de venda para o código do pedido de venda.</Information>
+    <Information>Criação da tabela de pedidos de compra.</Information>
+    <Information>Inclusão da chave estrangeira na tabela pedidos de compra para o código do fornecedor.</Information>
+    <Information>Inclusão da chave estrangeira na tabela pedidos de compra para o código do plano de conta.</Information>
+    <Information>Inclusão da chave estrangeira na tabela pedidos de compra para o código do centro de custo.</Information>
+    <Information>Inclusão da chave estrangeira na tabela pedidos de compra para o código da forma de pagamento.</Information>
+    <Information>Criação da tabela de itens do pedido de compra.</Information>
+    <Information>Inclusão da chave estrangeira na tabela itens do pedido de compra para o código do pedido de compra.</Information>
+    <Information>Inclusão da chave estrangeira na tabela itens do pedido de compra para o código do produto.</Information>
+    <Information>Criação da tabela de pagamentos do pedido de compra.</Information>
+    <Information>Inclusão da chave estrangeira na tabela pagamentos do pedido de compra para o código do pedido de compra.</Information>
+    <Information>Criação da tabela de contas a receber.</Information>
+    <Information>Inclusão da chave estrangeira na tabela contas a receber para o código do cliente.</Information>
+    <Information>Inclusão da chave estrangeira na tabela contas a receber para o código do plano de conta.</Information>
+    <Information>Inclusão da chave estrangeira na tabela contas a receber para o código do centro de custo.</Information>
+    <Information>Inclusão da chave estrangeira na tabela contas a receber para o código da forma de pagamento.</Information>
+    <Information>Criação da tabela de pagamentos da conta a receber.</Information>
+    <Information>Inclusão da chave estrangeira na tabela pagamentos da conta a receber para o código da conta a receber.</Information>
+    <Information>Criação da tabela de contas a pagar.</Information>
+    <Information>Inclusão da chave estrangeira na tabela contas a pagar para o código do fornecedor.</Information>
+    <Information>Inclusão da chave estrangeira na tabela contas a pagar para o código do plano de conta.</Information>
+    <Information>Inclusão da chave estrangeira na tabela contas a pagar para o código do centro de custo.</Information>
+    <Information>Inclusão da chave estrangeira na tabela contas a pagar para o código da forma de pagamento.</Information>
+    <Information>Criação da tabela de pagamentos da conta a pagar.</Information>
+    <Information>Inclusão da chave estrangeira na tabela pagamentos da conta a pagar para o código da conta a pagar.</Information>
+    <Information>Criação da tabela de lançamentos do caixa.</Information>
+    <Information>Inclusão da chave estrangeira na tabela lançamentos do caixa para o código do plano de conta.</Information>
+    <Information>Inclusão da chave estrangeira na tabela lançamentos do caixa para o código do centro de custo.</Information>
+    <Information>Criação da tabela de parâmetros do sistema.</Information>
+    <Information>Criação da tabela de usuários.</Information>
+    <Information>Criação da tabela de grupos.</Information>
+    <Information>Criação da tabela de usuários por grupo.</Information>
+    <Information>Inclusão da chave estrangeira na tabela usuários por grupo para o código do grupo.</Information>
+    <Information>Inclusão da chave estrangeira na tabela usuários por grupo para o código do usuário.</Information>
+    <Information>Criação da tabela de menu do sistema.</Information>
+    <Information>Criação da tabela de permissão de menu por usuário e/ou grupo.</Information>
+    <Information>Inclusão da chave estrangeira na tabela permissão menu para o código da rotina.</Information>
+    <Information>Criação da tabela de representantes.</Information>
+    <Information>Inclusão da chave estrangeira na tabela representante para o código da cidade.</Information>
+    <Information>Inclusão da chave estrangeira na tabela pedidos de venda para o código do representante.</Information>
+    <Information>Criação da tabela de comissões do representantes.</Information>
+    <Information>Inclusão da chave estrangeira na tabela comissão dos representantes para o código do representante.</Information>
+    <Information>Inclusão da chave estrangeira na tabela comissão dos representantes para o código da conta a pagar.</Information>
+    <Information>Inclusão da chave estrangeira na tabela comissão dos representantes para o código do pedido de venda.</Information>
+    <Information>Inclusão da chave estrangeira na tabela comissão dos representantes para o código da parcela do pedido de venda.</Information>
+    <Information>Criação da visualização de consulta de pedidos de venda.</Information>
+    <Information>Criação da visualização de consulta de pedidos de compra.</Information>
+    <Information>Criação da visualização de consulta de contas a receber.</Information>
+    <Information>Criação da visualização de consulta de contas a pagar.</Information>
+  </Informations>
+  <Instructions>
+    <Instruction action="CREATE" type="TABLE" object="tbl_familia">CREATE TABLE tbl_familia (
+  cod_familia INTEGER NOT NULL,
+  den_familia VARCHAR(30),
+  PRIMARY KEY (cod_familia)
+);</Instruction>
+    <Instruction action="CREATE" type="TABLE" object="tbl_unid_medida">CREATE TABLE tbl_unid_medida (
+  cod_unid_medida VARCHAR(3) NOT NULL,
+  den_unid_medida VARCHAR(30),
+  PRIMARY KEY (cod_unid_medida)
+);</Instruction>
+    <Instruction action="CREATE" type="TABLE" object="tbl_produto">CREATE TABLE tbl_produto (
+  cod_produto VARCHAR(15) NOT NULL,
+  den_produto VARCHAR(75) NOT NULL,
+  cod_familia INTEGER NOT NULL,
+  cod_unid_medida VARCHAR(3),
+  ies_ativo CHAR(1) NOT NULL DEFAULT 'S',
+  controla_estoque CHAR(1) DEFAULT 'S',
+  qtd_estoque DECIMAL(13,3),
+  qtd_estoque_min DECIMAL(13,3),
+  preco_custo DECIMAL(13,3),
+  observacao VARCHAR(4000),
+  ies_tipo_produto CHAR(1) DEFAULT 'P',
+  preco_venda DECIMAL(13,3),
+  preco_compra DECIMAL(13,3),
+  cod_ncm VARCHAR(8),
+  origem_mercadoria SMALLINT,
+  cod_extipi VARCHAR(3),
+  classe_enq_ipi VARCHAR(5),
+  cod_enq_ipi VARCHAR(3),
+  PRIMARY KEY (cod_produto)
+);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_produto" subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk1_tbl_produto">ALTER TABLE tbl_produto 
+  ADD CONSTRAINT fk1_tbl_produto FOREIGN KEY (cod_familia) 
+  REFERENCES tbl_familia (cod_familia);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_produto" subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk2_tbl_produto">ALTER TABLE tbl_produto 
+  ADD CONSTRAINT fk2_tbl_produto FOREIGN KEY (cod_unid_medida) 
+  REFERENCES tbl_unid_medida (cod_unid_medida);</Instruction>
+    <Instruction action="CREATE" type="TABLE" object="tbl_uf">CREATE TABLE tbl_uf (
+  cod_uf VARCHAR(2) NOT NULL,
+  den_uf VARCHAR(40),
+  cod_ibge SMALLINT,
+  PRIMARY KEY (cod_uf)
+);</Instruction>
+    <Instruction action="CREATE" type="TABLE" object="tbl_cidade">CREATE TABLE tbl_cidade (
+  cod_cidade VARCHAR(5) NOT NULL,
+  den_cidade VARCHAR(40),
+  cod_uf VARCHAR(2),
+  cod_ibge INTEGER,
+  PRIMARY KEY (cod_cidade)
+);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_cidade" subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk1_tbl_cidade">ALTER TABLE tbl_cidade 
+  ADD CONSTRAINT fk1_tbl_cidade FOREIGN KEY (cod_uf) 
+  REFERENCES tbl_uf (cod_uf);</Instruction>
+    <Instruction action="CREATE" type="TABLE" object="tbl_cliente">CREATE TABLE tbl_cliente (
+  cod_cliente VARCHAR(15) NOT NULL DEFAULT '0',
+  tipo_pessoa CHAR(1),
+  cpf_cnpj VARCHAR(16),
+  den_cliente VARCHAR(50) NOT NULL,
+  logradouro VARCHAR(50),
+  numero INTEGER,
+  complemento VARCHAR(10),
+  bairro VARCHAR(30),
+  cod_cidade VARCHAR(5),
+  cod_uf VARCHAR(2),
+  cep VARCHAR(12),
+  data_nasc_fund DATE,
+  rg_ie VARCHAR(20),
+  telefone VARCHAR(15),
+  fax VARCHAR(15),
+  celular VARCHAR(15),
+  data_cadastro date,
+  ies_ativo CHAR(1) DEFAULT 'S',
+  email VARCHAR(40),
+  contato VARCHAR(40),
+  url VARCHAR(40),
+  PRIMARY KEY (cod_cliente)
+);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_cliente" subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk1_tbl_cliente">ALTER TABLE tbl_cliente
+  ADD CONSTRAINT fk1_tbl_cliente FOREIGN KEY (cod_cidade) 
+  REFERENCES tbl_cidade (cod_cidade);</Instruction>
+    <Instruction action="CREATE" type="TABLE" object="tbl_fornecedor">CREATE TABLE tbl_fornecedor (
+  cod_fornecedor VARCHAR(15) NOT NULL DEFAULT '0',
+  tipo_pessoa CHAR(1),
+  cpf_cnpj VARCHAR(16),
+  den_fornecedor VARCHAR(50) NOT NULL,
+  logradouro VARCHAR(50),
+  numero INTEGER,
+  complemento VARCHAR(10),
+  bairro VARCHAR(30),
+  cod_cidade VARCHAR(5),
+  cod_uf VARCHAR(2),
+  cep VARCHAR(12),
+  data_nasc_fund date,
+  rg_ie VARCHAR(20),
+  telefone VARCHAR(15),
+  fax VARCHAR(15),
+  celular VARCHAR(15),
+  data_cadastro date,
+  ies_ativo CHAR(1),
+  email VARCHAR(40),
+  contato VARCHAR(40),
+  url VARCHAR(40),
+  PRIMARY KEY (cod_fornecedor)
+);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_fornecedor " subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk1_tbl_fornecedor">ALTER TABLE tbl_fornecedor
+  ADD CONSTRAINT fk1_tbl_fornecedor FOREIGN KEY (cod_cidade) 
+  REFERENCES tbl_cidade (cod_cidade);</Instruction>
+    <Instruction action="CREATE" type="TABLE" object="tbl_fornecedor_produto">CREATE TABLE tbl_fornecedor_produto (
+  cod_fornecedor VARCHAR(15) NOT NULL,
+  cod_produto VARCHAR(15) NOT NULL,
+  preco_compra DECIMAL(13,3),
+  data_atualizacao DATETIME,
+  PRIMARY KEY (cod_fornecedor,cod_produto)
+);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_fornecedor_produto" subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk1_fornecedor_produto">ALTER TABLE tbl_fornecedor_produto
+  ADD CONSTRAINT fk1_fornecedor_produto FOREIGN KEY (cod_fornecedor) 
+  REFERENCES tbl_fornecedor (cod_fornecedor);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_fornecedor_produto" subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk2_fornecedor_produto">ALTER TABLE tbl_fornecedor_produto
+  ADD CONSTRAINT fk2_fornecedor_produto FOREIGN KEY (cod_produto) 
+  REFERENCES tbl_produto (cod_produto);</Instruction>
+    <Instruction action="CREATE" type="TABLE" object="tbl_plano_conta">CREATE TABLE tbl_plano_conta (
+  cod_plano_conta VARCHAR(18) NOT NULL,
+  cod_plano_conta_reduz VARCHAR(8) NOT NULL,
+  den_plano_conta VARCHAR(45) NOT NULL,
+  tipo_plano_conta CHAR(1) NOT NULL,
+  cod_plano_conta_pai VARCHAR(15),
+  ies_ativo CHAR(1) DEFAULT 'S',
+  data_cadastro DATETIME,
+  PRIMARY KEY (cod_plano_conta)
+);</Instruction>
+    <Instruction action="CREATE" type="TABLE" object="tbl_forma_pagto">CREATE TABLE tbl_forma_pagto (
+  cod_forma_pagto SMALLINT NOT NULL,
+  den_forma_pagto VARCHAR(30),
+  ies_parcelado CHAR(1),
+  PRIMARY KEY (cod_forma_pagto)
+);</Instruction>
+    <Instruction action="CREATE" type="TABLE" object="tbl_centro_custo">CREATE TABLE tbl_centro_custo (
+  cod_centro_custo VARCHAR(15) NOT NULL,
+  den_centro_custo VARCHAR(45) NOT NULL,
+  PRIMARY KEY (cod_centro_custo)
+);</Instruction>
+    <Instruction action="CREATE" type="TABLE" object="tbl_orcamento">CREATE TABLE tbl_orcamento (
+  cod_orcamento INTEGER NOT NULL AUTO_INCREMENT,
+  cod_cliente VARCHAR(15) NOT NULL,
+  data_cadastro DATETIME NOT NULL,
+  data_validade DATETIME,
+  ies_situacao CHAR(1) NOT NULL DEFAULT 'A',
+  observacao VARCHAR(4000),
+  cod_forma_pagto SMALLINT,
+  num_parcelas SMALLINT,
+  valor_total DECIMAL(13,3),
+  cod_centro_custo VARCHAR(15),
+  cod_plano_conta VARCHAR(18),
+  importado CHAR(1) DEFAULT 'N',
+  PRIMARY KEY (cod_orcamento)
+);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_orcamento" subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk1_tbl_orcamento">ALTER TABLE tbl_orcamento
+  ADD CONSTRAINT fk1_tbl_orcamento FOREIGN KEY (cod_cliente) 
+  REFERENCES tbl_cliente (cod_cliente);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_orcamento" subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk2_tbl_orcamento">ALTER TABLE tbl_orcamento
+  ADD CONSTRAINT fk2_tbl_orcamento FOREIGN KEY (cod_plano_conta) 
+  REFERENCES tbl_plano_conta (cod_plano_conta);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_orcamento" subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk3_tbl_orcamento">ALTER TABLE tbl_orcamento
+  ADD CONSTRAINT fk3_tbl_orcamento FOREIGN KEY (cod_centro_custo) 
+  REFERENCES tbl_centro_custo (cod_centro_custo);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_orcamento" subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk4_tbl_orcamento">ALTER TABLE tbl_orcamento
+  ADD CONSTRAINT fk4_tbl_orcamento FOREIGN KEY (cod_forma_pagto) 
+  REFERENCES tbl_forma_pagto (cod_forma_pagto);</Instruction>
+    <Instruction action="CREATE" type="TABLE" object="tbl_orcamento_item">CREATE TABLE tbl_orcamento_item (
+  cod_orcamento INTEGER NOT NULL,
+  seq_produto INTEGER NOT NULL,
+  cod_produto VARCHAR(15) NOT NULL,
+  qtd_produto DECIMAL(13,3) DEFAULT '1.000',
+  preco_venda DECIMAL(13,3) DEFAULT '0.000',
+  val_desconto DECIMAL(13,3) DEFAULT '0.000',
+  PRIMARY KEY (cod_orcamento,seq_produto)
+);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_orcamento_item" subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk1_tbl_orcamento_item">ALTER TABLE tbl_orcamento_item
+  ADD CONSTRAINT fk1_tbl_orcamento_item FOREIGN KEY (cod_orcamento) 
+  REFERENCES tbl_orcamento (cod_orcamento);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_orcamento_item" subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk2_tbl_orcamento_item">ALTER TABLE tbl_orcamento_item
+  ADD CONSTRAINT fk2_tbl_orcamento_item FOREIGN KEY (cod_produto) 
+  REFERENCES tbl_produto (cod_produto);</Instruction>
+    <Instruction action="CREATE" type="TABLE" object="tbl_orcamento_pagto">CREATE TABLE tbl_orcamento_pagto (
+  cod_orcamento INTEGER NOT NULL,
+  seq_parcela INTEGER NOT NULL,
+  valor_parcela DECIMAL(13,3),
+  data_vencimento DATETIME,
+  observacao VARCHAR(100),
+  PRIMARY KEY (cod_orcamento,seq_parcela)
+);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_orcamento_pagto" subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk1_tbl_orcamento_pagto">ALTER TABLE tbl_orcamento_pagto
+  ADD CONSTRAINT fk1_tbl_orcamento_pagto FOREIGN KEY (cod_orcamento) 
+  REFERENCES tbl_orcamento (cod_orcamento);</Instruction>
+    <Instruction action="CREATE" type="TABLE" object="tbl_pedido_venda">CREATE TABLE tbl_pedido_venda (
+  cod_pedido_venda INTEGER NOT NULL AUTO_INCREMENT,
+  cod_cliente VARCHAR(15) NOT NULL,
+  data_cadastro DATETIME NOT NULL,
+  data_fechamento DATETIME,
+  ies_situacao CHAR(1) NOT NULL DEFAULT 'A',
+  observacao VARCHAR(4000),
+  cod_forma_pagto SMALLINT,
+  num_parcelas SMALLINT,
+  valor_total DECIMAL(13,3),
+  cod_centro_custo VARCHAR(15),
+  cod_plano_conta VARCHAR(18),
+  cod_orcamento INTEGER,
+  cod_representante VARCHAR(15),
+  PRIMARY KEY (cod_pedido_venda)
+);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_pedido_venda" subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk1_tbl_pedido_venda">ALTER TABLE tbl_pedido_venda
+  ADD CONSTRAINT fk1_tbl_pedido_venda FOREIGN KEY (cod_cliente) 
+  REFERENCES tbl_cliente (cod_cliente);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_pedido_venda" subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk2_tbl_pedido_venda">ALTER TABLE tbl_pedido_venda
+  ADD CONSTRAINT fk2_tbl_pedido_venda FOREIGN KEY (cod_plano_conta) 
+  REFERENCES tbl_plano_conta (cod_plano_conta);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_pedido_venda" subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk3_tbl_pedido_venda">ALTER TABLE tbl_pedido_venda
+  ADD CONSTRAINT fk3_tbl_pedido_venda FOREIGN KEY (cod_centro_custo) 
+  REFERENCES tbl_centro_custo (cod_centro_custo);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_pedido_venda" subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk4_tbl_pedido_venda">ALTER TABLE tbl_pedido_venda
+  ADD CONSTRAINT fk4_tbl_pedido_venda FOREIGN KEY (cod_forma_pagto) 
+  REFERENCES tbl_forma_pagto (cod_forma_pagto);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_pedido_venda" subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk5_tbl_pedido_venda">ALTER TABLE tbl_pedido_venda
+  ADD CONSTRAINT fk5_tbl_pedido_venda FOREIGN KEY (cod_orcamento) 
+  REFERENCES tbl_orcamento (cod_orcamento);</Instruction>
+    <Instruction action="CREATE" type="TABLE" object="tbl_pedido_venda_item">CREATE TABLE tbl_pedido_venda_item (
+  cod_pedido_venda INTEGER NOT NULL,
+  seq_produto INTEGER NOT NULL,
+  cod_produto VARCHAR(15) NOT NULL,
+  qtd_produto DECIMAL(13,3) DEFAULT '1.000',
+  preco_venda DECIMAL(13,3) DEFAULT '0.000',
+  val_desconto DECIMAL(13,3) DEFAULT '0.000',
+  PRIMARY KEY (cod_pedido_venda,seq_produto)
+);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_pedido_venda_item" subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk1_tbl_pedido_venda_item">ALTER TABLE tbl_pedido_venda_item
+  ADD CONSTRAINT fk1_tbl_pedido_venda_item FOREIGN KEY (cod_pedido_venda) 
+  REFERENCES tbl_pedido_venda (cod_pedido_venda);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_pedido_venda_item" subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk2_tbl_pedido_venda_item">ALTER TABLE tbl_pedido_venda_item
+  ADD CONSTRAINT fk2_tbl_pedido_venda_item FOREIGN KEY (cod_produto) 
+  REFERENCES tbl_produto (cod_produto);</Instruction>
+    <Instruction action="CREATE" type="TABLE" object="tbl_pedido_venda_pagto">CREATE TABLE tbl_pedido_venda_pagto (
+  cod_pedido_venda INTEGER NOT NULL,
+  seq_parcela INTEGER NOT NULL,
+  valor_parcela DECIMAL(13,3),
+  data_vencimento DATETIME,
+  data_pagamento DATETIME,
+  observacao VARCHAR(100),
+  ies_recebido CHAR(1) NOT NULL DEFAULT 'N',
+  PRIMARY KEY (cod_pedido_venda,seq_parcela)
+);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_pedido_venda_pagto" subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk1_tbl_pedido_venda_pagto">ALTER TABLE tbl_pedido_venda_pagto
+  ADD CONSTRAINT fk1_tbl_pedido_venda_pagto FOREIGN KEY (cod_pedido_venda) 
+  REFERENCES tbl_pedido_venda (cod_pedido_venda);</Instruction>
+    <Instruction action="CREATE" type="TABLE" object="tbl_pedido_compra">CREATE TABLE tbl_pedido_compra (
+  cod_pedido_compra INTEGER NOT NULL AUTO_INCREMENT,
+  cod_fornecedor VARCHAR(15) NOT NULL,
+  data_cadastro DATETIME NOT NULL,
+  data_recebimento DATETIME,
+  ies_situacao CHAR(1) NOT NULL DEFAULT 'A',
+  observacao VARCHAR(4000),
+  cod_forma_pagto SMALLINT,
+  num_parcelas SMALLINT,
+  valor_total DECIMAL(13,3),
+  cod_centro_custo VARCHAR(15),
+  cod_plano_conta VARCHAR(18),
+  PRIMARY KEY (cod_pedido_compra)
+);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_pedido_compra" subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk1_tbl_pedido_compra">ALTER TABLE tbl_pedido_compra
+  ADD CONSTRAINT fk1_tbl_pedido_compra FOREIGN KEY (cod_fornecedor) 
+  REFERENCES tbl_fornecedor (cod_fornecedor);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_pedido_compra" subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk2_tbl_pedido_compra">ALTER TABLE tbl_pedido_compra
+  ADD CONSTRAINT fk2_tbl_pedido_compra FOREIGN KEY (cod_plano_conta) 
+  REFERENCES tbl_plano_conta (cod_plano_conta);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_pedido_compra" subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk3_tbl_pedido_compra">ALTER TABLE tbl_pedido_compra
+  ADD CONSTRAINT fk3_tbl_pedido_compra FOREIGN KEY (cod_centro_custo) 
+  REFERENCES tbl_centro_custo (cod_centro_custo);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_pedido_compra" subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk4_tbl_pedido_compra">ALTER TABLE tbl_pedido_compra
+  ADD CONSTRAINT fk4_tbl_pedido_compra FOREIGN KEY (cod_forma_pagto) 
+  REFERENCES tbl_forma_pagto (cod_forma_pagto);</Instruction>
+    <Instruction action="CREATE" type="TABLE" object="tbl_pedido_compra_item">CREATE TABLE tbl_pedido_compra_item (
+  cod_pedido_compra INTEGER NOT NULL,
+  seq_produto INTEGER NOT NULL,
+  cod_produto VARCHAR(15) NOT NULL,
+  qtd_produto DECIMAL(13,3) DEFAULT '1.000',
+  preco_compra DECIMAL(13,3) DEFAULT '0.000',
+  val_desconto DECIMAL(13,3) DEFAULT '0.000',
+  qtd_recebida DECIMAL(13,3) DEFAULT '0.000',
+  PRIMARY KEY (cod_pedido_compra,seq_produto)
+);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_pedido_compra_item" subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk1_tbl_pedido_compra_item">ALTER TABLE tbl_pedido_compra_item
+  ADD CONSTRAINT fk1_tbl_pedido_compra_item FOREIGN KEY (cod_pedido_compra) 
+  REFERENCES tbl_pedido_compra (cod_pedido_compra);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_pedido_compra_item" subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk2_tbl_pedido_compra_item">ALTER TABLE tbl_pedido_compra_item
+  ADD CONSTRAINT fk2_tbl_pedido_compra_item FOREIGN KEY (cod_produto) 
+  REFERENCES tbl_produto (cod_produto);</Instruction>
+    <Instruction action="CREATE" type="TABLE" object="tbl_pedido_compra_pagto">CREATE TABLE tbl_pedido_compra_pagto (
+  cod_pedido_compra INTEGER NOT NULL,
+  seq_parcela INTEGER NOT NULL,
+  valor_parcela DECIMAL(13,3),
+  data_vencimento DATETIME,
+  observacao VARCHAR(100),
+  ies_pago CHAR(1) DEFAULT 'N',
+  PRIMARY KEY (cod_pedido_compra,seq_parcela)
+);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_pedido_compra_pagto" subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk1_tbl_pedido_compra_pagto">ALTER TABLE tbl_pedido_compra_pagto
+  ADD CONSTRAINT fk1_tbl_pedido_compra_pagto FOREIGN KEY (cod_pedido_compra) 
+  REFERENCES tbl_pedido_compra (cod_pedido_compra);</Instruction>
+    <Instruction action="CREATE" type="TABLE" object="tbl_conta_receber">CREATE TABLE tbl_conta_receber (
+  cod_conta_receber INTEGER NOT NULL AUTO_INCREMENT,
+  num_documento VARCHAR(25),
+  cod_cliente VARCHAR(15) NOT NULL,
+  data_cadastro DATETIME NOT NULL,
+  ies_situacao CHAR(1) NOT NULL,
+  observacao VARCHAR(1000),
+  cod_forma_pagto SMALLINT,
+  num_parcelas SMALLINT,
+  valor_total DECIMAL(13,3),
+  cod_centro_custo VARCHAR(15),
+  cod_plano_conta VARCHAR(18),
+  tipo_registro CHAR(2) NOT NULL DEFAULT 'M',
+  PRIMARY KEY (cod_conta_receber)
+);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_conta_receber" subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk1_tbl_conta_receber">ALTER TABLE tbl_conta_receber
+  ADD CONSTRAINT fk1_tbl_conta_receber FOREIGN KEY (cod_cliente) 
+  REFERENCES tbl_cliente (cod_cliente);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_conta_receber" subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk2_tbl_conta_receber">ALTER TABLE tbl_conta_receber
+  ADD CONSTRAINT fk2_tbl_conta_receber FOREIGN KEY (cod_plano_conta) 
+  REFERENCES tbl_plano_conta (cod_plano_conta);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_conta_receber" subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk3_tbl_conta_receber">ALTER TABLE tbl_conta_receber
+  ADD CONSTRAINT fk3_tbl_conta_receber FOREIGN KEY (cod_centro_custo) 
+  REFERENCES tbl_centro_custo (cod_centro_custo);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_conta_receber" subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk4_tbl_conta_receber">ALTER TABLE tbl_conta_receber
+  ADD CONSTRAINT fk4_tbl_conta_receber FOREIGN KEY (cod_forma_pagto) 
+  REFERENCES tbl_forma_pagto (cod_forma_pagto);</Instruction>
+    <Instruction action="CREATE" type="TABLE" object="tbl_conta_receber_pagto">CREATE TABLE tbl_conta_receber_pagto (
+  cod_conta_receber INTEGER NOT NULL,
+  seq_parcela INTEGER NOT NULL,
+  valor_parcela DECIMAL(13,3),
+  data_vencimento DATETIME,
+  data_recebimento DATETIME,
+  ies_recebido CHAR(1) DEFAULT 'N',
+  observacao VARCHAR(100),
+  valor_recebido DECIMAL(13,3),
+  valor_desconto DECIMAL(13,3) DEFAULT '0.000',
+  valor_acrescimo DECIMAL(13,3) DEFAULT '0.000',
+  valor_multa DECIMAL(13,3) DEFAULT '0.000',
+  PRIMARY KEY (cod_conta_receber,seq_parcela)
+);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_conta_receber_pagto" subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk1_tbl_conta_receber_pagto">ALTER TABLE tbl_conta_receber_pagto
+  ADD CONSTRAINT fk1_tbl_conta_receber_pagto FOREIGN KEY (cod_conta_receber) 
+  REFERENCES tbl_conta_receber (cod_conta_receber);</Instruction>
+    <Instruction action="CREATE" type="TABLE" object="tbl_conta_pagar">CREATE TABLE tbl_conta_pagar (
+  cod_conta_pagar INTEGER NOT NULL AUTO_INCREMENT,
+  num_documento VARCHAR(25),
+  cod_fornecedor VARCHAR(15) NOT NULL,
+  data_cadastro DATETIME NOT NULL,
+  ies_situacao CHAR(1) NOT NULL,
+  observacao VARCHAR(1000),
+  cod_forma_pagto SMALLINT ,
+  num_parcelas SMALLINT ,
+  valor_total DECIMAL(13,3),
+  cod_centro_custo VARCHAR(15),
+  cod_plano_conta VARCHAR(18),
+  tipo_registro CHAR(2) NOT NULL DEFAULT 'CP',
+  PRIMARY KEY (cod_conta_pagar)
+);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_conta_pagar" subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk1_tbl_conta_pagar">ALTER TABLE tbl_conta_pagar
+  ADD CONSTRAINT fk1_tbl_conta_pagar FOREIGN KEY (cod_fornecedor) 
+  REFERENCES tbl_fornecedor (cod_fornecedor);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_conta_pagar" subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk2_tbl_conta_pagar">ALTER TABLE tbl_conta_pagar
+  ADD CONSTRAINT fk2_tbl_conta_pagar FOREIGN KEY (cod_plano_conta) 
+  REFERENCES tbl_plano_conta (cod_plano_conta);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_conta_pagar" subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk3_tbl_conta_pagar">ALTER TABLE tbl_conta_pagar
+  ADD CONSTRAINT fk3_tbl_conta_pagar FOREIGN KEY (cod_centro_custo) 
+  REFERENCES tbl_centro_custo (cod_centro_custo);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_conta_pagar" subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk4_tbl_conta_pagar">ALTER TABLE tbl_conta_pagar
+  ADD CONSTRAINT fk4_tbl_conta_pagar FOREIGN KEY (cod_forma_pagto) 
+  REFERENCES tbl_forma_pagto (cod_forma_pagto);</Instruction>
+    <Instruction action="CREATE" type="TABLE" object="tbl_conta_pagar_pagto">CREATE TABLE tbl_conta_pagar_pagto (
+  cod_conta_pagar INTEGER NOT NULL,
+  seq_parcela INTEGER NOT NULL,
+  valor_parcela DECIMAL(13,3),
+  data_vencimento DATETIME,
+  data_pagamento DATETIME,
+  ies_pago CHAR(1) DEFAULT 'N',
+  observacao VARCHAR(100),
+  valor_pago DECIMAL(13,3),
+  valor_desconto DECIMAL(13,3) DEFAULT '0.000',
+  valor_acrescimo DECIMAL(13,3) DEFAULT '0.000',
+  valor_multa DECIMAL(13,3) DEFAULT '0.000',
+  PRIMARY KEY (cod_conta_pagar,seq_parcela)
+);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_conta_pagar_pagto" subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk1_tbl_conta_pagar_pagto">ALTER TABLE tbl_conta_pagar_pagto
+  ADD CONSTRAINT fk1_tbl_conta_pagar_pagto FOREIGN KEY (cod_conta_pagar) 
+  REFERENCES tbl_conta_pagar (cod_conta_pagar);</Instruction>
+    <Instruction action="CREATE" type="TABLE" object="tbl_lancamento_caixa">CREATE TABLE tbl_lancamento_caixa (
+  cod_lancamento INTEGER NOT NULL AUTO_INCREMENT,
+  tipo_documento CHAR(2) NOT NULL,
+  cod_documento INTEGER NOT NULL,
+  seq_documento INTEGER NOT NULL,
+  tipo_lancamento CHAR(1) NOT NULL,
+  data_lancamento DATETIME NOT NULL,
+  valor_lancamento DECIMAL(13,3) NOT NULL DEFAULT '0.000',
+  cod_centro_custo VARCHAR(15),
+  cod_plano_conta VARCHAR(18),
+  PRIMARY KEY (cod_lancamento)
+);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_lancamento_caixa" subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk1_tbl_lancamento_caixa">ALTER TABLE tbl_lancamento_caixa
+  ADD CONSTRAINT fk1_tbl_lancamento_caixa FOREIGN KEY (cod_plano_conta) 
+  REFERENCES tbl_plano_conta (cod_plano_conta);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_lancamento_caixa" subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk2_tbl_lancamento_caixa">ALTER TABLE tbl_lancamento_caixa
+  ADD CONSTRAINT fk2_tbl_lancamento_caixa FOREIGN KEY (cod_centro_custo) 
+  REFERENCES tbl_centro_custo (cod_centro_custo);</Instruction>
+    <Instruction action="CREATE" type="TABLE" object="tbl_parametro_sistema">CREATE TABLE tbl_parametro_sistema (
+  nome_parametro VARCHAR(20) NOT NULL,
+  valor_flag CHAR(1),
+  valor_texto VARCHAR(255),
+  valor_decimal DECIMAL(15,5),
+  valor_datetime DATETIME,
+  data_atualizacao DATETIME,
+  user_atualizacao VARCHAR(16),
+  PRIMARY KEY (nome_parametro)
+);</Instruction>
+    <Instruction action="CREATE" type="TABLE" object="tbl_usuario">CREATE TABLE tbl_usuario (
+  usuario VARCHAR(16) NOT NULL,
+  nome VARCHAR(30),
+  senha VARCHAR(16),
+  email VARCHAR(40),
+  ies_administrador CHAR(1) DEFAULT 'N',
+  PRIMARY KEY (usuario)
+);</Instruction>
+    <Instruction action="CREATE" type="TABLE" object="tbl_grupo">CREATE TABLE tbl_grupo (
+    cod_grupo  VARCHAR(16) NOT NULL,
+    den_grupo  VARCHAR(30),
+    PRIMARY KEY (cod_grupo)
+);</Instruction>
+    <Instruction action="CREATE" type="TABLE" object="tbl_usuario_grupo">CREATE TABLE tbl_usuario_grupo (
+    cod_grupo VARCHAR(16) NOT NULL,
+    usuario VARCHAR(16) NOT NULL,
+    PRIMARY KEY (cod_grupo,usuario)
+);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_usuario_grupo" subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk1_usuario_grupo">ALTER TABLE tbl_usuario_grupo 
+  ADD CONSTRAINT fk1_usuario_grupo FOREIGN KEY (cod_grupo)
+    REFERENCES tbl_grupo (cod_grupo);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_usuario_grupo" subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk2_usuario_grupo">ALTER TABLE tbl_usuario_grupo 
+  ADD CONSTRAINT fk2_usuario_grupo FOREIGN KEY (usuario)
+    REFERENCES tbl_usuario (usuario);</Instruction>
+    <Instruction action="CREATE" type="TABLE" object="tbl_menu_sistema">CREATE TABLE tbl_menu_sistema (
+    cod_rotina      VARCHAR(10) NOT NULL,
+    ord_rotina      SMALLINT NOT NULL,
+    cod_rotina_pai  VARCHAR(10),
+    den_rotina      VARCHAR(50),
+    programa        VARCHAR(10),
+    ico_index       SMALLINT,
+    modulo          SMALLINT,
+    PRIMARY KEY (cod_rotina)
+);</Instruction>
+    <Instruction action="CREATE" type="TABLE" object="tbl_permissao_usuario_grupo">CREATE TABLE tbl_permissao_usuario_grupo (
+    usuario_grupo   VARCHAR(16) NOT NULL,
+    tip_permissao   CHAR(1),
+    cod_rotina      VARCHAR(10),
+    nivel_permissao SMALLINT,
+    PRIMARY KEY (usuario_grupo,cod_rotina)
+);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_permissao_usuario_grupo" subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk1_tbl_perm_usuario_grupo">ALTER TABLE tbl_permissao_usuario_grupo 
+  ADD CONSTRAINT fk1_tbl_perm_usuario_grupo FOREIGN KEY (cod_rotina)
+    REFERENCES tbl_menu_sistema (cod_rotina); </Instruction>
+    <Instruction action="CREATE" type="TABLE" object="tbl_representante">CREATE TABLE tbl_representante (
+  cod_representante VARCHAR(15) NOT NULL DEFAULT '0',
+  tipo_pessoa CHAR(1),
+  cpf_cnpj VARCHAR(16),
+  den_representante VARCHAR(50) NOT NULL,
+  logradouro VARCHAR(50),
+  numero INTEGER,
+  complemento VARCHAR(10),
+  bairro VARCHAR(30),
+  cod_cidade VARCHAR(5),
+  cod_uf VARCHAR(2),
+  cep VARCHAR(12),
+  data_nasc_fund date,
+  rg_ie VARCHAR(20),
+  telefone VARCHAR(15),
+  fax VARCHAR(15),
+  celular VARCHAR(15),
+  data_cadastro date,
+  ies_ativo CHAR(1) DEFAULT 'S',
+  email VARCHAR(40),
+  contato VARCHAR(40),
+  url VARCHAR(40),
+  perc_comissao DECIMAL(10,3),
+  PRIMARY KEY (cod_representante)
+);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_representante" subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk1_tbl_representante">ALTER TABLE tbl_representante 
+  ADD CONSTRAINT fk1_tbl_representante FOREIGN KEY (cod_cidade)
+    REFERENCES tbl_cidade (cod_cidade);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_pedido_venda" subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk6_tbl_pedido_venda">ALTER TABLE tbl_pedido_venda
+  ADD CONSTRAINT fk6_tbl_pedido_venda FOREIGN KEY (cod_representante) 
+  REFERENCES tbl_representante (cod_representante);</Instruction>
+    <Instruction action="CREATE" type="TABLE" object="tbl_comissao_representante">CREATE TABLE tbl_comissao_representante (
+	cod_representante   VARCHAR(15) NOT NULL,
+	cod_pedido_venda    INTEGER NOT NULL,
+	seq_parcela         INTEGER NOT NULL,
+	valor_calculo       DECIMAL(13,3),
+	perc_comissao       DECIMAL(10,3),
+	valor_comissao      DECIMAL(13,3),
+   valor_base_calculo  SMALLINT,
+   mes_comissao        SMALLINT,
+   ano_comissao        SMALLINT,
+   data_calculo        DATETIME,
+   cod_conta_pagar     INTEGER,
+   PRIMARY KEY (cod_representante,cod_pedido_venda,seq_parcela)
+);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_comissao_representante " subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk1_tbl_comissao_representante">ALTER TABLE tbl_comissao_representante 
+  ADD CONSTRAINT fk1_tbl_comissao_representante FOREIGN KEY (cod_representante)
+    REFERENCES tbl_representante (cod_representante);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_comissao_representante " subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk2_tbl_comissao_representante">ALTER TABLE tbl_comissao_representante 
+  ADD CONSTRAINT fk2_tbl_comissao_representante FOREIGN KEY (cod_conta_pagar)
+    REFERENCES tbl_conta_pagar (cod_conta_pagar) ON DELETE SET NULL;</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_comissao_representante " subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk3_tbl_comissao_representante">ALTER TABLE tbl_comissao_representante 
+  ADD CONSTRAINT fk3_tbl_comissao_representante FOREIGN KEY (cod_pedido_venda)
+    REFERENCES tbl_pedido_venda (cod_pedido_venda);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_comissao_representante " subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk4_tbl_comissao_representante">ALTER TABLE tbl_comissao_representante 
+  ADD CONSTRAINT fk4_tbl_comissao_representante FOREIGN KEY (cod_pedido_venda, seq_parcela)
+    REFERENCES tbl_pedido_venda_pagto (cod_pedido_venda, seq_parcela);</Instruction>
+    <Instruction action="CREATE" type="VIEW" object="cns_pedido_venda">CREATE OR REPLACE VIEW cns_pedido_venda AS
+SELECT pv.cod_pedido_venda, 
+       pv.cod_cliente, c.den_cliente,
+       pv.data_cadastro, 
+       CASE pv.ies_situacao
+        WHEN 'A' THEN 1
+        WHEN 'F' THEN 4
+        ELSE 5 END ord_situacao,
+       pv.ies_situacao, 
+       CASE pv.ies_situacao
+        WHEN 'A' THEN 'Aberto'
+        WHEN 'F' THEN 'Fechado'
+        WHEN 'C' THEN 'Cancelado'
+        ELSE 'Indefinido' END den_situacao,
+       pg.den_forma_pagto, 
+       pv.valor_total, 
+       IFNULL((SELECT sum(crp.valor_recebido) 
+          FROM tbl_conta_receber cr,
+               tbl_conta_receber_pagto crp
+         WHERE cr.cod_conta_receber = crp.cod_conta_receber
+           AND cr.tipo_registro = 'PV'
+           AND cr.num_documento = pv.cod_pedido_venda),0) valor_recebido,       
+       pv.cod_centro_custo, pv.cod_plano_conta,
+       pv.cod_representante,
+       (SELECT den_representante
+          FROM tbl_representante
+         WHERE cod_representante = pv.cod_representante) den_representante
+  FROM tbl_pedido_venda pv
+ INNER JOIN tbl_cliente c
+    ON c.cod_cliente = pv.cod_cliente
+ INNER JOIN tbl_forma_pagto pg
+    ON pg.cod_forma_pagto = pv.cod_forma_pagto</Instruction>
+    <Instruction action="CREATE" type="VIEW" object="cns_pedido_compra">CREATE OR REPLACE VIEW cns_pedido_compra AS
+SELECT pc.cod_pedido_compra, 
+       pc.cod_fornecedor, f.den_fornecedor,
+       pc.data_cadastro, 
+       CASE pc.ies_situacao
+        WHEN 'A' THEN 1
+        WHEN 'E' THEN 2
+        WHEN 'R' THEN 3
+        WHEN 'F' THEN 4
+        ELSE 5 END ord_situacao, 
+       pc.ies_situacao,
+       CASE pc.ies_situacao
+        WHEN 'A' THEN 'Aberto'
+        WHEN 'E' THEN 'Enviado'
+        WHEN 'R' THEN 'Recebido'
+        WHEN 'F' THEN 'Fechado'
+        WHEN 'C' THEN 'Cancelado'
+        ELSE 'Indefinido' END den_situacao,
+       pg.den_forma_pagto, 
+       pc.valor_total, 
+       IFNULL((SELECT sum(cpp.valor_pago) 
+          FROM tbl_conta_pagar cp,
+               tbl_conta_pagar_pagto cpp
+         WHERE cp.cod_conta_pagar = cpp.cod_conta_pagar
+           AND cp.tipo_registro = 'PC'
+           AND cp.num_documento = pc.cod_pedido_compra),0) valor_pago,       
+       pc.cod_centro_custo, pc.cod_plano_conta
+  FROM tbl_pedido_compra pc
+ INNER JOIN tbl_fornecedor f
+    ON f.cod_fornecedor = pc.cod_fornecedor
+ INNER JOIN tbl_forma_pagto pg
+    ON pg.cod_forma_pagto = pc.cod_forma_pagto</Instruction>
+    <Instruction action="CREATE" type="VIEW" object="cns_conta_receber">CREATE OR REPLACE VIEW cns_conta_receber AS 
+SELECT cr.cod_conta_receber, 
+       cr.cod_cliente, f.den_cliente,
+       cr.data_cadastro, cr.num_documento,
+       CASE cr.ies_situacao 
+         WHEN 'P' THEN 1
+         WHEN 'A' THEN 2 
+         WHEN 'L' THEN 3
+         WHEN 'C' THEN 4
+         ELSE 5 END AS ord_situacao,
+       cr.ies_situacao,
+       CASE cr.ies_situacao 
+         WHEN 'P' THEN 'Pendente' 
+         WHEN 'A' THEN 'Andamento' 
+         WHEN 'L' THEN 'Liquidado' 
+         WHEN 'C' THEN 'Cancelado' end AS den_situacao,
+       CASE cr.tipo_registro 
+         WHEN 'CR' THEN 'Manual'
+         WHEN 'PV' THEN 'Pedido Venda' END AS tip_registro,         
+       pg.den_forma_pagto,
+       cr.num_parcelas,
+       cr.valor_total,
+       IFNULL((SELECT sum(crp.valor_recebido) 
+          FROM tbl_conta_receber_pagto crp
+         WHERE crp.cod_conta_receber = cr.cod_conta_receber),0) valor_recebido,                
+       cr.cod_plano_conta, cr.cod_centro_custo
+    FROM tbl_conta_receber cr 
+   INNER JOIN tbl_cliente f
+      ON f.cod_cliente = cr.cod_cliente
+   INNER JOIN tbl_forma_pagto pg
+      ON pg.cod_forma_pagto = cr.cod_forma_pagto</Instruction>
+    <Instruction action="CREATE" type="VIEW" object="cns_conta_pagar">CREATE OR REPLACE VIEW cns_conta_pagar AS 
+SELECT cp.cod_conta_pagar, 
+       cp.cod_fornecedor, f.den_fornecedor,
+       cp.data_cadastro, cp.num_documento,
+       CASE cp.ies_situacao 
+         WHEN 'P' THEN 1
+         WHEN 'A' THEN 2 
+         WHEN 'L' THEN 3
+         WHEN 'C' THEN 4
+         ELSE 5 END AS ord_situacao,
+       cp.ies_situacao,
+       CASE cp.ies_situacao 
+         WHEN 'P' THEN 'Pendente' 
+         WHEN 'A' THEN 'Andamento' 
+         WHEN 'L' THEN 'Liquidado' 
+         WHEN 'C' THEN 'Cancelado' end AS den_situacao,
+       CASE cp.tipo_registro 
+         WHEN 'CP' THEN 'Manual'
+         WHEN 'CR' THEN 'Comissão'
+         WHEN 'PC' THEN 'Pedido Compra' END AS tip_registro,         
+       pg.den_forma_pagto,
+       cp.num_parcelas,
+       cp.valor_total,
+       IFNULL((SELECT sum(cpp.valor_pago) 
+          FROM tbl_conta_pagar_pagto cpp
+         WHERE cpp.cod_conta_pagar = cp.cod_conta_pagar),0) valor_pago,                
+       cp.cod_plano_conta, cp.cod_centro_custo
+    FROM tbl_conta_pagar cp 
+   INNER JOIN tbl_fornecedor f
+      ON f.cod_fornecedor = cp.cod_fornecedor
+   INNER JOIN tbl_forma_pagto pg
+      ON pg.cod_forma_pagto = cp.cod_forma_pagto</Instruction>
+  </Instructions>
+</Atualization>

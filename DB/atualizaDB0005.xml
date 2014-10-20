@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="yes"?>
+<Atualization>
+  <FileInfoAtuDB file_atudbname="ATUDB00005" file_atudbdate="06/03/2013" file_requisito="CRTDB00002"></FileInfoAtuDB>
+  <Informations>
+    <Information>Inclusão do campo nome fantasia na tabela de clientes.</Information>
+    <Information>Inclusão do campo observação na tabela de clientes.</Information>
+    <Information>Inclusão do campo nome fantasia na tabela de fornecedores.</Information>
+    <Information>Inclusão do campo observação na tabela de fornecedores.</Information>
+    <Information>Inclusão do campo nome fantasia na tabela de representantes.</Information>
+    <Information>Inclusão do campo observação na tabela de representantes.</Information>
+    <Information>Inclusão do campo representante na tabela de clientes.</Information>
+    <Information>Inclusão da chave estrangeira na tabela clientes para o código do representante.</Information>
+    <Information>Criação da tabela de classificação de clientes.</Information>
+    <Information>Inclusão do campo classificação na tabela de clientes.</Information>
+    <Information>Inclusão da chave estrangeira na tabela clientes para o código da classificação.</Information>
+    <Information>Inclusão do campo indicação financeiro na tabela de forma de pagamentos.</Information>
+  </Informations>
+  <Instructions>
+    <Instruction action="ALTER" type="TABLE" object="tbl_cliente" subaction="ADD" subtype="COLUMN" subobject="nome_fantasia">ALTER TABLE tbl_cliente ADD nome_fantasia VARCHAR(50) after den_cliente;</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_cliente" subaction="ADD" subtype="COLUMN" subobject="observacao">ALTER TABLE tbl_cliente ADD observacao VARCHAR(4000);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_fornecedor" subaction="ADD" subtype="COLUMN" subobject="nome_fantasia">ALTER TABLE tbl_fornecedor ADD nome_fantasia VARCHAR(50) after den_fornecedor;</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_fornecedor" subaction="ADD" subtype="COLUMN" subobject="observacao">ALTER TABLE tbl_fornecedor ADD observacao VARCHAR(4000);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_representante" subaction="ADD" subtype="COLUMN" subobject="nome_fantasia">ALTER TABLE tbl_representante ADD nome_fantasia VARCHAR(50) after den_representante;</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_representante" subaction="ADD" subtype="COLUMN" subobject="observacao">ALTER TABLE tbl_representante ADD observacao VARCHAR(4000);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_cliente" subaction="ADD" subtype="COLUMN" subobject="cod_representante">ALTER TABLE tbl_cliente ADD cod_representante VARCHAR(15);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_cliente" subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk2_tbl_cliente">ALTER TABLE tbl_cliente
+  ADD CONSTRAINT fk2_tbl_cliente FOREIGN KEY (cod_representante) 
+  REFERENCES tbl_representante (cod_representante);</Instruction>
+    <Instruction action="CREATE" type="TABLE" object="tbl_class_cliente">CREATE TABLE tbl_class_cliente (
+    cod_classificacao INTEGER NOT NULL AUTO_INCREMENT,
+    den_classificacao VARCHAR(30) NOT NULL,
+    PRIMARY KEY (cod_classificacao)
+);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_cliente" subaction="ADD" subtype="COLUMN" subobject="cod_classificacao">ALTER TABLE tbl_cliente ADD cod_classificacao INTEGER;</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_cliente" subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk3_tbl_cliente">ALTER TABLE tbl_cliente
+  ADD CONSTRAINT fk3_tbl_cliente FOREIGN KEY (cod_classificacao) 
+  REFERENCES tbl_class_cliente (cod_classificacao);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_forma_pagto" subaction="ADD" subtype="COLUMN" subobject="ies_financeiro">ALTER TABLE tbl_forma_pagto ADD ies_financeiro CHAR(1) DEFAULT 'S';</Instruction>
+  </Instructions>
+</Atualization>

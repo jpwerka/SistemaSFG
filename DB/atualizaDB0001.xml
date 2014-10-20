@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="yes"?>
+<Atualization>
+  <FileInfoAtuDB file_atudbname="ATUDB00001" file_atudbdate="22/11/2012" file_requisito="CRTDB00002"></FileInfoAtuDB>
+  <Informations>
+    <Information>Criação da tabela de grupos.</Information>
+    <Information>Criação da tabela de usuários por grupo.</Information>
+    <Information>Inclusão da chave estrangeira na tabela usuários por grupo para o código do grupo.</Information>
+    <Information>Inclusão da chave estrangeira na tabela usuários por grupo para o código do usuário.</Information>
+    <Information>Criação da tabela de menu do sistema.</Information>
+    <Information>Criação da tabela de permissão de menu por usuário e/ou grupo.</Information>
+    <Information>Inclusão da chave estrangeira na tabela permissão menu para o código da rotina.</Information>
+    <Information>Criação do procedimento que carrega a permissão de menu por usuário e/ou grupo.</Information>
+    <Information>Criação do procedimento que modifica a permissão de menu por usuário e/ou grupo.</Information>
+    <Information>Inclusão do campo indicador de administrador na tabela de usuários.</Information>
+    <Information>Alteração do campo indicador de administrador para o usuario administrador na tabela de usuários.</Information>
+  </Informations>
+  <Instructions>
+    <Instruction action="CREATE" type="TABLE" object="tbl_grupo">CREATE TABLE tbl_grupo (
+    cod_grupo  VARCHAR(16) NOT NULL,
+    den_grupo  VARCHAR(30),
+    PRIMARY KEY (cod_grupo));</Instruction>
+    <Instruction action="CREATE" type="TABLE" object="tbl_usuario_grupo">CREATE TABLE tbl_usuario_grupo (
+    cod_grupo VARCHAR(16) NOT NULL,
+    usuario VARCHAR(16) NOT NULL,
+    PRIMARY KEY (cod_grupo,usuario));</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_usuario_grupo" subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk1_usuario_grupo">ALTER TABLE tbl_usuario_grupo 
+  ADD CONSTRAINT fk1_usuario_grupo FOREIGN KEY (cod_grupo)
+    REFERENCES tbl_grupo (cod_grupo);</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_usuario_grupo" subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk2_usuario_grupo">ALTER TABLE tbl_usuario_grupo 
+  ADD CONSTRAINT fk2_usuario_grupo FOREIGN KEY (usuario)
+    REFERENCES tbl_usuario (usuario);</Instruction>
+    <Instruction action="CREATE" type="TABLE" object="tbl_menu_sistema">CREATE TABLE tbl_menu_sistema (
+    cod_rotina      VARCHAR(10) NOT NULL,
+    ord_rotina      SMALLINT NOT NULL,
+    cod_rotina_pai  VARCHAR(10),
+    den_rotina      VARCHAR(50),
+    programa        VARCHAR(10),
+    ico_index       SMALLINT,
+    PRIMARY KEY (cod_rotina));</Instruction>
+    <Instruction action="CREATE" type="TABLE" object="tbl_permissao_usuario_grupo">CREATE TABLE tbl_permissao_usuario_grupo (
+    usuario_grupo   VARCHAR(16) NOT NULL,
+    tip_permissao   CHAR(1),
+    cod_rotina      VARCHAR(10),
+    nivel_permissao SMALLINT,
+    PRIMARY KEY (usuario_grupo,cod_rotina));</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_permissao_usuario_grupo" subaction="ADD CONSTRAINT" subtype="FOREIGN KEY" subobject="fk1_perm_user_grupo">ALTER TABLE tbl_permissao_usuario_grupo 
+  ADD CONSTRAINT fk1_perm_user_grupo FOREIGN KEY (cod_rotina)
+    REFERENCES tbl_menu_sistema (cod_rotina); </Instruction>
+    <Instruction action="CREATE" type="PROCEDURE" object="carrega_permissao_menu">CREATE PROCEDURE carrega_permissao_menu(in_usuario_grupo varchar(16), in_tip_permissao char(1))
+BEGIN
+   -- Cria a tabela temporária, caso não exista
+   CREATE TEMPORARY TABLE IF NOT EXISTS tt_permissao_menu (
+     cod_rotina_pai  VARCHAR (10),
+     ord_rotina      SMALLINT,
+     cod_rotina      VARCHAR (10),
+     den_rotina      VARCHAR (50),
+     programa        VARCHAR (10),
+     ico_index       SMALLINT,
+     usuario_grupo   VARCHAR (16),
+     tip_permissao   CHAR (1),
+     nivel_permissao SMALLINT);
+
+   -- Limpa a temporária caso existam informações
+   DELETE FROM tt_permissao_menu;
+
+   IF in_tip_permissao = 'G' THEN -- Permissão por grupo 
+      INSERT INTO tt_permissao_menu 
+            (cod_rotina_pai, ord_rotina, cod_rotina, den_rotina, programa,
+             ico_index, usuario_grupo, tip_permissao, nivel_permissao)
+      SELECT m.cod_rotina_pai, m.ord_rotina, m.cod_rotina,
+             m.den_rotina, m.programa, m.ico_index,
+             in_usuario_grupo, 'G', p.nivel_permissao
+        FROM tbl_menu_sistema m
+        LEFT JOIN tbl_permissao_usuario_grupo p
+          ON p.cod_rotina = m.cod_rotina
+         AND p.tip_permissao = 'G'
+         AND p.usuario_grupo = in_usuario_grupo
+        LEFT JOIN tbl_usuario_grupo g
+          ON g.cod_grupo = p.usuario_grupo 
+       ORDER BY m.cod_rotina_pai, m.ord_rotina;
+   ELSE -- Permissão por usuário
+      INSERT INTO tt_permissao_menu 
+            (cod_rotina_pai, ord_rotina, cod_rotina, den_rotina, programa,
+             ico_index, usuario_grupo, tip_permissao, nivel_permissao)
+      SELECT m.cod_rotina_pai, m.ord_rotina, m.cod_rotina, 
+             m.den_rotina, m.programa, m.ico_index,
+             in_usuario_grupo, 'U', p.nivel_permissao
+        FROM tbl_menu_sistema m
+        LEFT JOIN tbl_permissao_usuario_grupo p
+          ON p.cod_rotina = m.cod_rotina
+         AND p.tip_permissao = 'U'
+         AND p.usuario_grupo = in_usuario_grupo
+        LEFT JOIN tbl_usuario u
+          ON u.usuario = p.usuario_grupo 
+       ORDER BY m.cod_rotina_pai, m.ord_rotina;
+       
+       -- Carrega a maior permissão por grupo para o usuário, caso exista
+       UPDATE tt_permissao_menu 
+          SET tip_permissao = 'G',
+              nivel_permissao = (SELECT max(p.nivel_permissao)
+                                   FROM tbl_permissao_usuario_grupo p
+                                  WHERE p.cod_rotina = tt_permissao_menu.cod_rotina
+                                    AND p.tip_permissao = 'G'
+                                    AND p.usuario_grupo IN 
+                                    (SELECT cod_grupo 
+                                       FROM tbl_usuario_grupo 
+                                      WHERE usuario = tt_permissao_menu.usuario_grupo))
+        WHERE nivel_permissao IS NULL;
+   END IF;
+
+   UPDATE tt_permissao_menu 
+      SET tip_permissao = in_tip_permissao,
+          nivel_permissao = 0
+    WHERE nivel_permissao IS NULL;  
+   
+   SELECT * FROM tt_permissao_menu;
+END</Instruction>
+    <Instruction action="CREATE" type="PROCEDURE" object="modifica_permissao_menu">CREATE PROCEDURE modifica_permissao_menu(in_usuario_grupo   VARCHAR(16),
+                                         in_tip_permissao   CHAR(1),
+                                         in_cod_rotina      VARCHAR(10),
+                                         in_nivel_permissao SMALLINT)
+BEGIN
+    DECLARE not_found INT DEFAULT 0;
+    DECLARE l_nivel_permissao SMALLINT;
+    DECLARE CONTINUE HANDLER FOR NOT FOUND SET not_found=1;
+    -- Verifica se já existe uma permissão cadastrada para o usuário
+    SELECT nivel_permissao
+      INTO l_nivel_permissao
+      FROM tbl_permissao_usuario_grupo
+     WHERE usuario_grupo = in_usuario_grupo
+       AND tip_permissao = in_tip_permissao
+       AND cod_rotina = in_cod_rotina;
+    IF not_found = 1 THEN
+        INSERT INTO tbl_permissao_usuario_grupo
+               (usuario_grupo,tip_permissao,cod_rotina,nivel_permissao)
+        VALUES (in_usuario_grupo,in_tip_permissao,in_cod_rotina,in_nivel_permissao);
+    ELSE
+        UPDATE tbl_permissao_usuario_grupo
+           SET nivel_permissao = in_nivel_permissao
+         WHERE usuario_grupo = in_usuario_grupo
+           AND tip_permissao = in_tip_permissao
+           AND cod_rotina = in_cod_rotina;
+    END IF;
+    SELECT l_nivel_permissao;
+END</Instruction>
+    <Instruction action="ALTER" type="TABLE" object="tbl_usuario" subaction="ADD " subtype="COLUMN" subobject="ies_administrador">ALTER TABLE tbl_usuario ADD COLUMN ies_administrador CHAR(1) DEFAULT 'N';</Instruction>
+    <Instruction action="UPDATE" type="TABLE" object="tbl_usuario">UPDATE tbl_usuario SET ies_administrador = 'S' WHERE usuario = 'administrador';</Instruction>
+  </Instructions>
+</Atualization>
